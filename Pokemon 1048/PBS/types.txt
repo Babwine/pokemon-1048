@@ -15,7 +15,7 @@ Resistances = ROCK,BUG,DARK
 [FLYING]
 Name = Flying
 IconPosition = 2
-Weaknesses = ROCK,ELECTRIC,ICE
+Weaknesses = ROCK,ELECTRIC,ICE,ECHO
 Resistances = FIGHTING,BUG,GRASS
 Immunities = GROUND
 #-------------------------------
@@ -24,19 +24,20 @@ Name = Poison
 IconPosition = 3
 Weaknesses = GROUND,PSYCHIC
 Resistances = FIGHTING,POISON,BUG,GRASS,FAIRY
+Immunities = ECHO
 #-------------------------------
 [GROUND]
 Name = Ground
 IconPosition = 4
 Weaknesses = WATER,GRASS,ICE
-Resistances = POISON,ROCK
+Resistances = POISON,ROCK,ECHO
 Immunities = ELECTRIC
 #-------------------------------
 [ROCK]
 Name = Rock
 IconPosition = 5
 Weaknesses = FIGHTING,GROUND,STEEL,WATER,GRASS
-Resistances = NORMAL,FLYING,POISON,FIRE
+Resistances = NORMAL,FLYING,POISON,FIRE,ECHO
 #-------------------------------
 [BUG]
 Name = Bug
@@ -47,7 +48,7 @@ Resistances = FIGHTING,GROUND,GRASS
 [GHOST]
 Name = Ghost
 IconPosition = 7
-Weaknesses = GHOST,DARK
+Weaknesses = GHOST,DARK,ECHO
 Resistances = POISON,BUG
 Immunities = NORMAL,FIGHTING
 #-------------------------------
@@ -68,13 +69,13 @@ Name = Fire
 IconPosition = 10
 IsSpecialType = true
 Weaknesses = GROUND,ROCK,WATER
-Resistances = BUG,STEEL,FIRE,GRASS,ICE,FAIRY
+Resistances = BUG,STEEL,FIRE,GRASS,ICE,FAIRY,ECHO
 #-------------------------------
 [WATER]
 Name = Water
 IconPosition = 11
 IsSpecialType = true
-Weaknesses = GRASS,ELECTRIC
+Weaknesses = GRASS,ELECTRIC,ECHO
 Resistances = STEEL,FIRE,WATER,ICE
 #-------------------------------
 [GRASS]
@@ -110,13 +111,13 @@ Name = Dragon
 IconPosition = 16
 IsSpecialType = true
 Weaknesses = ICE,DRAGON,FAIRY
-Resistances = FIRE,WATER,GRASS,ELECTRIC
+Resistances = FIRE,WATER,GRASS,ELECTRIC,ECHO
 #-------------------------------
 [DARK]
 Name = Dark
 IconPosition = 17
 IsSpecialType = true
-Weaknesses = FIGHTING,BUG,FAIRY
+Weaknesses = FIGHTING,BUG,FAIRY,ECHO
 Resistances = GHOST,DARK
 Immunities = PSYCHIC
 #-------------------------------
@@ -124,6 +125,14 @@ Immunities = PSYCHIC
 Name = Fairy
 IconPosition = 18
 IsSpecialType = true
-Weaknesses = POISON,STEEL
+Weaknesses = POISON,STEEL,ECHO
 Resistances = FIGHTING,BUG,DARK
 Immunities = DRAGON
+#-------------------------------
+[ECHO]
+Name = Echo
+IconPosition = 19
+IsSpecialType = true
+Weaknesses = ELECTRIC,ROCK,ECHO
+Resistances = STEEL,FIGHTING,FAIRY,FIRE,PSYCHIC,
+Immunities = DARK

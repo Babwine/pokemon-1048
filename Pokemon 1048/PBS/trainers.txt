@@ -120,3 +120,7 @@ Pokemon = BLASTOISE,63
 [POKEMON_Klefki,Klefki]
 LoseText = Kle...
 Pokemon = KLEFKI,5
+#-------------------------------
+[POKEMON_Misdreavus,Misdreavus]
+LoseText = Mis...
+Pokemon = MISDREAVUS,2

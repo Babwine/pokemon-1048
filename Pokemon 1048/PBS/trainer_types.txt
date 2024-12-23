@@ -403,4 +403,10 @@ VictoryBGM = Battle victory leader
 #-------------------------------
 [POKEMON_Klefki]
 Name = Malicious Pokémon
+Gender = Unknown
+BaseMoney = 100
+#-------------------------------
+[POKEMON_Misdreavus]
+Name = Malicious Pokémon
+Gender = Unknown
 BaseMoney = 100

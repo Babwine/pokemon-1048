@@ -5960,7 +5960,7 @@ Description = The user intimidates the target with the pattern on its belly to c
 #-------------------------------
 [GROWL]
 Name = Growl
-Type = NORMAL
+Type = ECHO
 Category = Status
 Accuracy = 100
 TotalPP = 40
@@ -8710,3 +8710,42 @@ TotalPP = 40
 Target = User
 FunctionCode = RaiseUserDefense1
 Description = The user withdraws its body into its hard shell, raising its Defense stat.
+#-------------------------------
+[WOODENCRASH]
+Name = Wooden Crash
+Type = GRASS
+Category = Physical
+Power = 60
+Accuracy = 100
+TotalPP = 20
+Target = NearOther
+Priority = 1
+FunctionCode = None
+Flags = Contact,CanProtect,CanMirrorMove
+Description = The user lunges to hit with its woody foot. This move always goes first.
+#-------------------------------
+[BOILEDCOFFEE]
+Name = Boiled Coffee
+Type = FIRE
+Category = Special
+Power = 60
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+Priority = 0
+FunctionCode = DoublePowerIfTargetBurnt
+Flags = CanProtect,CanMirrorMove
+Description = Throws a cup of burning coffee at the target. Doubled damage on burnt Pokémon.
+#-------------------------------
+[BUBBLEMILL]
+Name = Bubble Mill
+Type = WATER
+Category = Special
+Power = 20
+Accuracy = 95
+TotalPP = 10
+Target = NearOther
+Priority = 0
+FunctionCode = HitTwoToFiveTimes
+Flags = CanProtect,CanMirrorMove
+Description = The user blows bubbles at the target that violently burst. Hit two to five times and can deafen.
