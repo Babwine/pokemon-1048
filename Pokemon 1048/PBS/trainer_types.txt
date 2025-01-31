@@ -54,6 +54,7 @@ BaseMoney = 32
 Name = Bug Catcher
 Gender = Male
 BaseMoney = 16
+IntroBGM = Encounter_BUGCATCHER
 #-------------------------------
 [BURGLAR]
 Name = Burglar
@@ -192,12 +193,13 @@ BaseMoney = 60
 Name = Youngster
 Gender = Male
 BaseMoney = 16
-IntroBGM = Trainers Eyes Meet! (Youngster) - Pokémon Sword and Shield OST (Gamerip)
+IntroBGM = Encounter_YOUNGSTER
 #-------------------------------
 [LASS]
 Name = Lass
 Gender = Female
 BaseMoney = 16
+IntroBGM = Encounter_LASS
 #-------------------------------
 [POKEMONRANGER_M]
 Name = Pokémon Ranger
@@ -410,3 +412,41 @@ BaseMoney = 100
 Name = Malicious Pokémon
 Gender = Unknown
 BaseMoney = 100
+#-------------------------------
+[POKEMONTRAINER_Hazel]
+Name = Rash Girl
+Gender = Female
+BaseMoney = 100
+BattleBGM = Battle_RIVAL_Anachor
+VictoryBGM = Battle victory leader
+#-------------------------------
+[POKEMONTRAINER_Zoe]
+Name = Blooming Artist
+Gender = Female
+BaseMoney = 100
+BattleBGM = Battle_RIVAL_Anachor
+VictoryBGM = Battle victory leader
+#-------------------------------
+[POKEMONTRAINER_Malka]
+Name = Professor Assistant
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle_RIVAL_Anachor
+VictoryBGM = Battle victory leader
+#-------------------------------
+[POKEMONTRAINER_Aewin]
+Name = World Ender
+Gender = Female
+BaseMoney = 100
+#-------------------------------
+[POKEMONTRAINER_Jill]
+Name = Serene Lady
+Gender = Female
+BaseMoney = 100
+#-------------------------------
+[POKEMONTRAINER_Vey]
+Name = Impetuous Boy
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle_RIVAL_Vey
+VictoryBGM = Battle victory leader

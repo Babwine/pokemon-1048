@@ -2976,7 +2976,7 @@ Description = The user attacks with a blade of air that slices even the sky. It 
 #-------------------------------
 [CHATTER]
 Name = Chatter
-Type = FLYING
+Type = ECHO
 Category = Special
 Power = 65
 Accuracy = 100
@@ -4661,7 +4661,7 @@ Description = The foe is attacked with a powerful beam. The user must rest on th
 #-------------------------------
 [BOOMBURST]
 Name = Boomburst
-Type = NORMAL
+Type = ECHO
 Category = Special
 Power = 140
 Accuracy = 100
@@ -4793,7 +4793,7 @@ Description = The user releases countless shots of light. Its type varies with t
 #-------------------------------
 [HYPERVOICE]
 Name = Hyper Voice
-Type = NORMAL
+Type = ECHO
 Category = Special
 Power = 90
 Accuracy = 100
@@ -4842,7 +4842,7 @@ Description = A reckless, full-body charge attack for slamming into the foe. It 
 #-------------------------------
 [UPROAR]
 Name = Uproar
-Type = NORMAL
+Type = ECHO
 Category = Special
 Power = 90
 Accuracy = 100
@@ -4967,7 +4967,7 @@ Description = The user slashes the target with hard and sharp claws. It may also
 #-------------------------------
 [RELICSONG]
 Name = Relic Song
-Type = NORMAL
+Type = ECHO
 Category = Special
 Power = 75
 Accuracy = 100
@@ -5128,7 +5128,7 @@ Description = A unique attack that varies in type and intensity depending on the
 #-------------------------------
 [ROUND]
 Name = Round
-Type = NORMAL
+Type = ECHO
 Category = Special
 Power = 60
 Accuracy = 100
@@ -5189,7 +5189,7 @@ Description = A spin attack that raises the user's Speed and eliminates the effe
 #-------------------------------
 [SNORE]
 Name = Snore
-Type = NORMAL
+Type = ECHO
 Category = Special
 Power = 50
 Accuracy = 100
@@ -5226,7 +5226,7 @@ Description = An attack move that varies in power and type depending on the weat
 #-------------------------------
 [ECHOEDVOICE]
 Name = Echoed Voice
-Type = NORMAL
+Type = ECHO
 Category = Special
 Power = 40
 Accuracy = 100
@@ -5790,7 +5790,7 @@ Description = The Pokémon congratulates you on your special day!
 #-------------------------------
 [CONFIDE]
 Name = Confide
-Type = NORMAL
+Type = ECHO
 Category = Status
 Accuracy = 0
 TotalPP = 20
@@ -6001,7 +6001,7 @@ Description = The user stiffens all the muscles in its body to raise its Defense
 #-------------------------------
 [HEALBELL]
 Name = Heal Bell
-Type = NORMAL
+Type = ECHO
 Category = Status
 Accuracy = 0
 TotalPP = 5
@@ -6033,7 +6033,7 @@ Description = The user and an ally hold hands. This makes them very happy.
 #-------------------------------
 [HOWL]
 Name = Howl
-Type = NORMAL
+Type = ECHO
 Category = Status
 Accuracy = 0
 TotalPP = 40
@@ -6191,7 +6191,7 @@ Description = An attack that makes use of nature's power. Its effects vary depen
 #-------------------------------
 [NOBLEROAR]
 Name = Noble Roar
-Type = NORMAL
+Type = ECHO
 Category = Status
 Accuracy = 0
 TotalPP = 30
@@ -6224,7 +6224,7 @@ Description = The user adds its HP to the target's HP, then equally shares the c
 #-------------------------------
 [PERISHSONG]
 Name = Perish Song
-Type = NORMAL
+Type = ECHO
 Category = Status
 Accuracy = 0
 TotalPP = 5
@@ -6308,7 +6308,7 @@ Description = The user rests to cure itself of a poisoning, burn, or paralysis.
 #-------------------------------
 [ROAR]
 Name = Roar
-Type = NORMAL
+Type = ECHO
 Category = Status
 Accuracy = 0
 TotalPP = 20
@@ -6341,7 +6341,7 @@ Description = The user frightens the target with a scary face to harshly reduce 
 #-------------------------------
 [SCREECH]
 Name = Screech
-Type = NORMAL
+Type = ECHO
 Category = Status
 Accuracy = 85
 TotalPP = 40
@@ -6383,7 +6383,7 @@ Description = The user's mysterious psychic wave changes the target's Ability to
 #-------------------------------
 [SING]
 Name = Sing
-Type = NORMAL
+Type = ECHO
 Category = Status
 Accuracy = 55
 TotalPP = 15
@@ -6497,7 +6497,7 @@ Description = The user makes a copy of itself using some of its HP. The copy ser
 #-------------------------------
 [SUPERSONIC]
 Name = Supersonic
-Type = NORMAL
+Type = ECHO
 Category = Status
 Accuracy = 55
 TotalPP = 20

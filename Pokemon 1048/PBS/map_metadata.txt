@@ -11,7 +11,7 @@ MapPosition = 0,13,12
 BattleBack = field
 #-------------------------------
 [003]   # Player's house
-Name = \PN's house
+Name = Red's house
 HealingSpot = 2,8,8
 MapPosition = 0,13,12
 #-------------------------------
@@ -108,6 +108,7 @@ Outdoor = true
 ShowArea = true
 Bicycle = true
 HealingSpot = 22,52,38
+MapPosition = 0,23,23
 MapSize = 1,1000
 #-------------------------------
 [023]   # Lerucean Town
@@ -161,10 +162,12 @@ BattleBack = field
 MapSize = 2,1101
 #-------------------------------
 [032]   # Alenys & \PN's House
-Name = Alenys & \PN's House
+Name = Alenys & Red's House
+MapPosition = 0,23,23
 #-------------------------------
 [033]   # Malka's House
 Name = Malka's House
+MapPosition = 0,23,23
 #-------------------------------
 [034]   # Ice Cave
 Name = Route 3
@@ -221,9 +224,11 @@ MapSize = 1,111
 #-------------------------------
 [042]   # Hazel's House
 Name = Hazel's House
+MapPosition = 0,23,23
 #-------------------------------
 [043]   # Anachor Interior
 Name = Anachor Interior
+MapPosition = 0,23,23
 #-------------------------------
 [044]   # Route 6
 Name = Route 6
@@ -254,6 +259,10 @@ MapPosition = 0,15,10
 BattleBack = rocky
 MapSize = 2,11
 Environment = Rock
+#-------------------------------
+[048]   # Ikoru Domain
+Name = Ikoru Domain
+MapPosition = 0,23,23
 #-------------------------------
 [049]   # Rock Cave 1F
 Name = Route 7
@@ -421,8 +430,29 @@ BattleBack = city
 Name = Route 1
 Outdoor = true
 ShowArea = true
+MapPosition = 0,22,22
 #-------------------------------
 [077]   # Cushy Cliff
 Name = Cushy Cliff
 Outdoor = true
 ShowArea = true
+MapPosition = 0,23,21
+#-------------------------------
+[078]   # Abandoned Mansion
+Name = Abandoned Mansion
+MapPosition = 0,23,21
+#-------------------------------
+[079]   # Hollyn Town
+Name = Hollyn Town
+Outdoor = true
+ShowArea = true
+HealingSpot = 79,27,18
+MapPosition = 0,21,22
+#-------------------------------
+[084]   # Hollyn Forest
+Name = Hollyn Forest
+Outdoor = true
+ShowArea = true
+Bicycle = true
+MapPosition = 0,21,23
+BattleBack = forest

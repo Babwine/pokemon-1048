@@ -124,3 +124,107 @@ Pokemon = KLEFKI,5
 [POKEMON_Misdreavus,Misdreavus]
 LoseText = Mis...
 Pokemon = MISDREAVUS,2
+#-------------------------------
+[YOUNGSTER,Bart]
+LoseText = How did you do that?!
+Pokemon = RABBOOZE,2
+Pokemon = RATTATA,3
+#-------------------------------
+[LASS,Sarah]
+LoseText = Shouldn't have messed with you...
+Pokemon = PARISTOTLE,3
+#-------------------------------
+[BUGCATCHER,Cyril]
+LoseText = This is so sad.
+Pokemon = WURMPLE,4
+#-------------------------------
+[TAMER,Tucker]
+LoseText = Good choice of moves.
+Pokemon = GREAVARD,4
+#-------------------------------
+[POKEMONRANGER_F,Emily]
+LoseText = You fought really well!
+Pokemon = DEERLING,6
+	Form = 2
+#-------------------------------
+[POKEMONTRAINER_Hazel,Hazel]
+LoseText = You guys were insane!
+Pokemon = SCORCHIS,5
+Pokemon = WURMPLE,2
+Pokemon = BUNNELBY,8
+	Name = Bunn's
+    Moves = MUDSLAP,LEER,TACKLE,ROLLOUT
+#-------------------------------
+[POKEMONTRAINER_Hazel,Hazel,1]
+LoseText = You guys were insane!
+Pokemon = CHOIRAL,5
+Pokemon = WURMPLE,2
+Pokemon = BUNNELBY,8
+	Name = Bunn's
+    Moves = MUDSLAP,LEER,TACKLE,ROLLOUT
+#-------------------------------
+[POKEMONTRAINER_Hazel,Hazel,2]
+LoseText = You guys were insane!
+Pokemon = WURMPLE,2
+Pokemon = BAALARIA,6
+Pokemon = BUNNELBY,8
+	Name = Bunn's
+    Moves = MUDSLAP,LEER,TACKLE,ROLLOUT
+#-------------------------------
+[POKEMONTRAINER_Malka,Malka]
+LoseText = That sure was a good fight.
+Pokemon = ROTOM,4
+Pokemon = MURKROW,5
+#-------------------------------
+[POKEMONTRAINER_Zoe,Zoe]
+LoseText = This was so tense, I loved it!
+Pokemon = SMEARGLE,7
+	Name = Smoochie
+    Moves = MEANLOOK,SKETCH,PURSUIT
+Pokemon = CHOIRAL,6
+#-------------------------------
+[POKEMONTRAINER_Zoe,Zoe,1]
+LoseText = This was so tense, I loved it!
+Pokemon = SMEARGLE,7
+	Name = Smoochie
+    Moves = MEANLOOK,SKETCH,PURSUIT
+Pokemon = BAALARIA,6
+#-------------------------------
+[POKEMONTRAINER_Zoe,Zoe,2]
+LoseText = This was so tense, I loved it!
+Pokemon = SMEARGLE,7
+	Name = Smoochie
+    Moves = MEANLOOK,SKETCH,PURSUIT
+Pokemon = SCORCHIS,6
+#-------------------------------
+[POKEMONTRAINER_Jill,Jill]
+LoseText = You're really good!
+Pokemon = GOSSIFLEUR,8
+Pokemon = SPRITZEE,7
+#-------------------------------
+[POKEMONTRAINER_Vey,Vey]
+LoseText = ...!
+Pokemon = SEEDOT,8
+Pokemon = NYMBLE,9
+Pokemon = SNEASEL,10
+	Form = 2
+#-------------------------------
+[BUGCATCHER,Joshua]
+LoseText = Cheaters, you were two!
+Pokemon = WURMPLE,5
+Pokemon = TAROUNTULA,6
+#-------------------------------
+[BUGCATCHER,Jonathan]
+LoseText = I can't believe that!
+Pokemon = LYMPHREAD,6
+Pokemon = SPINARAK,5
+#-------------------------------
+[BUGCATCHER,Justin]
+LoseText = Bugs are nuts!
+Pokemon = CATERPIE,6
+Pokemon = BUNNELBY,7
+#-------------------------------
+[BUGCATCHER,Jerry]
+LoseText = I couldn't fa-thom such a fate!
+Pokemon = WEEDLE,6
+Pokemon = SILCOON,7

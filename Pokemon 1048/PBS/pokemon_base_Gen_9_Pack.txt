@@ -837,7 +837,7 @@ Generation = 9
 [SQUAWKABILLY]
 Name = Squawkabilly
 FormName = Green Plumage
-Types = NORMAL,FLYING
+Types = ECHO,FLYING
 BaseStats = 82,96,51,92,45,51
 GenderRatio = Female50Percent
 GrowthRate = Erratic
@@ -2237,7 +2237,7 @@ WildItemUncommon = BOOSTERENERGY
 #-------------------------------
 [SCREAMTAIL]
 Name = Scream Tail
-Types = FAIRY,PSYCHIC
+Types = FAIRY,ECHO
 BaseStats = 115,65,99,111,65,115
 GenderRatio = Genderless
 GrowthRate = Slow

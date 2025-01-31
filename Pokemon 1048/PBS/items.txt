@@ -6563,3 +6563,11 @@ Pocket = 8
 Price = 0
 Flags = KeyItem
 Description = A faded sea chart that shows the way to a certain island.
+#-------------------------------
+[OBSIDIANSHARD]
+Name = Obsidian Shard
+NamePlural = Obsidian Shards
+Pocket = 8
+Price = 3000
+Flags = Fling_80
+Description = A dark shard with oozes weird energy. It is loved by a certain Pokémon.

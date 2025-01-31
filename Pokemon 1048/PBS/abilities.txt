@@ -1074,3 +1074,11 @@ Description = Combines Unnerve and Grim Neigh Abilities.
 [WINGEDFEET]
 Name = Wing Feet
 Description = Powers up Flying-type moves.
+#-------------------------------
+[MAINTHREAD]
+Name = Main Thread
+Description = The ally's attacks can't miss.
+#-------------------------------
+[COLLAPSE]
+Name = Collapse
+Description = Contact with the Pokémon may cause sleep.

@@ -72,7 +72,6 @@ class Battle
   def pbCommandPhase
     $CanToggle = true
     original_pbCommandPhase
-    $CanToggle = false
   end
 end
 #===============================================================================#

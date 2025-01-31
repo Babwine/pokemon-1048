@@ -24,7 +24,6 @@ Name = Poison
 IconPosition = 3
 Weaknesses = GROUND,PSYCHIC
 Resistances = FIGHTING,POISON,BUG,GRASS,FAIRY
-Immunities = ECHO
 #-------------------------------
 [GROUND]
 Name = Ground
@@ -90,7 +89,7 @@ Name = Electric
 IconPosition = 13
 IsSpecialType = true
 Weaknesses = GROUND
-Resistances = FLYING,STEEL,ELECTRIC
+Resistances = FLYING,STEEL,ELECTRIC,ECHO
 #-------------------------------
 [PSYCHIC]
 Name = Psychic
@@ -98,6 +97,7 @@ IconPosition = 14
 IsSpecialType = true
 Weaknesses = BUG,GHOST,DARK
 Resistances = FIGHTING,PSYCHIC
+Immunities = ECHO
 #-------------------------------
 [ICE]
 Name = Ice
@@ -117,7 +117,7 @@ Resistances = FIRE,WATER,GRASS,ELECTRIC,ECHO
 Name = Dark
 IconPosition = 17
 IsSpecialType = true
-Weaknesses = FIGHTING,BUG,FAIRY,ECHO
+Weaknesses = FIGHTING,BUG,FAIRY
 Resistances = GHOST,DARK
 Immunities = PSYCHIC
 #-------------------------------
@@ -133,6 +133,6 @@ Immunities = DRAGON
 Name = Echo
 IconPosition = 19
 IsSpecialType = true
-Weaknesses = ELECTRIC,ROCK,ECHO
-Resistances = STEEL,FIGHTING,FAIRY,FIRE,PSYCHIC,
+Weaknesses = ELECTRIC,ROCK
+Resistances = STEEL,FIGHTING,FAIRY,FIRE,PSYCHIC
 Immunities = DARK

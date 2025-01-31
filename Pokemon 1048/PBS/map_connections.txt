@@ -38,5 +38,7 @@
 47,East,8,52,West,0
 # Route 8 (69) - Safari Zone outside (66)
 69,North,0,66,South,10
+# Route 1 (76) - Hollyn (79)
+76,West,6,79,East,0
 # Cushy Cliff (77) - Route 1 (76)
 77,South,0,76,North,33
