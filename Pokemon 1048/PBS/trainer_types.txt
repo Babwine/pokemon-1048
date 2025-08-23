@@ -449,4 +449,9 @@ Name = Impetuous Boy
 Gender = Male
 BaseMoney = 100
 BattleBGM = Battle_RIVAL_Vey
-VictoryBGM = Battle victory leader
+#-------------------------------
+[ULTIMA_M]
+Name = Ultima Zealot
+Gender = Male
+BaseMoney = 100
+BattleBGM = Battle_ULTIMA

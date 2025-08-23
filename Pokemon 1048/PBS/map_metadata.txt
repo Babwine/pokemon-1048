@@ -456,3 +456,20 @@ ShowArea = true
 Bicycle = true
 MapPosition = 0,21,23
 BattleBack = forest
+#-------------------------------
+[085]   # Hollyn Forest Deep
+Name = Hollyn Forest
+Outdoor = true
+Bicycle = true
+MapPosition = 0,21,23
+#-------------------------------
+[086]   # Hidden Grove
+Name = Hidden Grove
+Outdoor = true
+ShowArea = true
+Bicycle = true
+MapPosition = 0,21,24
+#-------------------------------
+[089]   # Hermit's Abode (1000) Basement
+Name = 
+DarkMap = true

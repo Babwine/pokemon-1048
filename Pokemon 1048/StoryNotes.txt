@@ -1,0 +1,68 @@
+Prologue
+1 - Talk to Alenys
+2 - Check PC and take Shoes
+3 - Talk to Hazel, Malka & Zoe
+4 - Enter Route 1
+5 - Avoid the tall grass with Malka & Zoe
+6 - Wait for Hazel and enter the Mansion
+7 - Entered the Mansion
+8 - Try to open the door
+9 - Find the crowbar
+10 - Enter the Lab
+11 - Check the Pokéballs
+12 - Choose a starter and beat the Pokémon
+13 - Exit the Lab
+14 - Find Malka & Olive
+15 - Talk to Olive and obtain the Pokédex
+16 - Leave the Mansion
+17 - Go on an adventure!
+18 - Talk with friends at the Inn
+20 - Battle with them!
+99 - BIG HUG | END
+
+
+Chapter 1 : The Grove
+1 - Jill Encounter
+2 - Enter forest with Jill
+3 (Optional) - Leave forest
+4 - Split with Jill
+5 - Fight Vey
+6 - Fight the Beedrill
+7 - Meet at the Purple Tree
+8 - Back from Hollyn Forest
+9 - Leave the siblings rest
+10 - Encounter Aewin
+11 - Talk to Aewin to enter the Forest
+12 (Optional) - Leave the forest
+13 - Avoid the Ranger
+14 - Back at the "tree"
+15 - Explore the hidden path and uncover the Hidden Grove
+16 - Fight the SPIDOPS
+17 - Talk with Aewin
+18 - Enter the Abode
+19 (Optional) - Talk to Aewin
+20 (Optional) - Find the diary upstairs
+21 - Look at the photo album
+22 (Optional) - Where did the diary go?
+23 - Step through a Break...
+24 - Why is the path blocked??
+25 - Enter the basement
+26 - Get close to the cell...
+27 - The door got locked...
+28 - GET ME OUT OF HERE!
+29 - Talk with Melphis
+30 - Cutscene Melphis & Enea
+31 - Get jumpscared by Aewin
+32 - Icecream time!!
+33 - Exit the Pokémon Center
+99 - Sleep at the Inn then wake up | END
+
+Chapter 2 : Family meeting
+1 - Malka Encounter
+
+
+
+Klefki Subquest
+1 - Talk to the chief
+2 - Beat Klefki
+99 - Give the key to the Chief | END

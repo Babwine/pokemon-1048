@@ -132,7 +132,7 @@ Pokemon = RATTATA,3
 #-------------------------------
 [LASS,Sarah]
 LoseText = Shouldn't have messed with you...
-Pokemon = PARISTOTLE,3
+Pokemon = CHICKIPLE,3
 #-------------------------------
 [BUGCATCHER,Cyril]
 LoseText = This is so sad.
@@ -228,3 +228,8 @@ Pokemon = BUNNELBY,7
 LoseText = I couldn't fa-thom such a fate!
 Pokemon = WEEDLE,6
 Pokemon = SILCOON,7
+#-------------------------------
+[POKEMONTRAINER_Aewin,Aewin]
+LoseText = NOOOOOOOOOOOO
+Pokemon = SUDOWOODO,13
+Pokemon = ABSOL,14

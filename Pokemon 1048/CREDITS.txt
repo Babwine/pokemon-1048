@@ -21,3 +21,6 @@ Mood_HopeAtLast - Pokémon Sword and Shield - Glimwood Tangle (Remix)
 Mood_NoTimeLeft - Altru Tower Countdown (Orchestral Remix) - Pokemon Ranger Shadows of Almia [Remix]
 Area_FOREST_2 - Pokémon Super Mystery Dungeon - Lush Forest (Remix)
 Battle_RIVAL_Vey - Battle! Team Rocket Remix ► Pokémon Heart Gold & Soul Silver (Zame)
+Area_FOREST_3 - Pokémon Super Mystery Dungeon OST - Foreboding Forest
+Mood_IntenseQuestions - PMD2 - Planet's Paralysis (REMASTERED, Pokemon Mystery Dungeon 2 Remastering Project)
+Mood_Questions - Pokémon Super Mystery Dungeon OST - School's Rumors at Night

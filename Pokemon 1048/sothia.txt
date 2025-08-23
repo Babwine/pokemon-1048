@@ -1,0 +1,130 @@
+
+Faire 1 symbole caché sur chaque map avec un collectible, et un symbole parmi les 18
+Le Libs Touch peut être obtenu à Jesminy Town
+
+Anachor
+Route 1
+Cushy Cliff
+Abandoned Mansion -> Pokémon Lab
+Hollyn Town
+Hollyn Forest
+Hermit's Grotto
+Route 2
+Adrya Town
+Serene Garden
+Route 3
+Route 4
+Theral Cave
+Theral Woods
+Tia's Bower
+Route 5
+Jesminy Town
+Route 6
+Lase Cave
+Moondrop City
+Moondrop City's Observatory
+Moonlit Slope
+Route 7
+Gale Beach
+Calydopolis
+Aeon Guild Branch
+Route 8 (Sea)
+Route 9
+Dampaw Marsh
+Necropire
+Tec Temple Outskirts
+Tec Temple
+Route 10
+Excavation Site
+Ultima Research Camp
+Hidden Ultima Tunnel -> Train
+Crost Town
+Ultima Outpost
+Crost Mine West
+Abandoned Mineshaft
+Ebory Woods
+Route 11
+Pathfinder's Rest
+Shameena Forest
+Timeless Glade
+Orichalm
+Route 12
+Route 13
+Trythan Port
+Route 14
+Route 15 (Sea)
+Melkon Resort
+Route 16
+Symphenia City
+Hestis' Couch Store
+Route 17 (Sea)
+Hidden Beach
+Chimer Cave -> Maelsteed
+Route 18
+Route 19 (Sea)
+Yste Islet
+Route 20 (Sea)
+Selnion Port
+Route 21 (Sea)
+Seelies' Reef
+Route 22
+Saltine Village
+Looker's Shrine
+Sal Volcano
+Sal Temple
+Mephis City
+Abandoned Mineshaft's Trolley -> Wagonnet
+Crost Mine East
+Grumbling Cave -> Tremblfrey
+Route 23
+Ruins of Echo
+Route 24
+Mephis Plant
+Old Mephis
+Abandoned Tower -> Tornaridelle
+Opaque Tunnels
+Route 25
+Trytholy Trail
+Olyphie City
+Mt. Limpid Path
+Storm Mountainside
+Ful Temple
+Olyphie Descent -> Télésiège
+Route 26
+Olyphie's Lift
+Carthagon City
+Route 27
+Pokémon League's Center
+Aeon Guild HQ
+Route 28 (Sea)
+Route 29
+Route 30
+Sethec Town
+Route 31
+Osmanthus Sea
+Aeon's Undersea Research Center
+Zanak Oasis
+Mahol's Tent
+Halyden Desert
+Halyden Ruins
+East Halyden Beach
+Halyden's Beat
+Sephir City
+Sephir Ruins
+Route 32
+Route 33 (Sea)
+Route 34
+Frontier Cave
+Pandor Cave -> Broncanker
+Route 35
+Aeon Deep Sea Lab
+Victory Road
+Route 36
+Panthea City
+Pokémon League
+Pokémon League's Hyperrail
+Olyphie City Ultima HQ
+Mt. Limpid
+Liberators' Seal
+Eternal Snows
+End of Sky

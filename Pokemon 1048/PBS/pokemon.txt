@@ -23347,8 +23347,8 @@ Category = Soak Bunny
 Pokedex = It's often seen in pubs, drinking water, and it is always happy to bond with some Trainer in there.
 Generation = 10
 #-------------------------------
-[PARISTOTLE]
-Name = Paristotle
+[CHICKIPLE]
+Name = Chickiple
 Types = FLYING
 BaseStats = 60,30,30,50,36,56
 GenderRatio = Female50Percent
@@ -23371,10 +23371,10 @@ Habitat = Forest
 Category = Babbler
 Pokedex = Even while its eyes are still covered by an egg shell, it has great curiousity about the outside world.
 Generation = 10
-Evolutions = PEREGRATUS,Level,25
+Evolutions = HAWKRATES,Level,25
 #-------------------------------
-[PEREGRATUS]
-Name = Peregratus
+[HAWKRATES]
+Name = Hawkrates
 Types = FLYING,PSYCHIC
 BaseStats = 100,50,50,70,86,96
 GenderRatio = Female50Percent

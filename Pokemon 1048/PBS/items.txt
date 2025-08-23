@@ -6571,3 +6571,11 @@ Pocket = 8
 Price = 3000
 Flags = Fling_80
 Description = A dark shard with oozes weird energy. It is loved by a certain Pokémon.
+#-------------------------------
+[PURPLEMIRACLESEED]
+Name = Purple Miracle Seed
+NamePlural = Purple Miracle Seeds
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A Purple Miracle Seed. It seems ordinary, aside from the unusual color.
