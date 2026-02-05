@@ -233,3 +233,76 @@ Pokemon = SILCOON,7
 LoseText = NOOOOOOOOOOOO
 Pokemon = SUDOWOODO,13
 Pokemon = ABSOL,14
+#-------------------------------
+[AROMALADY,Flora]
+LoseText = The smell of defeat is not that bad after a fight like this!
+Pokemon = PETILIL,14
+Pokemon = FLABEBE,12
+#-------------------------------
+[CUEBALL,Germain]
+LoseText = I'm hatin'!
+Pokemon = POPIK,15
+#-------------------------------
+[CAMPER,Malchos]
+LoseText = I AM A CAMPER! I AM A CAMPER!
+Pokemon = PIDGEY,12
+Pokemon = DEERLING,11
+Pokemon = CHICKIPLE,13
+#-------------------------------
+[JUGGLER,Bartholomeo]
+LoseText = May your path be smooth and silky.
+Pokemon = MIMEJR,13
+Pokemon = APPLIN,14
+#-------------------------------
+[HIKER,Diomedus]
+LoseText = See you soon, monarch!
+Pokemon = ROGGENROLA,13
+Pokemon = SKORUPI,15
+#-------------------------------
+[YOUNGSTER,Samuel]
+LoseText = Oh no!
+Pokemon = RABBOOZE,16
+#-------------------------------
+[CRUSHGIRL,Emma]
+LoseText = BWAH BWAH?!
+Pokemon = CHICKIPLE,11
+Pokemon = CHICKIPLE,12
+Pokemon = CHICKIPLE,13
+Pokemon = CHICKIPLE,14
+#-------------------------------
+[ULTIMA_M,Ephimes]
+LoseText = Time has come.
+Pokemon = CHICKIPLE,11
+Pokemon = POPIK,13
+#-------------------------------
+[ULTIMA_M,Molest]
+LoseText = We can't let that happen.
+Pokemon = ZORUA,11
+Pokemon = EKANS,15
+#-------------------------------
+[AROMALADY,Elena]
+LoseText = Oh wow, you fight just like Alenys!
+Pokemon = PETILIL,16
+Pokemon = BUDEW,17
+#-------------------------------
+[PICNICKER,Sylvie]
+LoseText = You're a natural in nature!
+Pokemon = BUDEW,15
+Pokemon = DEERLING,16
+Pokemon = REEDHISTLE,15
+#-------------------------------
+[GENTLEMAN,Joseph]
+LoseText = Ah. I can return to my peaceful afternoon.
+Pokemon = HOPPIP,14
+Pokemon = DEERLING_2,14
+Pokemon = SUNKERN,17
+#-------------------------------
+[POKEMONRANGER_M,Jimmy]
+LoseText = ROAAAR!
+Pokemon = TEDDIURSA,19
+#-------------------------------
+[LEADER_Alenys,Alenys]
+LoseText = Now THAT's what I call a generational fight!
+Pokemon = PETILIL,20
+Pokemon = COTTONEE,20
+Pokemon = PAMPHLUTE,22

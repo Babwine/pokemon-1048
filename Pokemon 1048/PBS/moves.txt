@@ -8750,3 +8750,13 @@ FunctionCode = HitTwoToFiveTimesDeafenTarget
 Flags = CanProtect,CanMirrorMove,Sound
 Description = The user blows bubbles at the target that violently burst. Hit two to five times and can deafen.
 EffectChance = 100
+#-------------------------------
+[OBJECTION]
+Name = Objection
+Type = ECHO
+Category = Status
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+FunctionCode = ProtectAndTorment
+Description = The user contests the target's move, protecting itself and preventing it to use said move next turn.

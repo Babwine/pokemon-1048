@@ -9,4 +9,4 @@ Point = 22,22,Route 1
 Point = 23,21,Cushy Cliff,Abandoned Mansion
 Point = 21,22,Hollyn Town
 Point = 21,23,Hollyn Forest
-Point = 21,24,Hermit's Grotto,,,,,76
+Point = 21,24,Hidden Grove,Hermit's Abode,,,,276

@@ -449,6 +449,22 @@ ShowArea = true
 HealingSpot = 79,27,18
 MapPosition = 0,21,22
 #-------------------------------
+[080]   # Hollyn Town Poké Center
+Name = Hollyn Poké Center
+MapPosition = 0,21,22
+#-------------------------------
+[081]   # Jill & Vey's House
+Name = Jill & Vey's House
+MapPosition = 0,21,22
+#-------------------------------
+[082]   # Hollyn's Inn
+Name = Hollyn's Inn
+MapPosition = 0,21,22
+#-------------------------------
+[083]   # Hollyn Interior
+Name = Hollyn Town
+MapPosition = 0,21,22
+#-------------------------------
 [084]   # Hollyn Forest
 Name = Hollyn Forest
 Outdoor = true
@@ -470,6 +486,40 @@ ShowArea = true
 Bicycle = true
 MapPosition = 0,21,24
 #-------------------------------
+[087]   # Hermit's Abode
+Name = Hermit's Abode
+MapPosition = 0,21,24
+#-------------------------------
+[088]   # Hermit's Abode (1000)
+Name = Hermit's Abode
+MapPosition = 0,21,24
+#-------------------------------
 [089]   # Hermit's Abode (1000) Basement
-Name = 
+Name = Hermit's Abode Basement
+MapPosition = 0,21,24
 DarkMap = true
+#-------------------------------
+[090]   # Route 2
+Name = Route 2
+Outdoor = true
+ShowArea = true
+MapPosition = 0,19,22
+#-------------------------------
+[091]   # Hollyn Town West Gate
+Name = Hollyn Town West Gate
+MapPosition = 0,21,22
+#-------------------------------
+[093]   # Adrya Town
+Name = Adrya Town
+Outdoor = true
+ShowArea = true
+MapPosition = 0,18,23
+#-------------------------------
+[097]   # Adrya Town Gym
+Name = Adrya Town Gym
+MapPosition = 0,18,23
+#-------------------------------
+[105]   # Adrya Town Gym End
+Name = Adrya Town Gym
+Outdoor = true
+MapPosition = 0,18,23

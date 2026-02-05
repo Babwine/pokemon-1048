@@ -118,7 +118,7 @@
         # - Name of the graphic, found in the Graphics/Pictures folder.
         # - The graphic will always (true), never (false) or only when the switch is ON (nil) be shown on a wall map.
         RegionMapExtras = [
-		  [0, 76, 21, 23, "hermit_Grotto", false]
+		  [0, 276, 21, 23, "hidden_Grove", false]
         ]
 
       #======================== Location Search Settings ========================#
