@@ -60,3 +60,8 @@ Chapter 2 : Family meeting
 1 - Malka Encounter
 2 - Ultima Encounter
 3 - Ultima beaten
+4 - Beaten Hazel
+5 - Aewin drowning
+6 - Aewin ice cream
+7 - Gym challenge - until last room
+8 - Gym challenge complete

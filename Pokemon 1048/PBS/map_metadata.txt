@@ -514,6 +514,7 @@ Name = Adrya Town
 Outdoor = true
 ShowArea = true
 MapPosition = 0,18,23
+SnapEdges = true
 #-------------------------------
 [097]   # Adrya Town Gym
 Name = Adrya Town Gym

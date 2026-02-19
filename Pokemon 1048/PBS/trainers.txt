@@ -306,3 +306,27 @@ LoseText = Now THAT's what I call a generational fight!
 Pokemon = PETILIL,20
 Pokemon = COTTONEE,20
 Pokemon = PAMPHLUTE,22
+#-------------------------------
+[POKEMONTRAINER_Hazel,Hazel,3]
+LoseText = Wow, \PN, you rock!
+Pokemon = BUNEARY,14
+Pokemon = SCORCHIS,15
+Pokemon = LYMPHREAD,13
+Pokemon = BUNNELBY,16
+	Name = Bunn's
+#-------------------------------
+[POKEMONTRAINER_Hazel,Hazel,4]
+LoseText = Wow, \PN, you rock!
+Pokemon = BUNEARY,14
+Pokemon = CHOIRAL,15
+Pokemon = LYMPHREAD,13
+Pokemon = BUNNELBY,16
+	Name = Bunn's
+#-------------------------------
+[POKEMONTRAINER_Hazel,Hazel,5]
+LoseText = Wow, \PN, you rock!
+Pokemon = BUNEARY,14
+Pokemon = BAALARIA,15
+Pokemon = LYMPHREAD,13
+Pokemon = BUNNELBY,16
+	Name = Bunn's
