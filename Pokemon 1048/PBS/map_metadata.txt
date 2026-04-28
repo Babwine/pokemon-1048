@@ -513,6 +513,7 @@ MapPosition = 0,21,22
 Name = Adrya Town
 Outdoor = true
 ShowArea = true
+HealingSpot = 95,7,4
 MapPosition = 0,18,23
 SnapEdges = true
 #-------------------------------
@@ -524,3 +525,10 @@ MapPosition = 0,18,23
 Name = Adrya Town Gym
 Outdoor = true
 MapPosition = 0,18,23
+#-------------------------------
+[107]   # Adrya Park
+Name = Adrya Park
+Outdoor = true
+ShowArea = true
+MapPosition = 0,18,22
+SnapEdges = true

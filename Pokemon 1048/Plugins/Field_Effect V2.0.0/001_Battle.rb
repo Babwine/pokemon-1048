@@ -566,6 +566,11 @@ class Battle
     end
     return types
   end
+  
+  def allOtherBattlers(idxBattler = 0)
+    idxBattler = idxBattler.index if idxBattler.respond_to?("index")
+    return @battlers.select { |b| b && !b.fainted? && b.index != idxBattler}
+  end	
 end
 
 class Battle::Scene

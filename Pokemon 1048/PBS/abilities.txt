@@ -1090,3 +1090,7 @@ Description = Contact with the Pokémon may cause deafening.
 [JUMPSCARE]
 Name = Jumpscare
 Description = When entering combat, makes the opponent flinch.
+#-------------------------------
+[SORELOSER]
+Name = Sore Loser
+Description = When leaving combat, descreases the opponent's accuracy.

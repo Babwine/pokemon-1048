@@ -3469,7 +3469,7 @@ class Battle::Battler
   
   def pbRecoverHP(amt, anim = true)
     # Check if this is Wish healing on Misty Terrain
-    if @effects[PBEffects::Wish] > 0 &&
+    if @effects[PBEffects::Wish] != nil && @effects[PBEffects::Wish] > 0 &&
        @battle.has_field? && 
        MISTY_TERRAIN_IDS.include?(@battle.current_field.id)
       # Wish heals 50% normally, boost to 75%

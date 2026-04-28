@@ -438,6 +438,7 @@ VictoryBGM = Battle victory leader
 Name = World Ender
 Gender = Female
 BaseMoney = 100
+BattleBGM = Battle_RIVAL_Aewin
 #-------------------------------
 [POKEMONTRAINER_Jill]
 Name = Serene Lady

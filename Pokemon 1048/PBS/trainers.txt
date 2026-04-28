@@ -330,3 +330,9 @@ Pokemon = BAALARIA,15
 Pokemon = LYMPHREAD,13
 Pokemon = BUNNELBY,16
 	Name = Bunn's
+#-------------------------------
+[POKEMONTRAINER_Aewin,Aewin,1]
+LoseText = ARGH!
+Pokemon = WICKDINI,20
+Pokemon = SUDOWOODO,22
+Pokemon = ABSOL,23

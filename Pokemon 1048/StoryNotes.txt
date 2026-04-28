@@ -65,3 +65,5 @@ Chapter 2 : Family meeting
 6 - Aewin ice cream
 7 - Gym challenge - until last room
 8 - Gym challenge complete
+9 - Aewin encounter
+10 - Aewin battle in Adrya Park

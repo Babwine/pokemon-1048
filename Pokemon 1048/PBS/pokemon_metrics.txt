@@ -6327,3 +6327,9 @@ BackSprite = 0,48
 FrontSprite = -2,18
 ShadowX = 0
 ShadowSize = 1
+#-------------------------------
+[WICKDINI]
+BackSprite = 0,56
+FrontSprite = 0,24
+ShadowX = 0
+ShadowSize = 1
