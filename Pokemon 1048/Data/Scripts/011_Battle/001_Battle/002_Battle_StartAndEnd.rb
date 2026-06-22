@@ -269,6 +269,7 @@ class Battle
     pbParty(1).each { |pkmn| @peer.pbOnStartingBattle(self, pkmn, wildBattle?) if pkmn }
     begin
       pbStartBattleCore
+	
     rescue BattleAbortedException
       @decision = 0
       @scene.pbEndBattle(@decision)
@@ -297,6 +298,7 @@ class Battle
     when :StrongWinds then pbDisplay(_INTL("The wind is strong."))
     when :ShadowSky   then pbDisplay(_INTL("The sky is shadowy."))
     end
+	
     # Terrain announcement
     terrain_data = GameData::BattleTerrain.try_get(@field.terrain)
     pbCommonAnimation(terrain_data.animation) if terrain_data
@@ -321,9 +323,11 @@ class Battle
   #=============================================================================
   def pbBattleLoop
     @turnCount = 0
+	pbHandleBattleStartBattleEvents
     loop do   # Now begin the battle loop
       PBDebug.log("")
       PBDebug.log_header("===== Round #{@turnCount + 1} =====")
+	  pbHandleTurnStartBattleEvents
       if @debug && @turnCount >= 100
         @decision = pbDecisionOnTime
         PBDebug.log("")

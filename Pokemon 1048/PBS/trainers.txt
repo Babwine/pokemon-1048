@@ -127,6 +127,7 @@ Pokemon = MISDREAVUS,2
 #-------------------------------
 [YOUNGSTER,Bart]
 LoseText = How did you do that?!
+BattleEvents = START|PROUT
 Pokemon = RABBOOZE,2
 Pokemon = RATTATA,3
 #-------------------------------
@@ -145,14 +146,14 @@ Pokemon = GREAVARD,4
 [POKEMONRANGER_F,Emily]
 LoseText = You fought really well!
 Pokemon = DEERLING,6
-	Form = 2
+    Form = 2
 #-------------------------------
 [POKEMONTRAINER_Hazel,Hazel]
 LoseText = You guys were insane!
 Pokemon = SCORCHIS,5
 Pokemon = WURMPLE,2
 Pokemon = BUNNELBY,8
-	Name = Bunn's
+    Name = Bunn's
     Moves = MUDSLAP,LEER,TACKLE,ROLLOUT
 #-------------------------------
 [POKEMONTRAINER_Hazel,Hazel,1]
@@ -160,7 +161,7 @@ LoseText = You guys were insane!
 Pokemon = CHOIRAL,5
 Pokemon = WURMPLE,2
 Pokemon = BUNNELBY,8
-	Name = Bunn's
+    Name = Bunn's
     Moves = MUDSLAP,LEER,TACKLE,ROLLOUT
 #-------------------------------
 [POKEMONTRAINER_Hazel,Hazel,2]
@@ -168,7 +169,7 @@ LoseText = You guys were insane!
 Pokemon = WURMPLE,2
 Pokemon = BAALARIA,6
 Pokemon = BUNNELBY,8
-	Name = Bunn's
+    Name = Bunn's
     Moves = MUDSLAP,LEER,TACKLE,ROLLOUT
 #-------------------------------
 [POKEMONTRAINER_Malka,Malka]
@@ -179,21 +180,21 @@ Pokemon = MURKROW,5
 [POKEMONTRAINER_Zoe,Zoe]
 LoseText = This was so tense, I loved it!
 Pokemon = SMEARGLE,7
-	Name = Smoochie
+    Name = Smoochie
     Moves = MEANLOOK,SKETCH,PURSUIT
 Pokemon = CHOIRAL,6
 #-------------------------------
 [POKEMONTRAINER_Zoe,Zoe,1]
 LoseText = This was so tense, I loved it!
 Pokemon = SMEARGLE,7
-	Name = Smoochie
+    Name = Smoochie
     Moves = MEANLOOK,SKETCH,PURSUIT
 Pokemon = BAALARIA,6
 #-------------------------------
 [POKEMONTRAINER_Zoe,Zoe,2]
 LoseText = This was so tense, I loved it!
 Pokemon = SMEARGLE,7
-	Name = Smoochie
+    Name = Smoochie
     Moves = MEANLOOK,SKETCH,PURSUIT
 Pokemon = SCORCHIS,6
 #-------------------------------
@@ -207,7 +208,7 @@ LoseText = ...!
 Pokemon = SEEDOT,8
 Pokemon = NYMBLE,9
 Pokemon = SNEASEL,10
-	Form = 2
+    Form = 2
 #-------------------------------
 [BUGCATCHER,Joshua]
 LoseText = Cheaters, you were two!
@@ -313,7 +314,7 @@ Pokemon = BUNEARY,14
 Pokemon = SCORCHIS,15
 Pokemon = LYMPHREAD,13
 Pokemon = BUNNELBY,16
-	Name = Bunn's
+    Name = Bunn's
 #-------------------------------
 [POKEMONTRAINER_Hazel,Hazel,4]
 LoseText = Wow, \PN, you rock!
@@ -321,7 +322,7 @@ Pokemon = BUNEARY,14
 Pokemon = CHOIRAL,15
 Pokemon = LYMPHREAD,13
 Pokemon = BUNNELBY,16
-	Name = Bunn's
+    Name = Bunn's
 #-------------------------------
 [POKEMONTRAINER_Hazel,Hazel,5]
 LoseText = Wow, \PN, you rock!
@@ -329,10 +330,11 @@ Pokemon = BUNEARY,14
 Pokemon = BAALARIA,15
 Pokemon = LYMPHREAD,13
 Pokemon = BUNNELBY,16
-	Name = Bunn's
+    Name = Bunn's
 #-------------------------------
 [POKEMONTRAINER_Aewin,Aewin,1]
 LoseText = ARGH!
+BattleEvents = START|OH SHIT!\nHum... Hum... That's definitely a Pokémon I was planning to battle with!
 Pokemon = WICKDINI,20
 Pokemon = SUDOWOODO,22
 Pokemon = ABSOL,23

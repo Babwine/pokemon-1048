@@ -89,6 +89,7 @@ class Battle
   attr_reader   :endOfRound       # True during the end of round
   attr_accessor :moldBreaker      # True if Mold Breaker applies
   attr_reader   :struggle         # The Struggle move
+  attr_accessor :battle_events    
 
   def pbRandom(x); return rand(x); end
 
@@ -168,9 +169,18 @@ class Battle
     @runCommand        = 0
     @nextPickupUse     = 0
     @struggle          = Move::Struggle.new(self, nil)
+	@battle_events	   = []
     @mega_rings        = []
     GameData::Item.each { |item| @mega_rings.push(item.id) if item.has_flag?("MegaRing") }
     @battleAI          = AI.new(self)
+	opponent.each_with_index do |t, i|
+		trainer_data = GameData::Trainer.get(t.trainer_type,t.name,t.version)
+        if !trainer_data.nil? && !trainer_data.battle_events.nil?
+			trainer_data.battle_events.each_with_index do |b, j| 
+				battle_events << b+"|"+i.to_s
+			end
+		end
+    end
   end
 
   #=============================================================================
@@ -862,5 +872,38 @@ class Battle
   def pbReplaceAbilitySplash(battler)
     return if !Scene::USE_ABILITY_SPLASH
     @scene.pbReplaceAbilitySplash(battler)
+  end
+  
+  
+  def pbHandleBattleEventsByKey(key,b)
+	arr = b.split(key+"|")
+	if (arr[0] == "" && arr[1] != "")
+		event = arr[1].split("|")[0]
+		index = Integer(arr[1].split("|")[1])
+		pbTriggerBattleEvent(event, index)
+	end
+  end
+  
+  def pbHandleBattleStartBattleEvents()
+    if !@battle_events.nil?
+		@battle_events.each_with_index do |b, i|
+			pbHandleBattleEventsByKey("START",b)
+		end
+	end
+  end
+  
+  def pbHandleTurnStartBattleEvents()
+    if !@battle_events.nil?
+		@battle_events.each_with_index do |b, i|
+			pbHandleBattleEventsByKey("TURN",b)
+		end
+	end
+  end
+  
+  def pbTriggerBattleEvent(battle_event,index)
+    @scene.pbShowOpponent(index)
+    pbDisplay(_INTL(battle_event))
+	sleep(0.3)
+	@scene.pbHideOpponent
   end
 end

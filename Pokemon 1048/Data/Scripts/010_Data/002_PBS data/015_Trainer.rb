@@ -7,6 +7,7 @@ module GameData
     attr_reader :items
     attr_reader :real_lose_text
     attr_reader :pokemon
+    attr_reader :battle_events
     attr_reader :pbs_file_suffix
 
     DATA = {}
@@ -19,7 +20,8 @@ module GameData
       "SectionName" => [:id,             "esU", :TrainerType],
       "Items"       => [:items,          "*e", :Item],
       "LoseText"    => [:real_lose_text, "q"],
-      "Pokemon"     => [:pokemon,        "ev", :Species]   # Species, level
+      "Pokemon"     => [:pokemon,        "ev", :Species],   # Species, level
+      "BattleEvents"=> [:battle_events, "*s"]
     }
     # This schema is for definable properties of individual Pokémon (apart from
     # species and level which are above).
@@ -97,6 +99,7 @@ module GameData
           pkmn[:ev][s.id] ||= 0 if pkmn[:ev]
         end
       end
+      @battle_events     = hash[:battle_events] || []
       @pbs_file_suffix = hash[:pbs_file_suffix] || ""
     end
 
