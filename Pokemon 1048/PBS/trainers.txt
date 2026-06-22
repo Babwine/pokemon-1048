@@ -127,7 +127,6 @@ Pokemon = MISDREAVUS,2
 #-------------------------------
 [YOUNGSTER,Bart]
 LoseText = How did you do that?!
-BattleEvents = START|PROUT
 Pokemon = RABBOOZE,2
 Pokemon = RATTATA,3
 #-------------------------------
@@ -334,7 +333,7 @@ Pokemon = BUNNELBY,16
 #-------------------------------
 [POKEMONTRAINER_Aewin,Aewin,1]
 LoseText = ARGH!
-BattleEvents = START|OH SHIT!\nHum... Hum... That's definitely a Pokémon I was planning to battle with!
+StartEvent = OH SHIT!\nHum... Hum... That's definitely a Pokémon I was planning to battle with!
 Pokemon = WICKDINI,20
 Pokemon = SUDOWOODO,22
 Pokemon = ABSOL,23
