@@ -282,7 +282,11 @@ class Battle::Move
       else
         @battle.pbDisplay(_INTL("It's super effective!"))
       end
-      @battle.pbHandleSuperEffectiveEvent(@battle.pbGetOwnerIndexFromBattlerIndex(target.index)) if opposes?(target.index)
+      if opposes?(target.index)
+        oppIdx = @battle.pbGetOwnerIndexFromBattlerIndex(target.index)
+        @battle.formatEventText(@battle.supereffective_events,oppIdx,user,target)
+        @battle.pbHandleSuperEffectiveEvent(oppIdx)
+      end
     elsif Effectiveness.not_very_effective?(target.damageState.typeMod)
       if numTargets > 1
         @battle.pbDisplay(_INTL("It's not very effective on {1}...", target.pbThis(true)))
@@ -315,7 +319,11 @@ class Battle::Move
       else
         @battle.pbDisplay(_INTL("A critical hit!"))
       end
-      @battle.pbHandleCritEvent(@battle.pbGetOwnerIndexFromBattlerIndex(target.index)) if opposes?(target.index)
+      if opposes?(target.index)
+        oppIdx = @battle.pbGetOwnerIndexFromBattlerIndex(target.index)
+        @battle.formatEventText(@battle.crit_events,oppIdx,user,target)
+        @battle.pbHandleCritEvent(oppIdx)
+      end
     end
     # Effectiveness message, for moves with 1 hit
     if !multiHitMove? && user.effects[PBEffects::ParentalBond] == 0

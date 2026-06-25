@@ -912,3 +912,12 @@ class Battle
     sleep(0.3)
     @scene.pbHideOpponent
   end
+
+  def formatEventText(events_field, oppIdx, user, target)
+    unless events_field.nil? || events_field.empty? || events_field[oppIdx].nil?
+      events_field[oppIdx] = events_field[oppIdx]
+             .gsub("\\PKMN",target.name)
+             .gsub("\\PLTR",@player[pbGetOwnerIndexFromBattlerIndex(user.index)].name)
+             .gsub("\\PN",@player[0].name)
+    end
+  end
