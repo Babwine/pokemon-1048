@@ -10,6 +10,7 @@ module GameData
     attr_reader :start_event
     attr_reader :crit_event
     attr_reader :supereffective_event
+    attr_reader :onehit_event
     attr_reader :pbs_file_suffix
 
     DATA = {}
@@ -25,7 +26,8 @@ module GameData
       "Pokemon"     => [:pokemon,        "ev", :Species],   # Species, level
       "StartEvent"  => [:start_event,    "q"],
       "CritEvent"   => [:crit_event,    "q"],
-      "SuperEffectiveEvent"   => [:supereffective_event,    "q"]
+      "SuperEffectiveEvent"   => [:supereffective_event,    "q"],
+      "OneHitEvent"  => [:onehit_event,    "q"]
     }
     # This schema is for definable properties of individual Pokémon (apart from
     # species and level which are above).
@@ -105,6 +107,7 @@ module GameData
       end
       @start_event     = hash[:start_event] || ""
       @crit_event     = hash[:crit_event] || ""
+      @onehit_event     = hash[:onehit_event] || ""
       @supereffective_event = hash[:supereffective_event] || ""
       @pbs_file_suffix = hash[:pbs_file_suffix] || ""
     end

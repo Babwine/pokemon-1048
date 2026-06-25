@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="ff716f2d-87c3-486e-ad4c-66ecfb99e08b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../Scripts.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Scripts.rxdata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/010_Data/002_PBS data/015_Trainer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/010_Data/002_PBS data/015_Trainer.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/011_Battle/001_Battle/001_Battle.rb" beforeDir="false" afterPath="$PROJECT_DIR$/011_Battle/001_Battle/001_Battle.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/011_Battle/003_Move/002_Move_Usage.rb" beforeDir="false" afterPath="$PROJECT_DIR$/011_Battle/003_Move/002_Move_Usage.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/011_Battle/002_Battler/003_Battler_ChangeSelf.rb" beforeDir="false" afterPath="$PROJECT_DIR$/011_Battle/002_Battler/003_Battler_ChangeSelf.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ScriptsBackup.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../ScriptsBackup.rxdata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../map_metadata.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trainers.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trainers.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../trainers.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../PBS/trainers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../PBS/trainers.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +58,7 @@
       <workItem from="1782150364113" duration="4721000" />
       <workItem from="1782257499861" duration="5997000" />
       <workItem from="1782344790235" duration="33000" />
-      <workItem from="1782399444167" duration="8250000" />
+      <workItem from="1782399444167" duration="10323000" />
     </task>
     <servers />
   </component>

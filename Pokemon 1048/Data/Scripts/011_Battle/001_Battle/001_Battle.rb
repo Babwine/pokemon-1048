@@ -92,6 +92,7 @@ class Battle
   attr_accessor :start_events
   attr_accessor :crit_events
   attr_accessor :supereffective_events
+  attr_accessor :onehit_events
 
   def pbRandom(x); return rand(x); end
 
@@ -173,6 +174,7 @@ class Battle
     @struggle          = Move::Struggle.new(self, nil)
 	  @start_events	   = {}
     @crit_events	   = {}
+    @onehit_events = {}
     @supereffective_events = {}
     @mega_rings        = []
     GameData::Item.each { |item| @mega_rings.push(item.id) if item.has_flag?("MegaRing") }
@@ -189,6 +191,9 @@ class Battle
           end
           unless trainer_data.supereffective_event.nil? || trainer_data.supereffective_event.empty?
             @supereffective_events[i] = trainer_data.supereffective_event
+          end
+          unless trainer_data.onehit_event.nil? || trainer_data.onehit_event.empty?
+            @onehit_events[i] = trainer_data.onehit_event
           end
         end
       end
@@ -901,6 +906,13 @@ class Battle
       @supereffective_events.delete(index)
     end
   end
+
+def pbHandleOneHitEvent(index)
+  unless @onehit_events.nil? || @onehit_events.size <= index || @onehit_events[index].nil?
+    pbTriggerBattleEvent(@onehit_events[index], index)
+    @onehit_events.delete(index)
+  end
+end
 
   def pbHandleTurnStartEvents()
 
