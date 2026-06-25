@@ -323,11 +323,11 @@ class Battle
   #=============================================================================
   def pbBattleLoop
     @turnCount = 0
-	  pbHandleBattleStartBattleEvents
+	  pbHandleBattleStartEvents
     loop do   # Now begin the battle loop
       PBDebug.log("")
       PBDebug.log_header("===== Round #{@turnCount + 1} =====")
-	    pbHandleTurnStartBattleEvents
+	    pbHandleTurnStartEvents
       if @debug && @turnCount >= 100
         @decision = pbDecisionOnTime
         PBDebug.log("")

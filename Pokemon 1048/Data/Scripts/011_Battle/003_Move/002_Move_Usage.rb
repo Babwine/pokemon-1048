@@ -314,6 +314,7 @@ class Battle::Move
       else
         @battle.pbDisplay(_INTL("A critical hit!"))
       end
+      @battle.pbHandleCritEvent(@battle.pbGetOwnerIndexFromBattlerIndex(target.index)) if opposes?(target.index)
     end
     # Effectiveness message, for moves with 1 hit
     if !multiHitMove? && user.effects[PBEffects::ParentalBond] == 0

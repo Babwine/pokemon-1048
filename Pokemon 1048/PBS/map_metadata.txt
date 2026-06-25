@@ -163,6 +163,7 @@ MapSize = 2,1101
 #-------------------------------
 [032]   # Alenys & \PN's House
 Name = Alenys & Red's House
+HealingSpot = 22,52,38
 MapPosition = 0,23,23
 #-------------------------------
 [033]   # Malka's House

@@ -149,6 +149,8 @@ Pokemon = DEERLING,6
 #-------------------------------
 [POKEMONTRAINER_Hazel,Hazel]
 LoseText = You guys were insane!
+StartEvent = Let it rock!
+CritEvent = Oh come on, now!
 Pokemon = SCORCHIS,5
 Pokemon = WURMPLE,2
 Pokemon = BUNNELBY,8
@@ -157,6 +159,8 @@ Pokemon = BUNNELBY,8
 #-------------------------------
 [POKEMONTRAINER_Hazel,Hazel,1]
 LoseText = You guys were insane!
+StartEvent = Let it rock!
+CritEvent = Oh come on, now!
 Pokemon = CHOIRAL,5
 Pokemon = WURMPLE,2
 Pokemon = BUNNELBY,8
@@ -165,6 +169,8 @@ Pokemon = BUNNELBY,8
 #-------------------------------
 [POKEMONTRAINER_Hazel,Hazel,2]
 LoseText = You guys were insane!
+StartEvent = Let it rock!
+CritEvent = Oh come on, now!
 Pokemon = WURMPLE,2
 Pokemon = BAALARIA,6
 Pokemon = BUNNELBY,8
@@ -173,11 +179,15 @@ Pokemon = BUNNELBY,8
 #-------------------------------
 [POKEMONTRAINER_Malka,Malka]
 LoseText = That sure was a good fight.
+StartEvent = Oh, this is gonna be interesting.
+CritEvent = Sigh... Gotta be unlucky, I guess.
 Pokemon = ROTOM,4
 Pokemon = MURKROW,5
 #-------------------------------
 [POKEMONTRAINER_Zoe,Zoe]
 LoseText = This was so tense, I loved it!
+StartEvent = I've been waiting so MUCH for this!
+CritEvent = HOW DID YOU DO THAT?!
 Pokemon = SMEARGLE,7
     Name = Smoochie
     Moves = MEANLOOK,SKETCH,PURSUIT
@@ -185,6 +195,8 @@ Pokemon = CHOIRAL,6
 #-------------------------------
 [POKEMONTRAINER_Zoe,Zoe,1]
 LoseText = This was so tense, I loved it!
+StartEvent = I've been waiting so MUCH for this!
+CritEvent = HOW DID YOU DO THAT?!
 Pokemon = SMEARGLE,7
     Name = Smoochie
     Moves = MEANLOOK,SKETCH,PURSUIT
@@ -192,6 +204,8 @@ Pokemon = BAALARIA,6
 #-------------------------------
 [POKEMONTRAINER_Zoe,Zoe,2]
 LoseText = This was so tense, I loved it!
+StartEvent = I've been waiting so MUCH for this!
+CritEvent = HOW DID YOU DO THAT?!
 Pokemon = SMEARGLE,7
     Name = Smoochie
     Moves = MEANLOOK,SKETCH,PURSUIT
@@ -333,7 +347,11 @@ Pokemon = BUNNELBY,16
 #-------------------------------
 [POKEMONTRAINER_Aewin,Aewin,1]
 LoseText = ARGH!
-StartEvent = OH SHIT!\nHum... Hum... That's definitely a Pokémon I was planning to battle with!
+StartEvent = OH SHIT! Hum... Hum... That's definitely a Pokémon I was planning to battle with!
+CritEvent = WHAT?! That's unfair! GRRRAH!!
+SuperEffectiveEvent = NGAAAH! How did I not see THAT coming?!
+OneShotEvent = WHAT THE ACTUAL HECK?!
+LastStandEvent = Okay, you MIGHT have come this far, but NOW I'll blow you to smitherins!
 Pokemon = WICKDINI,20
 Pokemon = SUDOWOODO,22
 Pokemon = ABSOL,23

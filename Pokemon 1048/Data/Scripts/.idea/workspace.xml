@@ -1,12 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24e0be21-4f8e-425b-bd07-82d198b7901a" name="Changes" comment="">
+    <list default="true" id="ff716f2d-87c3-486e-ad4c-66ecfb99e08b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Actors.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Actors.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Animations.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Animations.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Armors.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Armors.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CommonEvents.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../CommonEvents.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enemies.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Enemies.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Items.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Items.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Map032.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Map032.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Map076.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Map076.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Map080.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Map080.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MapInfos.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../MapInfos.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PluginScripts.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../PluginScripts.rxdata" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Scripts.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Scripts.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/007_Objects and windows/011_Messages.rb" beforeDir="false" afterPath="$PROJECT_DIR$/007_Objects and windows/011_Messages.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/010_Data/002_PBS data/015_Trainer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/010_Data/002_PBS data/015_Trainer.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/011_Battle/001_Battle/001_Battle.rb" beforeDir="false" afterPath="$PROJECT_DIR$/011_Battle/001_Battle/001_Battle.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/011_Battle/001_Battle/002_Battle_StartAndEnd.rb" beforeDir="false" afterPath="$PROJECT_DIR$/011_Battle/001_Battle/002_Battle_StartAndEnd.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/011_Battle/003_Move/002_Move_Usage.rb" beforeDir="false" afterPath="$PROJECT_DIR$/011_Battle/003_Move/002_Move_Usage.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ScriptsBackup.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../ScriptsBackup.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Skills.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Skills.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../States.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../States.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../System.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../System.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tilesets.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Tilesets.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Weapons.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Weapons.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../map_metadata.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../map_metadata.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../messages_game.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../messages_game.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trainers.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../trainers.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Graphics/Transitions/vsDoubleTrainer_POKEMONTRAINER_Red_POKEMONTRAINER_Hazel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Graphics/Transitions/vsDoubleTrainer_POKEMONTRAINER_Red_POKEMONTRAINER_Malka.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Graphics/Transitions/vsDoubleTrainer_POKEMONTRAINER_Red_POKEMONTRAINER_Zoe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Graphics/Transitions/vsTrainer_POKEMONTRAINER_Aewin.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../Graphics/Transitions/vsTrainer_POKEMONTRAINER_Aewin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PBS/map_metadata.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../PBS/map_metadata.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PBS/trainers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../PBS/trainers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Delta Speed Up/_Main_Script.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Delta Speed Up/_Main_Script.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,11 +45,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3,
-  "fromUser": false
-}]]></component>
-  <component name="ProjectId" id="3FUpfYcS6iKckp34jbf2dD5kECl" />
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="3FVBSq6NudRQUoxJzTZKgUWthPL" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -29,12 +58,11 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.ruby.rubocop.migration.global.runOnSaveToExternalFormatter": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/pierr/Desktop/Bureau rangé/Pokémon/Pokémon-1048/pokemon-1048/Pokemon 1048/Data/Scripts",
     "ruby.structure.view.model.defaults.configured": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -48,12 +76,15 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="24e0be21-4f8e-425b-bd07-82d198b7901a" name="Changes" comment="" />
-      <created>1782139610001</created>
+      <changelist id="ff716f2d-87c3-486e-ad4c-66ecfb99e08b" name="Changes" comment="" />
+      <created>1782150361935</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1782139610001</updated>
-      <workItem from="1782139612916" duration="794000" />
+      <updated>1782150361935</updated>
+      <workItem from="1782150364113" duration="4721000" />
+      <workItem from="1782257499861" duration="5997000" />
+      <workItem from="1782344790235" duration="33000" />
+      <workItem from="1782399444167" duration="22000" />
     </task>
     <servers />
   </component>
