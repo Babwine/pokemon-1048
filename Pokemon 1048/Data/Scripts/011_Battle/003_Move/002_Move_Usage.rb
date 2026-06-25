@@ -282,6 +282,7 @@ class Battle::Move
       else
         @battle.pbDisplay(_INTL("It's super effective!"))
       end
+      @battle.pbHandleSuperEffectiveEvent(@battle.pbGetOwnerIndexFromBattlerIndex(target.index)) if opposes?(target.index)
     elsif Effectiveness.not_very_effective?(target.damageState.typeMod)
       if numTargets > 1
         @battle.pbDisplay(_INTL("It's not very effective on {1}...", target.pbThis(true)))
