@@ -93,6 +93,7 @@ class Battle
   attr_accessor :crit_events
   attr_accessor :supereffective_events
   attr_accessor :onehit_events
+  attr_accessor :laststand_events
 
   def pbRandom(x); return rand(x); end
 
@@ -174,8 +175,9 @@ class Battle
     @struggle          = Move::Struggle.new(self, nil)
 	  @start_events	   = {}
     @crit_events	   = {}
-    @onehit_events = {}
     @supereffective_events = {}
+    @onehit_events = {}
+    @laststand_events = {}
     @mega_rings        = []
     GameData::Item.each { |item| @mega_rings.push(item.id) if item.has_flag?("MegaRing") }
     @battleAI          = AI.new(self)
@@ -194,6 +196,9 @@ class Battle
           end
           unless trainer_data.onehit_event.nil? || trainer_data.onehit_event.empty?
             @onehit_events[i] = trainer_data.onehit_event
+          end
+          unless trainer_data.laststand_event.nil? || trainer_data.laststand_event.empty?
+            @laststand_events[i] = trainer_data.laststand_event
           end
         end
       end
@@ -894,22 +899,28 @@ class Battle
   end
 
   def pbHandleCritEvent(index)
-    unless @crit_events.nil? || @crit_events.size <= index || @crit_events[index].nil?
+    unless @crit_events.nil? || @crit_events[index].nil?
       pbTriggerBattleEvent(@crit_events, index)
     end
   end
 
   def pbHandleSuperEffectiveEvent(index)
-    unless @supereffective_events.nil? || @supereffective_events.size <= index || @supereffective_events[index].nil?
+    unless @supereffective_events.nil? || @supereffective_events[index].nil?
       pbTriggerBattleEvent(@supereffective_events, index)
     end
   end
 
-def pbHandleOneHitEvent(index)
-  unless @onehit_events.nil? || @onehit_events.size <= index || @onehit_events[index].nil?
-    pbTriggerBattleEvent(@onehit_events, index)
+  def pbHandleOneHitEvent(index)
+    unless @onehit_events.nil? || @onehit_events[index].nil?
+      pbTriggerBattleEvent(@onehit_events, index)
+    end
   end
-end
+
+  def pbHandleLastStandEvent(index)
+    unless @laststand_events.nil? || @laststand_events[index].nil?
+      pbTriggerBattleEvent(@laststand_events, index)
+    end
+  end
 
   def pbHandleTurnStartEvents()
 
