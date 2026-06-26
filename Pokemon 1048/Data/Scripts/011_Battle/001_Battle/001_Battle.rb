@@ -888,41 +888,46 @@ class Battle
 
   def pbHandleBattleStartEvents()
     unless @start_events.nil? || @start_events.empty?
-      @start_events.each { |key, value| pbTriggerBattleEvent(value, key) }
+      @start_events.each_key { |key| pbTriggerStartBattleEvent(key) }
       @start_events = []
     end
   end
 
   def pbHandleCritEvent(index)
     unless @crit_events.nil? || @crit_events.size <= index || @crit_events[index].nil?
-      pbTriggerBattleEvent(@crit_events[index], index)
-      @crit_events.delete(index)
+      pbTriggerBattleEvent(@crit_events, index)
     end
   end
 
   def pbHandleSuperEffectiveEvent(index)
     unless @supereffective_events.nil? || @supereffective_events.size <= index || @supereffective_events[index].nil?
-      pbTriggerBattleEvent(@supereffective_events[index], index)
-      @supereffective_events.delete(index)
+      pbTriggerBattleEvent(@supereffective_events, index)
     end
   end
 
 def pbHandleOneHitEvent(index)
   unless @onehit_events.nil? || @onehit_events.size <= index || @onehit_events[index].nil?
-    pbTriggerBattleEvent(@onehit_events[index], index)
-    @onehit_events.delete(index)
+    pbTriggerBattleEvent(@onehit_events, index)
   end
 end
 
   def pbHandleTurnStartEvents()
 
   end
-  
-  def pbTriggerBattleEvent(battle_event,index)
+
+  def pbTriggerStartBattleEvent(index)
     @scene.pbShowOpponent(index)
-    pbDisplay(_INTL(battle_event))
+    pbDisplay(_INTL(@start_events[index]))
     sleep(0.3)
     @scene.pbHideOpponent
+  end
+
+  def pbTriggerBattleEvent(event_hash,index)
+    @scene.pbShowOpponent(index)
+    pbDisplay(_INTL(event_hash[index]))
+    sleep(0.3)
+    @scene.pbHideOpponent
+    event_hash.delete(index)
   end
 
   def formatEventText(events_field, oppIdx, user, target)
