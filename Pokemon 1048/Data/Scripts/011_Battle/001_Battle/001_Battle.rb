@@ -933,8 +933,11 @@ end
   def formatEventText(events_field, oppIdx, user, target)
     unless events_field.nil? || events_field.empty? || events_field[oppIdx].nil?
       events_field[oppIdx] = events_field[oppIdx]
-             .gsub("\\PKMN",target.name)
-             .gsub("\\PLTR",@player[pbGetOwnerIndexFromBattlerIndex(user.index)].name)
-             .gsub("\\PN",@player[0].name)
+             .gsub("\\pkmn",target.name)
+             .gsub("\\pltr",@player[pbGetOwnerIndexFromBattlerIndex(user.index)].name)
+             .gsub("\\pn",@player[0].name)
+             .gsub("\\PKMN",target.name.upcase)
+             .gsub("\\PLTR",@player[pbGetOwnerIndexFromBattlerIndex(user.index)].name.upcase)
+             .gsub("\\PN",@player[0].name.upcase)
     end
   end
