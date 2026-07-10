@@ -8796,3 +8796,25 @@ Target = NearOther
 FunctionCode = AddRockTypeToTargetAndParalyze
 Flags = CanProtect,CanMirrorMove
 Description = The user's gaze petrifies its target. If the target isn't Rock type, adds it to the target's type and paralyzes it.
+#-------------------------------
+[HIGHFIVE]
+Name = High Five
+Type = FAIRY
+Category = Physical
+Accuracy = 100
+Power = 20
+TotalPP = 15
+Target = NearOther
+FunctionCode = RaiseUserAndTargetAtk1
+Flags = Contact,CanProtect,CanMirrorMove
+Description = The user's high fives its target and boosts both's Attack stat.
+#-------------------------------
+[ALLFORONE]
+Name = All for One
+Type = FAIRY
+Category = Status
+Accuracy = 0
+TotalPP = 10
+Target = User
+FunctionCode = LoseHpAndSwitchAndHealNextAllyTotalHPLost
+Description = The user sacrifices some of its HP and switches places with a party Pokémon to heal it.
