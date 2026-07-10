@@ -8761,3 +8761,38 @@ Target = User
 Priority = 4
 FunctionCode = ProtectUserFromDamagingMovesObjection
 Description = The user contests the target's move, protecting itself and disabling said move for the next turn.
+#-------------------------------
+[GOLDFINGER]
+Name = Goldfinger
+Type = STEEL
+Category = Physical
+Power = 50
+Accuracy = 95
+TotalPP = 10
+Target = NearOther
+FunctionCode = ParalyzeTarget
+Flags = Contact,CanProtect,CanMirrorMove
+EffectChance = 100
+Description = The user strikes its target with a golden finger. This also leaves the target with paralysis.
+#-------------------------------
+[IRONFILINGS]
+Name = Iron Filings
+Type = STEEL
+Category = Status
+Accuracy = 90
+TotalPP = 10
+Target = NearOther
+FunctionCode = AddSteelTypeToTarget
+Flags = CanProtect,CanMirrorMove
+Description = The user throws iron filings at its target. This adds Steel type to the target's type.
+#-------------------------------
+[PETRIFACTION]
+Name = Petrifaction
+Type = PSYCHIC
+Category = Status
+Accuracy = 95
+TotalPP = 10
+Target = NearOther
+FunctionCode = AddRockTypeToTargetAndParalyze
+Flags = CanProtect,CanMirrorMove
+Description = The user's gaze petrifies its target. If the target isn't Rock type, adds it to the target's type and paralyzes it.
