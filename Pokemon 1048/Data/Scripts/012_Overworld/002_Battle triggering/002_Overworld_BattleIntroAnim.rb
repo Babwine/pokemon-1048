@@ -276,48 +276,25 @@ SpecialBattleIntroAnimations.register("vs_admin_animation", 60,   # Priority 60
 ##### Tweaked by Maruno           #####
 SpecialBattleIntroAnimations.register("alternate_vs_trainer_animation", 50,   # Priority 50
   proc { |battle_type, foe, location|   # Condition
-    if !battle_type.even? && foe.length  != 1  # Trainer battle against +1 trainer
-      tr_type1 = foe[0].trainer_type
-      tr_type2 = foe[1].trainer_type
-      next pbResolveBitmap("Graphics/Transitions/vsDoubleTrainer_#{tr_type1}_#{tr_type2}") &&
-           pbResolveBitmap("Graphics/Transitions/vsDoubleBar_#{tr_type1}_#{tr_type2}")
-    elsif !battle_type.even?
-        tr_type = foe[0].trainer_type
-        next pbResolveBitmap("Graphics/Transitions/vsTrainer_#{tr_type}") &&
-             pbResolveBitmap("Graphics/Transitions/vsBar_#{tr_type}")
-    end
+    next false if battle_type.even? || foe.length != 1   # Trainer battle against 1 trainer
+    tr_type = foe[0].trainer_type
+    next pbResolveBitmap("Graphics/Transitions/vsTrainer_#{tr_type}") &&
+         pbResolveBitmap("Graphics/Transitions/vsBar_#{tr_type}")
   },
   proc { |viewport, battle_type, foe, location|   # Animation
     # Determine filenames of graphics to be used
     tr_type = foe[0].trainer_type
-    if !battle_type.even? && foe.length != 1
-      tr_type2 = foe[1].trainer_type
-      trainer_bar_graphic = sprintf("vsDoubleBar_%s_%s", tr_type.to_s, tr_type2.to_s) rescue nil
-      trainer_graphic = sprintf("vsDoubleTrainer_%s_%s", tr_type.to_s, tr_type2.to_s) rescue nil
-    elsif !battle_type.even?
-      trainer_bar_graphic = sprintf("vsBar_%s", tr_type.to_s) rescue nil
-      trainer_graphic     = sprintf("vsTrainer_%s", tr_type.to_s) rescue nil
-    end
+    trainer_bar_graphic = sprintf("vsBar_%s", tr_type.to_s) rescue nil
+    trainer_graphic     = sprintf("vsTrainer_%s", tr_type.to_s) rescue nil
     player_tr_type = $player.trainer_type
     outfit = $player.outfit
     player_bar_graphic = sprintf("vsBar_%s_%d", player_tr_type.to_s, outfit) rescue nil
-    if !pbResolveBitmap("Graphics/Transitions/" + player_bar_graphic) 
-      if (tr_type.to_s.include? "LEADER")
-        player_bar_graphic = sprintf("vsBar_%s", tr_type.to_s) rescue nil
-      else
-        player_bar_graphic = sprintf("vsBar_%s", player_tr_type.to_s) rescue nil
-      end
+    if !pbResolveBitmap("Graphics/Transitions/" + player_bar_graphic)
+      player_bar_graphic = sprintf("vsBar_%s", player_tr_type.to_s) rescue nil
     end
-    if $PokemonGlobal.partner != nil
-      player_graphic = sprintf("vsDoubleTrainer_%s_%s_%d", player_tr_type.to_s, $PokemonGlobal.partner[0].to_s, outfit) rescue nil
-      if !pbResolveBitmap("Graphics/Transitions/" + player_graphic)
-        player_graphic = sprintf("vsDoubleTrainer_%s_%s", player_tr_type.to_s, $PokemonGlobal.partner[0].to_s) rescue nil
-      end
-    else
-      player_graphic = sprintf("vsTrainer_%s_%d", player_tr_type.to_s, outfit) rescue nil
-      if !pbResolveBitmap("Graphics/Transitions/" + player_graphic)
-        player_graphic = sprintf("vsTrainer_%s", player_tr_type.to_s) rescue nil
-      end
+    player_graphic = sprintf("vsTrainer_%s_%d", player_tr_type.to_s, outfit) rescue nil
+    if !pbResolveBitmap("Graphics/Transitions/" + player_graphic)
+      player_graphic = sprintf("vsTrainer_%s", player_tr_type.to_s) rescue nil
     end
     # Set up viewports
     viewplayer = Viewport.new(0, Graphics.height / 3, Graphics.width / 2, 128)
@@ -336,7 +313,7 @@ SpecialBattleIntroAnimations.register("alternate_vs_trainer_animation", 50,   # 
     pbSetSystemFont(overlay.bitmap)
     xoffset = ((Graphics.width / 2) / 10) * 10
     bar1 = Sprite.new(viewplayer)
-    bar1.bitmap = RPG::Cache.transition(player_bar_graphic) 
+    bar1.bitmap = RPG::Cache.transition(player_bar_graphic)
     bar1.x      = -xoffset
     bar2 = Sprite.new(viewopp)
     bar2.bitmap = RPG::Cache.transition(trainer_bar_graphic)
@@ -392,22 +369,13 @@ SpecialBattleIntroAnimations.register("alternate_vs_trainer_animation", 50,   # 
     # Make the Vs logo and trainer names appear, and reset trainer's tone
     vs.visible = true
     trainer.tone = Tone.new(0, 0, 0)
-    if $PokemonGlobal.partner != nil 
-      playername = $player.name + " & " + $PokemonGlobal.partner[1]
-    else
-      playername = $player.name
-    end
-    if foe.length != 1
-      trainername = foe[0].name + " & " + foe[1].name
-    else
-      trainername = foe[0].name
-    end
+    trainername = foe[0].name
     textpos = [
-        [playername, Graphics.width / 4, (Graphics.height / 1.5) + 16, :center,
-         Color.new(248, 248, 248), Color.new(72, 72, 72)],
-        [trainername, (Graphics.width / (4*foe.length)) + (Graphics.width / 2), (Graphics.height / 1.5) + 16, :left,
-         Color.new(248, 248, 248), Color.new(72, 72, 72)]
-      ]
+      [$player.name, Graphics.width / 4, (Graphics.height / 1.5) + 16, :center,
+       Color.new(248, 248, 248), Color.new(72, 72, 72)],
+      [trainername, (Graphics.width / 4) + (Graphics.width / 2), (Graphics.height / 1.5) + 16, :center,
+       Color.new(248, 248, 248), Color.new(72, 72, 72)]
+    ]
     pbDrawTextPositions(overlay.bitmap, textpos)
     # Fade out flash, shudder Vs logo and expand it, and then fade to black
     shudder_time = 1.75

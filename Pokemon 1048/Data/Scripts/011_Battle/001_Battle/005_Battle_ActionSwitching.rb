@@ -223,14 +223,6 @@ class Battle
     @scene.pbShowPartyLineup(idxBattler & 1) if pbSideSize(idxBattler) == 1
     pbMessagesOnReplace(idxBattler, idxParty) if !randomReplacement
     pbReplace(idxBattler, idxParty, batonPass)
-    if opposes?(idxBattler)
-        pbAbleTeamCounts(1).each_with_index do |count, index|
-        if count == (@opponent.length == 1 ? 2 : 1) # replace 2 with battle side size (x3 battle)
-          formatEventText(@laststand_events,index,@battlers[index].pbDirectOpposing,pbParty(idxBattler)[idxParty])
-          pbHandleLastStandEvent(index)
-        end
-      end
-    end
   end
 
   def pbMessageOnRecall(battler)

@@ -435,22 +435,6 @@ HiddenMoveHandlers::CanUseMove.add(:FLASH, proc { |move, pkmn, showmsg|
   next true
 })
 
-def pbFlashForDarkMap
-  darkness = $game_temp.darkness_sprite
-  darkness.radius = darkness.radiusMax
-  Graphics.update
-  Input.update
-  pbUpdateSceneMap
-end
-
-def pbReturnToDarkMap
-  darkness = $game_temp.darkness_sprite
-  darkness.radius = darkness.radiusMin
-  Graphics.update
-  Input.update
-  pbUpdateSceneMap
-end 
-
 HiddenMoveHandlers::UseMove.add(:FLASH, proc { |move, pokemon|
   darkness = $game_temp.darkness_sprite
   next false if !darkness || darkness.disposed?

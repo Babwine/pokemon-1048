@@ -111,7 +111,7 @@ class Battle::Battler
     return true if !@battle.pbOwnedByPlayer?(@index)
     disobedient = false
     # Pokémon may be disobedient; calculate if it is
-    badge_level = 20 + 10 * (@battle.pbPlayer.badge_count)
+    badge_level = 10 * (@battle.pbPlayer.badge_count + 1)
     badge_level = GameData::GrowthRate.max_level if @battle.pbPlayer.badge_count >= 8
     if Settings::ANY_HIGH_LEVEL_POKEMON_CAN_DISOBEY ||
        (Settings::FOREIGN_HIGH_LEVEL_POKEMON_CAN_DISOBEY && @pokemon.foreign?(@battle.pbPlayer))
@@ -231,19 +231,6 @@ class Battle::Battler
           return false
         end
       end
-    when :DEAFENED
-      self.statusCount -= 1
-      if @statusCount <= 0
-        pbCureStatus
-      else
-        pbContinueStatus
-        if move.specialMove? && @battle.pbRandom(100) < 20
-          @lastMoveFailed = true
-          return false
-        else
-          return true
-        end
-      end
     end
     # Obedience check
     return false if !pbObedienceCheck?(choice)
@@ -305,13 +292,6 @@ class Battle::Battler
         @lastMoveFailed = true
         return false
       end
-    end
-    # Deafness
-    if @status == :DEAFENED && @battle.pbRandom(100) < 20
-      pbContinueStatus
-      PBDebug.log("[Move failed] #{pbThis}'s deafness made it fail.")
-      @lastMoveFailed = true
-      return false
     end
     return true
   end
@@ -566,8 +546,6 @@ class Battle::Battler
     hitsInvul = true if @battle.futureSight
     # Helping Hand
     hitsInvul = true if move.function_code == "PowerUpAllyMove"
-    # Deafened target
-    hitsInvul = true if target.deafened?
     if !hitsInvul
       # Semi-invulnerable moves
       if target.effects[PBEffects::TwoTurnAttack]

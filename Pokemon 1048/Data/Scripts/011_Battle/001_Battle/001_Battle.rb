@@ -89,11 +89,6 @@ class Battle
   attr_reader   :endOfRound       # True during the end of round
   attr_accessor :moldBreaker      # True if Mold Breaker applies
   attr_reader   :struggle         # The Struggle move
-  attr_accessor :start_events
-  attr_accessor :crit_events
-  attr_accessor :supereffective_events
-  attr_accessor :onehit_events
-  attr_accessor :laststand_events
 
   def pbRandom(x); return rand(x); end
 
@@ -173,37 +168,9 @@ class Battle
     @runCommand        = 0
     @nextPickupUse     = 0
     @struggle          = Move::Struggle.new(self, nil)
-	  @start_events	   = {}
-    @crit_events	   = {}
-    @supereffective_events = {}
-    @onehit_events = {}
-    @laststand_events = {}
     @mega_rings        = []
     GameData::Item.each { |item| @mega_rings.push(item.id) if item.has_flag?("MegaRing") }
     @battleAI          = AI.new(self)
-    unless opponent.nil?
-      opponent.each_with_index do |t, i|
-        trainer_data = GameData::Trainer.get(t.trainer_type,t.name,t.version)
-        unless trainer_data.nil?
-          unless trainer_data.start_event.nil? || trainer_data.start_event.empty?
-            @start_events[i] = trainer_data.start_event
-          end
-          unless trainer_data.crit_event.nil? || trainer_data.crit_event.empty?
-            @crit_events[i] = trainer_data.crit_event
-          end
-          unless trainer_data.supereffective_event.nil? || trainer_data.supereffective_event.empty?
-            @supereffective_events[i] = trainer_data.supereffective_event
-          end
-          unless trainer_data.onehit_event.nil? || trainer_data.onehit_event.empty?
-            @onehit_events[i] = trainer_data.onehit_event
-          end
-          unless trainer_data.laststand_event.nil? || trainer_data.laststand_event.empty?
-            @laststand_events[i] = trainer_data.laststand_event
-          end
-        end
-      end
-    end
-    end
   end
 
   #=============================================================================
@@ -861,6 +828,12 @@ class Battle
     return @scene.pbDisplayConfirmMessage(msg)
   end
 
+  # defaultValue of -1 means "can't cancel". If it's 0 or greater, returns that
+  # value when pressing the "Back" button.
+  def pbShowCommands(msg, commands, defaultValue = -1)
+    return @scene.pbShowCommands(msg, commands, defaultValue)
+  end
+
   def pbAnimation(move, user, targets, hitNum = 0)
     @scene.pbAnimation(move, user, targets, hitNum) if @showAnims
   end
@@ -890,65 +863,4 @@ class Battle
     return if !Scene::USE_ABILITY_SPLASH
     @scene.pbReplaceAbilitySplash(battler)
   end
-
-  def pbHandleBattleStartEvents()
-    unless @start_events.nil? || @start_events.empty?
-      @start_events.each_key { |key| pbTriggerStartBattleEvent(key) }
-      @start_events = []
-    end
-  end
-
-  def pbHandleCritEvent(index)
-    unless @crit_events.nil? || @crit_events[index].nil?
-      pbTriggerBattleEvent(@crit_events, index)
-    end
-  end
-
-  def pbHandleSuperEffectiveEvent(index)
-    unless @supereffective_events.nil? || @supereffective_events[index].nil?
-      pbTriggerBattleEvent(@supereffective_events, index)
-    end
-  end
-
-  def pbHandleOneHitEvent(index)
-    unless @onehit_events.nil? || @onehit_events[index].nil?
-      pbTriggerBattleEvent(@onehit_events, index)
-    end
-  end
-
-  def pbHandleLastStandEvent(index)
-    unless @laststand_events.nil? || @laststand_events[index].nil?
-      pbTriggerBattleEvent(@laststand_events, index)
-    end
-  end
-
-  def pbHandleTurnStartEvents()
-
-  end
-
-  def pbTriggerStartBattleEvent(index)
-    @scene.pbShowOpponent(index)
-    pbDisplay(_INTL(@start_events[index]))
-    sleep(0.3)
-    @scene.pbHideOpponent
-  end
-
-  def pbTriggerBattleEvent(event_hash,index)
-    @scene.pbShowOpponent(index)
-    pbDisplay(_INTL(event_hash[index]))
-    sleep(0.3)
-    @scene.pbHideOpponent
-    event_hash.delete(index)
-  end
-
-  def formatEventText(events_field, oppIdx, user, target)
-    unless events_field.nil? || events_field.empty? || events_field[oppIdx].nil?
-      events_field[oppIdx] = events_field[oppIdx]
-             .gsub("\\pkmn",target.name)
-             .gsub("\\pltr",@player[pbGetOwnerIndexFromBattlerIndex(user.index)].name)
-             .gsub("\\pn",@player[0].name)
-             .gsub("\\PKMN",target.name.upcase)
-             .gsub("\\PLTR",@player[pbGetOwnerIndexFromBattlerIndex(user.index)].name.upcase)
-             .gsub("\\PN",@player[0].name.upcase)
-    end
-  end
+end

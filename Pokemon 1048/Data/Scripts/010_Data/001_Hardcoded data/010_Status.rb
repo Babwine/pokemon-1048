@@ -74,10 +74,3 @@ GameData::Status.register({
   :animation     => "Frozen",
   :icon_position => 4
 })
-
-GameData::Status.register({
-  :id            => :DEAFENED,
-  :name          => _INTL("Deafened"),
-  :animation     => "Deafened",
-  :icon_position => 8
-})

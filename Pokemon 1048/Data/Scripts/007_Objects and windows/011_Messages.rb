@@ -505,7 +505,6 @@ def pbMessageDisplay(msgwindow, message, letterbyletter = true, commandProc = ni
   text = textchunks.join
   appear_timer_start = nil
   appear_duration = 0.5   # In seconds
-  shout = false
   haveSpecialClose = false
   specialCloseSE = ""
   startSE = nil
@@ -691,7 +690,7 @@ def pbMessage(message, commands = nil, cmdIfCancel = 0, skin = nil, defaultCmd =
   if commands
     ret = pbMessageDisplay(msgwindow, message, true,
                            proc { |msgwndw|
-                             next pbShowCommands(msgwndw, commands, cmdIfCancel, defaultCmd, &block)
+                             next Kernel.pbShowCommands(msgwndw, commands, cmdIfCancel, defaultCmd, &block)
                            }, &block)
   else
     pbMessageDisplay(msgwindow, message, &block)

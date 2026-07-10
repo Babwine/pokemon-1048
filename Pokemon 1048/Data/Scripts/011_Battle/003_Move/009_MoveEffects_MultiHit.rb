@@ -147,24 +147,6 @@ class Battle::Move::HitTwoToFiveTimesRaiseUserSpd1LowerUserDef1 < Battle::Move::
 end
 
 #===============================================================================
-# Hits 2-5 in a row. May deafen the target on each hit. (Bubble Mill)
-#===============================================================================
-class Battle::Move::HitTwoToFiveTimesDeafenTarget < Battle::Move::DeafenTarget
-  def multiHitMove?;            return true; end
-  def pbNumHits(user, targets)
-    hitChances = [
-      2, 2, 2, 2, 2, 2, 2,
-      3, 3, 3, 3, 3, 3, 3,
-      4, 4, 4,
-      5, 5, 5
-    ]
-    r = @battle.pbRandom(hitChances.length)
-    r = hitChances.length - 1 if user.hasActiveAbility?(:SKILLLINK)
-    return hitChances[r]
-  end
-end
-
-#===============================================================================
 # Hits X times, where X is the number of non-user unfainted status-free Pokémon
 # in the user's party (not including partner trainers). Fails if X is 0.
 # Base power of each hit depends on the base Attack stat for the species of that

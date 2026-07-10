@@ -35,7 +35,6 @@ class Battle::Battler
         when :BURN      then msg = _INTL("{1} already has a burn!", pbThis)
         when :PARALYSIS then msg = _INTL("{1} is already paralyzed!", pbThis)
         when :FROZEN    then msg = _INTL("{1} is already frozen solid!", pbThis)
-        when :DEAFENED  then msg = _INTL("{1} is already deafened!", pbThis)
         end
         @battle.pbDisplay(msg)
       end
@@ -96,8 +95,6 @@ class Battle::Battler
       hasImmuneType |= pbHasType?(:ELECTRIC) && Settings::MORE_TYPE_EFFECTS
     when :FROZEN
       hasImmuneType |= pbHasType?(:ICE)
-    when :DEAFENED
-      hasImmuneType |= pbHasType?(:ECHO)
     end
     if hasImmuneType
       @battle.pbDisplay(_INTL("It doesn't affect {1}...", pbThis(true))) if showMessages
@@ -132,7 +129,6 @@ class Battle::Battler
           when :BURN      then msg = _INTL("{1} cannot be burned!", pbThis)
           when :PARALYSIS then msg = _INTL("{1} cannot be paralyzed!", pbThis)
           when :FROZEN    then msg = _INTL("{1} cannot be frozen solid!", pbThis)
-          when :DEAFENED  then msg = _INTL("{1} cannot be deafened!", pbThis)
           end
         elsif immAlly
           case newStatus
@@ -151,9 +147,6 @@ class Battle::Battler
           when :FROZEN
             msg = _INTL("{1} cannot be frozen solid because of {2}'s {3}!",
                         pbThis, immAlly.pbThis(true), immAlly.abilityName)
-          when :DEAFENED
-            msg = _INTL("{1} cannot be deafened because of {2}'s {3}!",
-                        pbThis, immAlly.pbThis(true), immAlly.abilityName)
           end
         else
           case newStatus
@@ -162,7 +155,6 @@ class Battle::Battler
           when :BURN      then msg = _INTL("{1}'s {2} prevents burns!", pbThis, abilityName)
           when :PARALYSIS then msg = _INTL("{1}'s {2} prevents paralysis!", pbThis, abilityName)
           when :FROZEN    then msg = _INTL("{1}'s {2} prevents freezing!", pbThis, abilityName)
-          when :DEAFENED  then msg = _INTL("{1}'s {2} prevents deafening!", pbThis, abilityName)
           end
         end
         @battle.pbDisplay(msg)
@@ -177,7 +169,6 @@ class Battle::Battler
       return false
     end
     return true
-    @battle.pbDisplay("DEAFENED TRUE")
   end
 
   def pbCanSynchronizeStatus?(newStatus, user)
@@ -256,8 +247,6 @@ class Battle::Battler
         @battle.pbDisplay(_INTL("{1} is paralyzed! It may be unable to move!", pbThis))
       when :FROZEN
         @battle.pbDisplay(_INTL("{1} was frozen solid!", pbThis))
-      when :DEAFENED
-        @battle.pbDisplay(_INTL("{1} was deafened! It may be unable to use some attacks!", pbThis))
       end
     end
     PBDebug.log("[Status change] #{pbThis}'s sleep count is #{newStatusCount}") if newStatus == :SLEEP
@@ -408,26 +397,6 @@ class Battle::Battler
   end
 
   #=============================================================================
-  # Deafen
-  #=============================================================================
-  def deafened?
-    return pbHasStatus?(:DEAFENED)
-  end
-
-  def pbCanDeafen?(user, showMessages, move = nil)
-    return pbCanInflictStatus?(:DEAFENED, user, showMessages, move)
-  end
-
-  def pbDeafen(msg = nil)
-    pbInflictStatus(:DEAFENED, pbDeafenDuration, msg)
-  end
-
-  def pbDeafenDuration(duration = -1)
-    duration = 2 + @battle.pbRandom(3) if duration <= 0
-    return duration
-  end
-
-  #=============================================================================
   # Generalised status displays
   #=============================================================================
   def pbContinueStatus
@@ -449,8 +418,6 @@ class Battle::Battler
       @battle.pbDisplay(_INTL("{1} is paralyzed! It can't move!", pbThis))
     when :FROZEN
       @battle.pbDisplay(_INTL("{1} is frozen solid!", pbThis))
-    when :DEAFENED
-      @battle.pbDisplay(_INTL("{1} is deaf! It failed!", pbThis))
     end
     PBDebug.log("[Status continues] #{pbThis}'s sleep count is #{@statusCount}") if self.status == :SLEEP
   end
@@ -465,7 +432,6 @@ class Battle::Battler
       when :BURN      then @battle.pbDisplay(_INTL("{1}'s burn was healed.", pbThis))
       when :PARALYSIS then @battle.pbDisplay(_INTL("{1} was cured of paralysis.", pbThis))
       when :FROZEN    then @battle.pbDisplay(_INTL("{1} thawed out!", pbThis))
-      when :DEAFENED  then @battle.pbDisplay(_INTL("{1} hears loud and clear!", pbThis))
       end
     end
     PBDebug.log("[Status change] #{pbThis}'s status was cured") if !showMessages

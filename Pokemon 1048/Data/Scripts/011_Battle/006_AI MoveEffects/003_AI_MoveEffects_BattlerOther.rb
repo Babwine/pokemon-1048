@@ -478,8 +478,7 @@ Battle::AI::Handlers::MoveEffectAgainstTargetScore.add("GiveUserStatusToTarget",
       :PARALYSIS => "ParalyzeTarget",
       :POISON    => "PoisonTarget",
       :BURN      => "BurnTarget",
-      :FROZEN    => "FreezeTarget",
-      :DEAFENED  => "DeafenTarget"
+      :FROZEN    => "FreezeTarget"
     }[user.status]
     if function_code
       new_score = Battle::AI::Handlers.apply_move_effect_against_target_score(function_code,

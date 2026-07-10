@@ -1,105 +1,5 @@
 class Battle::Battler
   #=============================================================================
-  # Decide whether the trainer is allowed to tell the Pokémon to use the given
-  # move. Called when choosing a command for the round.
-  # Also called when processing the Pokémon's action, because these effects also
-  # prevent Pokémon action. Relevant because these effects can become active
-  # earlier in the same round (after choosing the command but before using the
-  # move) or an unusable move may be called by another move such as Metronome.
-  #=============================================================================
-  def pbCanChooseMove?(move, commandPhase, showMessages = true, specialUsage = false)
-    # Disable
-    if @effects[PBEffects::DisableMove] == move.id && !specialUsage
-      if showMessages
-        msg = _INTL("{1}'s {2} is disabled!", pbThis, move.name)
-        (commandPhase) ? @battle.pbDisplayPaused(msg) : @battle.pbDisplay(msg)
-      end
-      return false
-    end
-    # Heal Block
-    if @effects[PBEffects::HealBlock] > 0 && move.healingMove?
-      if showMessages
-        msg = _INTL("{1} can't use {2} because of Heal Block!", pbThis, move.name)
-        (commandPhase) ? @battle.pbDisplayPaused(msg) : @battle.pbDisplay(msg)
-      end
-      return false
-    end
-    # Gravity
-    if @battle.field.effects[PBEffects::Gravity] > 0 && move.unusableInGravity?
-      if showMessages
-        msg = _INTL("{1} can't use {2} because of gravity!", pbThis, move.name)
-        (commandPhase) ? @battle.pbDisplayPaused(msg) : @battle.pbDisplay(msg)
-      end
-      return false
-    end
-    # Throat Chop
-    if @effects[PBEffects::ThroatChop] > 0 && move.soundMove?
-      if showMessages
-        msg = _INTL("{1} can't use {2} because of Throat Chop!", pbThis, move.name)
-        (commandPhase) ? @battle.pbDisplayPaused(msg) : @battle.pbDisplay(msg)
-      end
-      return false
-    end
-    # Choice Band/Gorilla Tactics
-    @effects[PBEffects::ChoiceBand] = nil if !pbHasMove?(@effects[PBEffects::ChoiceBand])
-    if @effects[PBEffects::ChoiceBand] && move.id != @effects[PBEffects::ChoiceBand]
-      choiced_move = GameData::Move.try_get(@effects[PBEffects::ChoiceBand])
-      if choiced_move
-        if hasActiveItem?([:CHOICEBAND, :CHOICESPECS, :CHOICESCARF])
-          if showMessages
-            msg = _INTL("The {1} only allows the use of {2}!", itemName, choiced_move.name)
-            (commandPhase) ? @battle.pbDisplayPaused(msg) : @battle.pbDisplay(msg)
-          end
-          return false
-        elsif hasActiveAbility?(:GORILLATACTICS)
-          if showMessages
-            msg = _INTL("{1} can only use {2}!", pbThis, choiced_move.name)
-            (commandPhase) ? @battle.pbDisplayPaused(msg) : @battle.pbDisplay(msg)
-          end
-          return false
-        end
-      end
-    end
-    # Taunt
-    if @effects[PBEffects::Taunt] > 0 && move.statusMove? && !specialUsage
-      if showMessages
-        msg = _INTL("{1} can't use {2} after the taunt!", pbThis, move.name)
-        (commandPhase) ? @battle.pbDisplayPaused(msg) : @battle.pbDisplay(msg)
-      end
-      return false
-    end
-    # Torment
-    if @effects[PBEffects::Torment] && !@effects[PBEffects::Instructed] && !specialUsage &&
-       @lastMoveUsed && move.id == @lastMoveUsed && move.id != @battle.struggle.id
-      if showMessages
-        msg = _INTL("{1} can't use the same move twice in a row due to the torment!", pbThis)
-        (commandPhase) ? @battle.pbDisplayPaused(msg) : @battle.pbDisplay(msg)
-      end
-      return false
-    end
-    # Imprison
-    if @battle.allOtherSideBattlers(@index).any? { |b| b.effects[PBEffects::Imprison] && b.pbHasMove?(move.id) }
-      if showMessages
-        msg = _INTL("{1} can't use its sealed {2}!", pbThis, move.name)
-        (commandPhase) ? @battle.pbDisplayPaused(msg) : @battle.pbDisplay(msg)
-      end
-      return false
-    end
-    # Assault Vest (prevents choosing status moves but doesn't prevent
-    # executing them)
-    if hasActiveItem?(:ASSAULTVEST) && move.statusMove? && move.function_code != "UseMoveTargetIsAboutToUse" && commandPhase
-      if showMessages
-        msg = _INTL("The effects of the {1} prevent status moves from being used!", itemName)
-        (commandPhase) ? @battle.pbDisplayPaused(msg) : @battle.pbDisplay(msg)
-      end
-      return false
-    end
-    # Belch
-    return false if !move.pbCanChooseMove?(self, commandPhase, showMessages)
-    return true
-  end
-
-  #=============================================================================
   # Obedience check
   #=============================================================================
   # Return true if Pokémon continues attacking (although it may have chosen to
@@ -124,55 +24,6 @@ class Battle::Battler
     return true if !disobedient
     # Pokémon is disobedient; make it do something else
     return pbDisobey(choice, badge_level)
-  end
-
-  def pbDisobey(choice, badge_level)
-    move = choice[2]
-    PBDebug.log("[Disobedience] #{pbThis} disobeyed")
-    @effects[PBEffects::Rage] = false
-    # Do nothing if using Snore/Sleep Talk
-    if @status == :SLEEP && move.usableWhenAsleep?
-      @battle.pbDisplay(_INTL("{1} ignored orders and kept sleeping!", pbThis))
-      return false
-    end
-    b = ((@level + badge_level) * @battle.pbRandom(256) / 256).floor
-    # Use another move
-    if b < badge_level
-      @battle.pbDisplay(_INTL("{1} ignored orders!", pbThis))
-      return false if !@battle.pbCanShowFightMenu?(@index)
-      otherMoves = []
-      eachMoveWithIndex do |_m, i|
-        next if i == choice[1]
-        otherMoves.push(i) if @battle.pbCanChooseMove?(@index, i, false)
-      end
-      return false if otherMoves.length == 0   # No other move to use; do nothing
-      newChoice = otherMoves[@battle.pbRandom(otherMoves.length)]
-      choice[1] = newChoice
-      choice[2] = @moves[newChoice]
-      choice[3] = -1
-      return true
-    end
-    c = @level - badge_level
-    r = @battle.pbRandom(256)
-    # Fall asleep
-    if r < c && pbCanSleep?(self, false)
-      pbSleepSelf(_INTL("{1} began to nap!", pbThis))
-      return false
-    end
-    # Hurt self in confusion
-    r -= c
-    if r < c && @status != :SLEEP
-      pbConfusionDamage(_INTL("{1} won't obey! It hurt itself in its confusion!", pbThis))
-      return false
-    end
-    # Show refusal message and do nothing
-    case @battle.pbRandom(4)
-    when 0 then @battle.pbDisplay(_INTL("{1} won't obey!", pbThis))
-    when 1 then @battle.pbDisplay(_INTL("{1} turned away!", pbThis))
-    when 2 then @battle.pbDisplay(_INTL("{1} is loafing around!", pbThis))
-    when 3 then @battle.pbDisplay(_INTL("{1} pretended not to notice!", pbThis))
-    end
-    return false
   end
 
   #=============================================================================
@@ -237,12 +88,6 @@ class Battle::Battler
         pbCureStatus
       else
         pbContinueStatus
-        if move.specialMove? && @battle.pbRandom(100) < 20
-          @lastMoveFailed = true
-          return false
-        else
-          return true
-        end
       end
     end
     # Obedience check
@@ -309,6 +154,7 @@ class Battle::Battler
     # Deafness
     if @status == :DEAFENED && @battle.pbRandom(100) < 20
       pbContinueStatus
+      @battle.pbDisplay(_INTL("{1} couldn't hear any command!", pbThis))
       PBDebug.log("[Move failed] #{pbThis}'s deafness made it fail.")
       @lastMoveFailed = true
       return false
@@ -447,6 +293,21 @@ class Battle::Battler
           @battle.pbDisplay(_INTL("{1} was blocked by the kicked-up mat!", move.name)) if show_message
           target.damageState.protected = true
           @battle.successStates[user.index].protected = true
+          return false
+        end
+        # Objection
+        if target.effects[PBEffects::Objection] && move.damagingMove?
+          if show_message
+            @battle.pbCommonAnimation("Protect", target)
+            @battle.pbDisplay(_INTL("{1} protected itself!", target.pbThis))
+          end
+          target.damageState.protected = true
+          @battle.successStates[user.index].protected = true
+          user.effects[PBEffects::Disable]     = 2
+          user.effects[PBEffects::DisableMove] = user.lastRegularMoveUsed
+          @battle.pbDisplay(_INTL("{1}'s {2} was disabled!", user.pbThis,
+                                  GameData::Move.get(user.lastRegularMoveUsed).name))
+          user.pbItemStatusCureCheck
           return false
         end
       end
@@ -600,18 +461,5 @@ class Battle::Battler
     end
     # Missed
     return false
-  end
-
-  #=============================================================================
-  # Message shown when a move fails the per-hit success check above.
-  #=============================================================================
-  def pbMissMessage(move, user, target)
-    if target.damageState.affection_missed
-      @battle.pbDisplay(_INTL("{1} avoided the move in time with your shout!", target.pbThis))
-    elsif move.pbTarget(user).num_targets > 1 || target.effects[PBEffects::TwoTurnAttack]
-      @battle.pbDisplay(_INTL("{1} avoided the attack!", target.pbThis))
-    elsif !move.pbMissMessage(user, target)
-      @battle.pbDisplay(_INTL("{1}'s attack missed!", user.pbThis))
-    end
   end
 end

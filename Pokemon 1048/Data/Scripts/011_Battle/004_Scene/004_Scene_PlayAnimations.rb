@@ -83,14 +83,6 @@ class Battle::Scene
       pbUpdate
     end
   end
-  
-  def pbHideOpponent()
-    fadeAnim = Animation::TrainerFade.new(@sprites, @viewport, false)
-    @animations.push(fadeAnim)
-    while inPartyAnimation?
-      pbUpdate
-    end
-  end
 
   #=============================================================================
   # Animates a trainer's sprite and party lineup hiding (if they are visible).

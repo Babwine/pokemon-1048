@@ -24,8 +24,7 @@ class Game_Character
   attr_accessor :through
   attr_accessor :animation_id
   attr_accessor :transparent
-  attr_accessor  :move_speed
-  attr_accessor   :move_frequency
+  attr_reader   :move_speed
   attr_reader   :jump_speed
   attr_accessor :walk_anime
   attr_writer   :bob_height

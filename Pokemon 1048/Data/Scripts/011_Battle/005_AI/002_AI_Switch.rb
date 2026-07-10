@@ -245,8 +245,7 @@ Battle::AI::Handlers::ShouldSwitch.add(:cure_status_problem_by_switching_out,
       :MAGMAARMOR  => :FROZEN,
       :VITALSPIRIT => :SLEEP,
       :WATERBUBBLE => :BURN,
-      :WATERVEIL   => :BURN,
-      :SOUNDPROOF  => :DEAFENED
+      :WATERVEIL   => :BURN
     }[battler.ability_id]
     if battler.ability == :NATURALCURE || (single_status_cure && single_status_cure == battler.status)
       # Cures status problem

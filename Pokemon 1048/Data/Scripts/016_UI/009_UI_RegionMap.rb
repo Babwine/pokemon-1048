@@ -53,8 +53,8 @@ end
 class PokemonRegionMap_Scene
   LEFT          = 0
   TOP           = 0
-  RIGHT         = 25
-  BOTTOM        = 25
+  RIGHT         = 29
+  BOTTOM        = 19
   SQUARE_WIDTH  = 16
   SQUARE_HEIGHT = 16
 

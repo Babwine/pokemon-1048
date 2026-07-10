@@ -70,11 +70,6 @@ class Battle::Battler
     @battle.pbDisplayBrief(_INTL("{1} fainted!", pbThis)) if showMessage
     PBDebug.log("[Pokémon fainted] #{pbThis} (#{@index})") if !showMessage
     @battle.scene.pbFaintBattler(self)
-    if opposes? && @lastHPLost >= @totalhp # lost all its hp from the last hit
-      oppIdx = @battle.pbGetOwnerIndexFromBattlerIndex(@index)
-      @battle.formatEventText(@battle.onehit_events,oppIdx,@battle.battlers[@lastFoeAttacker.last],self)
-      @battle.pbHandleOneHitEvent(oppIdx)
-    end
     @battle.pbSetDefeated(self) if opposes?
     pbInitEffects(false)
     # Reset status
