@@ -240,6 +240,9 @@ Pokemon = SPRITZEE,7
 #-------------------------------
 [POKEMONTRAINER_Vey,Vey]
 LoseText = ...!
+CritEvent = ...
+OneHitEvent = ?!
+LastStandEvent = !!!
 Pokemon = SEEDOT,8
 Pokemon = NYMBLE,9
 Pokemon = SNEASEL,10
@@ -339,12 +342,21 @@ Pokemon = TEDDIURSA,19
 #-------------------------------
 [LEADER_Alenys,Alenys]
 LoseText = Now THAT's what I call a generational fight!
+StartEvent = You'd better give it all, \pn! Don't pull any punches!
+CritEvent = Wow, your team is pumped up!
+SuperEffectiveEvent = Yeah, just as I taught you!
+OneHitEvent = ... What was that?
+LastStandEvent = I'm not done yet! BRING ALL YOU HAVE, \PN!
 Pokemon = PETILIL,20
 Pokemon = COTTONEE,20
 Pokemon = PAMPHLUTE,22
 #-------------------------------
 [POKEMONTRAINER_Hazel,Hazel,3]
 LoseText = Wow, \pn, you rock!
+StartEvent = Let's see how far we've gone already, pal!
+CritEvent = That's crazy!
+OneHitEvent = Oh you got me so bad here!
+LastStandEvent = You won't win this fight, \pn!
 Pokemon = BUNEARY,14
 Pokemon = SCORCHIS,15
 Pokemon = LYMPHREAD,13
@@ -353,6 +365,10 @@ Pokemon = BUNNELBY,16
 #-------------------------------
 [POKEMONTRAINER_Hazel,Hazel,4]
 LoseText = Wow, \pn, you rock!
+StartEvent = Let's see how far we've gone already, pal!
+CritEvent = That's crazy!
+OneHitEvent = Oh you got me so bad here!
+LastStandEvent = You won't win this fight, \pn!
 Pokemon = BUNEARY,14
 Pokemon = CHOIRAL,15
 Pokemon = LYMPHREAD,13
@@ -361,6 +377,10 @@ Pokemon = BUNNELBY,16
 #-------------------------------
 [POKEMONTRAINER_Hazel,Hazel,5]
 LoseText = Wow, \pn, you rock!
+StartEvent = Let's see how far we've gone already, pal!
+CritEvent = That's crazy!
+OneHitEvent = Oh you got me so bad here!
+LastStandEvent = You won't win this fight, \pn!
 Pokemon = BUNEARY,14
 Pokemon = BAALARIA,15
 Pokemon = LYMPHREAD,13
