@@ -162,3 +162,13 @@ Battle::AbilityEffects::DamageCalcFromTarget.add(:STOICAL,
      target.damageState.calcDamage = 0
    }
 )
+
+Battle::AbilityEffects::EndOfRoundEffect.add(:SWEETDREAMS,
+   proc { |ability, battler, battle|
+     next if !battler.asleep? || !battler.canHeal?
+     battle.pbShowAbilitySplash(battler)
+     battler.pbRecoverHP(battler.totalhp / 4)
+     battle.pbDisplay(_INTL("{1}'s HP was restored.", battler.pbThis))
+     battle.pbHideAbilitySplash(battler)
+   }
+)

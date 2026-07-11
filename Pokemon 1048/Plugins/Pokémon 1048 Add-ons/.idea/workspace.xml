@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53f26598-8cb9-4a7b-b310-c695443fe57c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Generation 9 Pack Scripts/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Generation 9 Pack Scripts/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Generation 9 Pack Scripts/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data/PluginScripts.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/PluginScripts.rxdata" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Data/Scripts/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/Scripts/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data/abilities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/abilities.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data/messages_game.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/messages_game.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../PBS/abilities_Pokemon_1048_New.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../PBS/abilities_Pokemon_1048_New.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/011_Battle/007_Other battle code/008_Battle_AbilityEffects.rb" beforeDir="false" afterPath="$PROJECT_DIR$/011_Battle/007_Other battle code/008_Battle_AbilityEffects.rb" afterDir="false" />
@@ -77,7 +71,7 @@
       <workItem from="1783694823731" duration="13941000" />
       <workItem from="1783763655311" duration="4311000" />
       <workItem from="1783778195123" duration="4417000" />
-      <workItem from="1783783520954" duration="10499000" />
+      <workItem from="1783783520954" duration="11431000" />
     </task>
     <servers />
   </component>

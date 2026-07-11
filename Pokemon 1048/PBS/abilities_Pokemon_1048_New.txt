@@ -35,3 +35,7 @@ Description = Burns any opponent upon them using any priority move.
 [STOICAL]
 Name = Stoical
 Description = Critical hits deal 1 hp and boost critical rate.
+#-------------------------------
+[SWEETDREAMS]
+Name = Sweet Dreams
+Description = Heals while asleep.
