@@ -117,3 +117,48 @@ Battle::AbilityEffects::DamageCalcFromTarget.add(:HEADSUP,
      mults[:power_multiplier] *= 0.5 if move.pbContactMove?(user) && type != :FIRE
    }
 )
+
+Battle::AbilityEffects::MoveBlocking.add(:SUDDENBLAST,
+   proc { |ability, bearer, user, targets, move, battle|
+     next false if battle.choices[user.index][4] <= 0
+     next false if !bearer.opposes?(user)
+     battle.pbShowAbilitySplash(bearer)
+     isfoeside = false
+     targets.each do |b|
+       isfoeside = true if b.opposes?(user)
+       if isfoeside && user.pbCanBurn?(b, Battle::Scene::USE_ABILITY_SPLASH)
+         msg = nil
+         if !Battle::Scene::USE_ABILITY_SPLASH
+           msg = _INTL("{1}'s {2} burned {3} for using a priority move!", bearer.pbThis, bearer.abilityName, user.pbThis(true))
+         end
+         user.pbBurn(bearer, msg)
+       end
+     end
+     battle.pbHideAbilitySplash(bearer)
+     next false
+   }
+)
+
+Battle::AbilityEffects::OnBeingHit.add(:STOICAL,
+   proc { |ability, user, target, move, battle|
+     next if !target.damageState.critical
+     next if target.effects[PBEffects::FocusEnergy] >= 4
+     battle.pbShowAbilitySplash(target)
+     target.effects[PBEffects::FocusEnergy] = [target.effects[PBEffects::FocusEnergy] + 2, 4].min
+     if Battle::Scene::USE_ABILITY_SPLASH
+       battle.pbDisplay(_INTL("{1} is getting pumped!", target.pbThis))
+     else
+       battle.pbDisplay(_INTL("{1}'s {2} got it pumped!",
+                              target.pbThis, target.abilityName))
+     end
+     battle.pbHideAbilitySplash(target)
+   }
+)
+
+Battle::AbilityEffects::DamageCalcFromTarget.add(:STOICAL,
+   proc { |ability, user, target, move, mults, power, type|
+     next if !target.damageState.critical
+     mults[:final_damage_multiplier] *= 0
+     target.damageState.calcDamage = 0
+   }
+)
