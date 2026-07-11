@@ -2,15 +2,60 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11f0dc06-8be5-49e7-aadb-5c474382f50d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Plugins/Field_Effect V2.0.0/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Plugins/Field_Effect V2.0.0/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Plugins/Field_Effect V2.0.0/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Actors.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Actors.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Animations.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Animations.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Armors.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Armors.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CommonEvents.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../CommonEvents.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enemies.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Enemies.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Items.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Items.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Map079.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Map079.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MapInfos.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../MapInfos.rxdata" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PluginScripts.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../PluginScripts.rxdata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Skills.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Skills.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../States.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../States.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../System.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../System.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tilesets.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Tilesets.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Weapons.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Weapons.rxdata" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../abilities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../abilities.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../items.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../items.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../messages_game.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../messages_game.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../moves.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../moves.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../species.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../species.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PBS/abilities.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../PBS/abilities.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../PBS/abilities_Pokemon_1048_New.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../PBS/abilities_Pokemon_1048_New.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Plugins/Pokémon 1048 Add-ons/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Pokémon 1048 Add-ons/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PBS/items.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../PBS/items.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PBS/items_Gen_9_Pack.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../PBS/items_Gen_9_Pack.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PBS/items_Gen_Pokemon_1048_New.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../PBS/items_Gen_Pokemon_1048_New.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PBS/moves.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../PBS/moves.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PBS/moves_Pokemon_1048_New.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../PBS/moves_Pokemon_1048_New.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PBS/pokemon.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../PBS/pokemon.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PBS/pokemon_base_Gen_9_Pack.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../PBS/pokemon_base_Gen_9_Pack.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PBS/pokemon_forms.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../PBS/pokemon_forms.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PBS/pokemon_forms_Gen_9_Pack.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../PBS/pokemon_forms_Gen_9_Pack.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PBS/pokemon_metrics.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../PBS/pokemon_metrics.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PBS/pokemon_metrics_Gen_9_Pack.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../PBS/pokemon_metrics_Gen_9_Pack.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/.idea/Generation 9 Pack Scripts.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/Settings.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/Settings.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[000] General/[000] Pokemon.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[000] General/[000] Pokemon.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[000] General/[002] Debug.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[000] General/[002] Debug.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[001] Battle/[001] Battle.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[001] Battle/[001] Battle.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[001] Battle/[002] Battle_Battler.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[001] Battle/[002] Battle_Battler.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[001] Battle/[003] Weather and Status.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[001] Battle/[003] Weather and Status.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[001] Battle/[004] Legend Plate Functions.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[001] Battle/[004] Legend Plate Functions.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[002] Battle_AI/[000] Battle_AI.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[002] Battle_AI/[000] Battle_AI.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[002] Battle_AI/[001] AI Move Rankings.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[002] Battle_AI/[001] AI Move Rankings.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[002] Battle_AI/[002] AI New Move Rankings.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[002] Battle_AI/[002] AI New Move Rankings.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[002] Battle_AI/[003] AI Ability Rankings.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[002] Battle_AI/[003] AI Ability Rankings.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[003] Moves/[000] Move Functions.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[003] Moves/[000] Move Functions.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[003] Moves/[001] New Move Functions.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[003] Moves/[001] New Move Functions.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[003] Moves/[002] DLC Moves.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[003] Moves/[002] DLC Moves.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[004] Abilities/[000] Ability Handlers.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[004] Abilities/[000] Ability Handlers.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[004] Abilities/[001] New Ability Handlers.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[004] Abilities/[001] New Ability Handlers.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[005] Items/[000] Item Handlers.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/[005] Items/[000] Item Handlers.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/meta.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Generation 9 Pack Scripts/meta.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Plugins/Pokémon 1048 Add-ons/011_Battle/007_Other battle code/008_Battle_AbilityEffects.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Pokémon 1048 Add-ons/011_Battle/007_Other battle code/008_Battle_AbilityEffects.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

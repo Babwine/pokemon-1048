@@ -105,7 +105,7 @@ Battle::AbilityEffects::MoveImmunity.add(:HEADSUP,
        battle.pbDisplay(_INTL("{1}'s {2} blocks {3}!", target.pbThis, target.abilityName, move.name))
      end
      battle.pbHideAbilitySplash(target)
-     target.pbRaiseStatStageByAbility(:ATTACK, 2, target, false) if b.index != target.index
+     target.pbRaiseStatStageByAbility(:ATTACK, 2, target, false) if user.index != target.index
    end
    next true
   }

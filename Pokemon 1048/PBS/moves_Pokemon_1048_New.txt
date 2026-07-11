@@ -1,4 +1,4 @@
-﻿
+﻿# See the documentation on the wiki to learn how to edit this file.
 #-------------------------------
 [WOODENCRASH]
 Name = Wooden Crash
@@ -21,7 +21,6 @@ Power = 60
 Accuracy = 100
 TotalPP = 10
 Target = NearOther
-Priority = 0
 FunctionCode = DoublePowerIfTargetBurned
 Flags = CanProtect,CanMirrorMove
 Description = Throws a cup of burning coffee at the target. Doubled damage on burnt Pokémon.
@@ -34,11 +33,10 @@ Power = 20
 Accuracy = 95
 TotalPP = 10
 Target = NearOther
-Priority = 0
 FunctionCode = HitTwoToFiveTimesDeafenTarget
 Flags = CanProtect,CanMirrorMove,Sound
-Description = The user blows bubbles at the target that violently burst. Hit two to five times and can deafen.
 EffectChance = 100
+Description = The user blows bubbles at the target that violently burst. Hit two to five times and can deafen.
 #-------------------------------
 [OBJECTION]
 Name = Objection
@@ -90,8 +88,8 @@ Description = The user's gaze petrifies its target. If the target isn't Rock typ
 Name = High Five
 Type = FAIRY
 Category = Physical
-Accuracy = 100
 Power = 20
+Accuracy = 100
 TotalPP = 15
 Target = NearOther
 FunctionCode = RaiseUserAndTargetAtk1
