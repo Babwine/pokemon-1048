@@ -22,3 +22,7 @@ Description = When entering combat, makes the foes flinch. Only once for every f
 [SORELOSER]
 Name = Sore Loser
 Description = When leaving combat, descreases all battlers' accuracy.
+#-------------------------------
+[HEADSUP]
+Name = Heads Up
+Description = Contact moves deal reduces damage. Slicing moves deal no damage and raise Attack by 2. Weak to Fire type.

@@ -92,3 +92,28 @@ Battle::AbilityEffects::OnBeingHit.add(:SORELOSER,
    battle.pbHideAbilitySplash(target)
   }
 )
+
+Battle::AbilityEffects::MoveImmunity.add(:HEADSUP,
+  proc { |ability, user, target, move, type, battle, show_message|
+   next false if !move.slicingMove?
+   next false if Settings::MECHANICS_GENERATION >= 8 && user.index == target.index
+   if show_message
+     battle.pbShowAbilitySplash(target)
+     if Battle::Scene::USE_ABILITY_SPLASH
+       battle.pbDisplay(_INTL("It doesn't affect {1}...", target.pbThis(true)))
+     else
+       battle.pbDisplay(_INTL("{1}'s {2} blocks {3}!", target.pbThis, target.abilityName, move.name))
+     end
+     battle.pbHideAbilitySplash(target)
+     target.pbRaiseStatStageByAbility(:ATTACK, 2, target, false) if b.index != target.index
+   end
+   next true
+  }
+)
+
+Battle::AbilityEffects::DamageCalcFromTarget.add(:HEADSUP,
+   proc { |ability, user, target, move, mults, power, type|
+     mults[:power_multiplier] *= 1.25 if type == :FIRE
+     mults[:power_multiplier] *= 0.5 if move.pbContactMove?(user) && type != :FIRE
+   }
+)
