@@ -1,0 +1,109 @@
+﻿
+#-------------------------------
+[WOODENCRASH]
+Name = Wooden Crash
+Type = GRASS
+Category = Physical
+Power = 60
+Accuracy = 100
+TotalPP = 20
+Target = NearOther
+Priority = 1
+FunctionCode = None
+Flags = Contact,CanProtect,CanMirrorMove
+Description = The user lunges to hit with its woody foot. This move always goes first.
+#-------------------------------
+[BOILEDCOFFEE]
+Name = Boiled Coffee
+Type = FIRE
+Category = Special
+Power = 60
+Accuracy = 100
+TotalPP = 10
+Target = NearOther
+Priority = 0
+FunctionCode = DoublePowerIfTargetBurned
+Flags = CanProtect,CanMirrorMove
+Description = Throws a cup of burning coffee at the target. Doubled damage on burnt Pokémon.
+#-------------------------------
+[BUBBLEMILL]
+Name = Bubble Mill
+Type = WATER
+Category = Special
+Power = 20
+Accuracy = 95
+TotalPP = 10
+Target = NearOther
+Priority = 0
+FunctionCode = HitTwoToFiveTimesDeafenTarget
+Flags = CanProtect,CanMirrorMove,Sound
+Description = The user blows bubbles at the target that violently burst. Hit two to five times and can deafen.
+EffectChance = 100
+#-------------------------------
+[OBJECTION]
+Name = Objection
+Type = ECHO
+Category = Status
+Accuracy = 0
+TotalPP = 10
+Target = User
+Priority = 4
+FunctionCode = ProtectUserFromDamagingMovesObjection
+Description = The user contests the target's move, protecting itself and disabling said move for the next turn.
+#-------------------------------
+[GOLDFINGER]
+Name = Goldfinger
+Type = STEEL
+Category = Physical
+Power = 50
+Accuracy = 95
+TotalPP = 10
+Target = NearOther
+FunctionCode = ParalyzeTarget
+Flags = Contact,CanProtect,CanMirrorMove
+EffectChance = 100
+Description = The user strikes its target with a golden finger. This also leaves the target with paralysis.
+#-------------------------------
+[IRONFILINGS]
+Name = Iron Filings
+Type = STEEL
+Category = Status
+Accuracy = 90
+TotalPP = 10
+Target = NearOther
+FunctionCode = AddSteelTypeToTarget
+Flags = CanProtect,CanMirrorMove
+Description = The user throws iron filings at its target. This adds Steel type to the target's type.
+#-------------------------------
+[PETRIFACTION]
+Name = Petrifaction
+Type = PSYCHIC
+Category = Status
+Accuracy = 95
+TotalPP = 10
+Target = NearOther
+FunctionCode = AddRockTypeToTargetAndParalyze
+Flags = CanProtect,CanMirrorMove
+Description = The user's gaze petrifies its target. If the target isn't Rock type, adds it to the target's type and paralyzes it.
+#-------------------------------
+[HIGHFIVE]
+Name = High Five
+Type = FAIRY
+Category = Physical
+Accuracy = 100
+Power = 20
+TotalPP = 15
+Target = NearOther
+FunctionCode = RaiseUserAndTargetAtk1
+Flags = Contact,CanProtect,CanMirrorMove
+Description = The user's high fives its target and boosts both's Attack stat.
+#-------------------------------
+[ALLFORONE]
+Name = All for One
+Type = FAIRY
+Category = Status
+Accuracy = 0
+TotalPP = 10
+Target = User
+FunctionCode = LoseHpAndSwitchAndHealNextAllyTotalHPLost
+Description = The user sacrifices some of its HP and switches places with a party Pokémon to heal it.

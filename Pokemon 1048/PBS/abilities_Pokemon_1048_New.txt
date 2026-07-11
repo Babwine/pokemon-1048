@@ -1,0 +1,24 @@
+﻿#-------------------------------
+[WINGEDFEET]
+Name = Winged Feet
+Description = Powers up Flying-type moves.
+#-------------------------------
+[MAINTHREAD]
+Name = Main Thread
+Description = The ally's attacks can't miss.
+#-------------------------------
+[COLLAPSE]
+Name = Collapse
+Description = Contact with the Pokémon may cause sleep.
+#-------------------------------
+[PANICKEDCRY]
+Name = Panicked Cry
+Description = Contact with the Pokémon may cause deafening.
+#-------------------------------
+[JUMPSCARE]
+Name = Jumpscare
+Description = When entering combat, makes the opponent flinch.
+#-------------------------------
+[SORELOSER]
+Name = Sore Loser
+Description = When leaving combat, descreases the opponent's accuracy.

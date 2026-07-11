@@ -1,0 +1,95 @@
+
+#-------------------------------
+[BAALARIA]
+BackSprite = 0,0
+FrontSprite = -2,25
+ShadowX = 0
+ShadowSize = 1
+#-------------------------------
+[RAPIDEER]
+BackSprite = 0,0
+FrontSprite = 1,25
+ShadowX = 0
+ShadowSize = 2
+#-------------------------------
+[MARATHYR]
+BackSprite = 0,0
+FrontSprite = -3,19
+ShadowX = 0
+ShadowSize = 2
+#-------------------------------
+[SCORCHIS]
+BackSprite = 0,0
+FrontSprite = 1,25
+ShadowX = 0
+ShadowSize = 1
+#-------------------------------
+[KHALKORN]
+BackSprite = 0,0
+FrontSprite = 1,25
+ShadowX = 0
+ShadowSize = 2
+#-------------------------------
+[ROASTOTAUR]
+BackSprite = 0,0
+FrontSprite = 1,25
+ShadowX = 0
+ShadowSize = 3
+#-------------------------------
+[CHOIRAL]
+BackSprite = 0,0
+FrontSprite = 1,25
+ShadowX = 0
+ShadowSize = 1
+#-------------------------------
+[ANEMUSA]
+BackSprite = 0,0
+FrontSprite = 1,25
+ShadowX = 0
+ShadowSize = 2
+#-------------------------------
+[MADROPERA]
+BackSprite = 0,0
+FrontSprite = 1,25
+ShadowX = 0
+ShadowSize = 2
+#-------------------------------
+[RABBOOZE]
+BackSprite = 0,0
+FrontSprite = 1,30
+ShadowX = 0
+ShadowSize = 1
+#-------------------------------
+[RABBOTTLE]
+BackSprite = 0,0
+FrontSprite = -3,24
+ShadowX = 0
+ShadowSize = 2
+#-------------------------------
+[CHICKIPLE]
+#-------------------------------
+[HAWKRATES]
+#-------------------------------
+[POPIK]
+#-------------------------------
+[PORPOKET]
+#-------------------------------
+[LYMPHREAD]
+#-------------------------------
+[SNEASEL,2]
+BackSprite = 0,56
+FrontSprite = 0,24
+ShadowX = 0
+ShadowSize = 2
+#-------------------------------
+[WEAVILE,2]
+BackSprite = 0,48
+FrontSprite = -2,18
+ShadowX = 0
+ShadowSize = 1
+#-------------------------------
+[WICKDINI]
+BackSprite = 0,56
+FrontSprite = 0,24
+ShadowX = 0
+ShadowSize = 1

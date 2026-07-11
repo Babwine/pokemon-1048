@@ -154,7 +154,7 @@ class Battle::Battler
     # Deafness
     if @status == :DEAFENED && @battle.pbRandom(100) < 20
       pbContinueStatus
-      @battle.pbDisplay(_INTL("{1} couldn't hear any command!", pbThis))
+      @battle.pbDisplay(_INTL("{1}'s deafness made it lose its focus'!", pbThis))
       PBDebug.log("[Move failed] #{pbThis}'s deafness made it fail.")
       @lastMoveFailed = true
       return false

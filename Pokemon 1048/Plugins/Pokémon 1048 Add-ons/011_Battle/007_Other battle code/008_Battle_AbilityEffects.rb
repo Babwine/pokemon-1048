@@ -27,3 +27,39 @@ Battle::AbilityEffects::AccuracyCalcFromAlly.add(:MAINTHREAD,
      mods[:base_accuracy] = 0
    }
 )
+
+Battle::AbilityEffects::OnBeingHit.add(:COLLAPSE,
+   proc { |ability, user, target, move, battle|
+     next if !move.pbContactMove?(user)
+     next if user.asleep? || battle.pbRandom(100) >= 30
+     battle.pbShowAbilitySplash(target)
+     if user.pbCanSleep?(target, Battle::Scene::USE_ABILITY_SPLASH) &&
+        user.affectedByContactEffect?(Battle::Scene::USE_ABILITY_SPLASH)
+       msg = nil
+       if !Battle::Scene::USE_ABILITY_SPLASH
+         msg = _INTL("{1}'s {2} made {3} fall asleep!",
+                     target.pbThis, target.abilityName, user.pbThis(true))
+       end
+       user.pbSleep(msg)
+     end
+     battle.pbHideAbilitySplash(target)
+   }
+)
+
+Battle::AbilityEffects::OnBeingHit.add(:PANICKEDCRY,
+   proc { |ability, user, target, move, battle|
+     next if !move.pbContactMove?(user)
+     next if user.deafened? || battle.pbRandom(100) >= 30
+     battle.pbShowAbilitySplash(target)
+     if user.pbCanDeafen?(target, Battle::Scene::USE_ABILITY_SPLASH) &&
+        user.affectedByContactEffect?(Battle::Scene::USE_ABILITY_SPLASH)
+       msg = nil
+       if !Battle::Scene::USE_ABILITY_SPLASH
+         msg = _INTL("{1}'s {2} deafened {3}!",
+                     target.pbThis, target.abilityName, user.pbThis(true))
+       end
+       user.pbDeafen(msg)
+     end
+     battle.pbHideAbilitySplash(target)
+   }
+)
