@@ -423,6 +423,8 @@ class Battle::Battler
     # No Guard
     hitsInvul = true if user.hasActiveAbility?(:NOGUARD) ||
                         target.hasActiveAbility?(:NOGUARD)
+    # Main Thread
+    hitsInvul = true if @battle.allSameSideBattlers(user.index).delete_if {|b| b.index == user.index }.map { |b| b.hasActiveAbility?(:MAINTHREAD) }.any?
     # Future Sight
     hitsInvul = true if @battle.futureSight
     # Helping Hand

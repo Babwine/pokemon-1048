@@ -15,3 +15,15 @@ Battle::AbilityEffects::StatusCure.add(:SOUNDPROOF,
     battler.battle.pbHideAbilitySplash(battler)
   }
 )
+
+Battle::AbilityEffects::DamageCalcFromUser.add(:WINGEDFEET,
+  proc { |ability, user, target, move, mults, power, type|
+   mults[:attack_multiplier] *= 1.5 if type == :FLYING
+  }
+)
+
+Battle::AbilityEffects::AccuracyCalcFromAlly.add(:MAINTHREAD,
+   proc { |ability, mods, user, target, move, type|
+     mods[:base_accuracy] = 0
+   }
+)

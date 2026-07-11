@@ -1072,7 +1072,7 @@ Name = As One
 Description = Combines Unnerve and Grim Neigh Abilities.
 #-------------------------------
 [WINGEDFEET]
-Name = Wing Feet
+Name = Winged Feet
 Description = Powers up Flying-type moves.
 #-------------------------------
 [MAINTHREAD]
