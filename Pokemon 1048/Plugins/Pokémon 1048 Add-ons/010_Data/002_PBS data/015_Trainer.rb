@@ -12,6 +12,7 @@ module GameData
     attr_reader :supereffective_event
     attr_reader :onehit_event
     attr_reader :laststand_event
+    attr_reader :ability_event
     attr_reader :pbs_file_suffix
 
     # "Pokemon" is specially mentioned in def compile_trainers and def
@@ -25,7 +26,8 @@ module GameData
       "CritEvent"   => [:crit_event,    "q"],
       "SuperEffectiveEvent"   => [:supereffective_event,    "q"],
       "OneHitEvent"  => [:onehit_event,    "q"],
-      "LastStandEvent"  => [:laststand_event,    "q"]
+      "LastStandEvent"  => [:laststand_event,    "q"],
+      "AbilityEvent"  => [:ability_event,    "q"]
     }
 
     def initialize(hash)
@@ -47,6 +49,7 @@ module GameData
       @supereffective_event = hash[:supereffective_event] || ""
       @onehit_event     = hash[:onehit_event] || ""
       @laststand_event     = hash[:laststand_event] || ""
+      @ability_event     = hash[:ability_event] || ""
       @pbs_file_suffix = hash[:pbs_file_suffix] || ""
     end
   end

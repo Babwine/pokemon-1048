@@ -55,6 +55,7 @@ class Battle
   attr_accessor :supereffective_events
   attr_accessor :onehit_events
   attr_accessor :laststand_events
+  attr_accessor :ability_events
 
   #=============================================================================
   # Creating the battle class
@@ -137,6 +138,7 @@ class Battle
     @supereffective_events = {}
     @onehit_events = {}
     @laststand_events = {}
+    @ability_events = {}
     @mega_rings        = []
     GameData::Item.each { |item| @mega_rings.push(item.id) if item.has_flag?("MegaRing") }
     @battleAI          = AI.new(self)
@@ -158,6 +160,9 @@ class Battle
           end
           unless trainer_data.laststand_event.nil? || trainer_data.laststand_event.empty?
             @laststand_events[i] = trainer_data.laststand_event
+          end
+          unless trainer_data.ability_event.nil? || trainer_data.ability_event.empty?
+            @ability_events[i] = trainer_data.ability_event
           end
         end
       end
@@ -196,6 +201,12 @@ end
     end
   end
 
+def pbHandleAbilityEvent(index,ability)
+  unless @ability_events.nil? || @ability_events[index].nil?
+    pbTriggerBattleEventWithAdditionalInfo(@ability_events, index, ability)
+  end
+end
+
   def pbHandleTurnStartEvents()
 
   end
@@ -214,6 +225,17 @@ end
     @scene.pbHideOpponent
     event_hash.delete(index)
   end
+
+def pbTriggerBattleEventWithAdditionalInfo(event_hash,index,additional_info)
+  arr = event_hash[index].split('|')
+  if arr[0] == additional_info
+    @scene.pbShowOpponent(index)
+    pbDisplay(_INTL(arr[1]))
+    sleep(0.3)
+    @scene.pbHideOpponent
+    event_hash.delete(index)
+  end
+end
 
   def formatEventText(events_field, oppIdx, user, target)
     unless events_field.nil? || events_field.empty? || events_field[oppIdx].nil?

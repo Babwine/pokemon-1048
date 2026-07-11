@@ -89,6 +89,7 @@ Battle::AbilityEffects::OnBeingHit.add(:SORELOSER,
    battle.allBattlers.each do |b|
      b.pbLowerStatStageByAbility(:ACCURACY, 1, target, false) if b.index != target.index
    end
+   battle.pbHandleAbilityEvent(battle.pbGetOwnerIndexFromBattlerIndex(target.index),ability.to_s)
    battle.pbHideAbilitySplash(target)
   }
 )

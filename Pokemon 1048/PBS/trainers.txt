@@ -394,6 +394,7 @@ CritEvent = WHAT?! That's unfair! GRRRAH!!
 SuperEffectiveEvent = NGAAAH! How did I not see THAT coming?!
 OneHitEvent = WHAT THE ACTUAL HECK?!
 LastStandEvent = Okay, you MIGHT have come this far, but NOW I'll blow you to smitherins!
+AbilityEvent = SORELOSER|Yeah, that's what you get, you meanie!
 Pokemon = WICKDINI,20
 Pokemon = SUDOWOODO,22
 Pokemon = ABSOL,23
