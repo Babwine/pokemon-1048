@@ -107,3 +107,13 @@ TotalPP = 10
 Target = User
 FunctionCode = LoseHpAndSwitchAndHealNextAllyTotalHPLost
 Description = The user sacrifices some of its HP and switches places with a party Pokémon to heal it.
+#-------------------------------
+[THIRSTGO]
+Name = Thirst Go
+Type = NORMAL
+Category = Status
+Accuracy = 0
+TotalPP = 10
+Target = User
+FunctionCode = HealUserFullyAndBecomeConfused
+Description = The user fully heals, then becomes confused for 2 turns.
