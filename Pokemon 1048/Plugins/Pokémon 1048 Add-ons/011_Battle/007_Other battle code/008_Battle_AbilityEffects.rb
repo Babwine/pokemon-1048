@@ -63,3 +63,32 @@ Battle::AbilityEffects::OnBeingHit.add(:PANICKEDCRY,
      battle.pbHideAbilitySplash(target)
    }
 )
+
+Battle::AbilityEffects::OnSwitchIn.add(:JUMPSCARE,
+  proc { |ability, battler, battle, switch_in|
+   battle.pbShowAbilitySplash(battler)
+   battle.allOtherSideBattlers(battler.index).each do |b|
+     next if !b.near?(battler)
+     if b.effects[PBEffects::Jumpscare]
+       battle.pbDisplay(_INTL("{1} didn't fall for it this time!", b.pbThis))
+       next
+     else
+       b.effects[PBEffects::Jumpscare] = true
+       b.pbFlinch(battler)
+       battle.pbDisplay(_INTL("{1}'s {2} made {3} flinch!", battler.pbThis, battler.abilityName, b.pbThis(true)))
+     end
+   end
+   battle.pbHideAbilitySplash(battler)
+  }
+)
+
+Battle::AbilityEffects::OnBeingHit.add(:SORELOSER,
+  proc { |ability, user, target, move, battle|
+   next if !target.fainted?
+   battle.pbShowAbilitySplash(target)
+   battle.allBattlers.each do |b|
+     b.pbLowerStatStageByAbility(:ACCURACY, 1, target, false) if b.index != target.index
+   end
+   battle.pbHideAbilitySplash(target)
+  }
+)

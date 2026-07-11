@@ -3,4 +3,5 @@ module PBEffects
   # These effects apply to a battler
   #===========================================================================
   Objection           = 117
+  Jumpscare           = 118
 end
