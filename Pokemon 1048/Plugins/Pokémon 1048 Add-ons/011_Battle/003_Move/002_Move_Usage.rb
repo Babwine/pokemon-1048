@@ -48,9 +48,9 @@ class Battle::Move
       else
         @battle.pbDisplay(_INTL("A critical hit!"))
       end
-      if user.opposes?(target.index)
+      unless @battle.pbOwnedByPlayer?(target.index)
         oppIdx = @battle.pbGetOwnerIndexFromBattlerIndex(target.index)
-        @battle.formatEventText(@battle.crit_events,oppIdx,user,target)
+        @battle.formatEventText(@battle.crit_events, oppIdx, user, target)
         @battle.pbHandleCritEvent(oppIdx)
       end
     end
