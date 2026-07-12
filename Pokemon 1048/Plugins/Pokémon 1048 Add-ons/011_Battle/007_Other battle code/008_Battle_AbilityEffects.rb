@@ -203,3 +203,9 @@ Battle::AbilityEffects::EffectivenessCalcFromUser.add(:DREADFUL,
      target.damageState.typeMod *= darkEff
    }
 )
+
+Battle::AbilityEffects::OnBeingHit.add(:RESILIENCE,
+   proc { |ability, user, target, move, battle|
+     target.pbRaiseStatStageByAbility(:SPECIAL_DEFENSE, 1, target)
+   }
+)

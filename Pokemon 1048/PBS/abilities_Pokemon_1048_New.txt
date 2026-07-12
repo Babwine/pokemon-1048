@@ -47,3 +47,7 @@ Description = Ghost type moves are also Dark type.
 [OLYMPICFLAME]
 Name = Olympic Flame
 Description = Powers up Fire-type moves.
+#-------------------------------
+[RESILIENCE]
+Name = Resilience
+Description = Boosts Special Defense when hit by an attack
