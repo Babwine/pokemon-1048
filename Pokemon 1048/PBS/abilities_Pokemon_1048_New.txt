@@ -43,3 +43,7 @@ Description = Heals while asleep.
 [DREADFUL]
 Name = Dreadful
 Description = Ghost type moves are also Dark type.
+#-------------------------------
+[OLYMPICFLAME]
+Name = Olympic Flame
+Description = Powers up Fire-type moves.

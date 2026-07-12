@@ -29,6 +29,12 @@ Battle::AbilityEffects::DamageCalcFromUser.add(:WINGEDFEET,
   }
 )
 
+Battle::AbilityEffects::DamageCalcFromUser.add(:OLYMPICFLAME,
+   proc { |ability, user, target, move, mults, power, type|
+     mults[:attack_multiplier] *= 1.5 if type == :FIRE
+   }
+)
+
 Battle::AbilityEffects::AccuracyCalcFromAlly.add(:MAINTHREAD,
    proc { |ability, mods, user, target, move, type|
      mods[:base_accuracy] = 0

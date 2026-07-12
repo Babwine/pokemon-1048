@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11f0dc06-8be5-49e7-aadb-5c474382f50d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../PluginScripts.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../PluginScripts.rxdata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Plugins/Pokémon 1048 Add-ons/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Pokémon 1048 Add-ons/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Plugins/Pokémon 1048 Add-ons/011_Battle/002_Battler/009_Battler_UseMoveSuccessChecks.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Pokémon 1048 Add-ons/011_Battle/002_Battler/009_Battler_UseMoveSuccessChecks.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Plugins/Pokémon 1048 Add-ons/011_Battle/007_Other battle code/008_Battle_AbilityEffects.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Pokémon 1048 Add-ons/011_Battle/007_Other battle code/008_Battle_AbilityEffects.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PBS/abilities_Pokemon_1048_New.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../PBS/abilities_Pokemon_1048_New.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +56,7 @@
       <workItem from="1783763636432" duration="4063000" />
       <workItem from="1783778166952" duration="4487000" />
       <workItem from="1783783530743" duration="8532000" />
-      <workItem from="1783808334153" duration="7021000" />
+      <workItem from="1783808334153" duration="7360000" />
     </task>
     <servers />
   </component>
