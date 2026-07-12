@@ -1,3 +1,10 @@
+module Battle::AbilityEffects
+  EffectivenessCalcFromUser          = AbilityHandlerHash.new   # Dreadul
+
+  def self.triggerEffectivenessCalcFromUser(ability, user, target, move, type)
+    EffectivenessCalcFromUser.trigger(ability, user, target, move, type)
+  end
+end
 Battle::AbilityEffects::StatusImmunity.add(:SOUNDPROOF,
   proc { |ability, battler, status|
     next true if status == :DEAFENED
@@ -174,9 +181,15 @@ Battle::AbilityEffects::EndOfRoundEffect.add(:SWEETDREAMS,
    }
 )
 
-Battle::AbilityEffects::DamageCalcFromUser.add(:DREADFUL,
-   proc { |ability, user, target, move, mults, power, type|
+Battle::AbilityEffects::EffectivenessCalcFromUser.add(:DREADFUL,
+   proc { |ability, user, target, move, type|
      next if type != :GHOST
+     ineff = false
+     if target.pbTypes(true).any? {|t| Effectiveness.ineffective_type?(:DARK, t)} || target.pbTypes(true).any? {|t| Effectiveness.ineffective_type?(type, t)}
+       target.damageState.typeMod = Effectiveness::INEFFECTIVE_MULTIPLIER
+       ineff = true
+     end
+     next if ineff
      darkEff = Effectiveness::NORMAL_EFFECTIVE_MULTIPLIER
      target.pbTypes(true).each do |t|
        darkEff *= move.pbCalcTypeModSingle(:DARK, t, user, target)

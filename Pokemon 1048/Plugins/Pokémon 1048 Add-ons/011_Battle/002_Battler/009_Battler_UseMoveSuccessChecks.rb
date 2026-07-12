@@ -170,6 +170,8 @@ class Battle::Battler
     show_message = move.pbShowFailMessages?(targets)
     typeMod = move.pbCalcTypeMod(move.calcType, user, target)
     target.damageState.typeMod = typeMod
+    Battle::AbilityEffects.triggerEffectivenessCalcFromUser(user.ability, user, target, move, move.calcType)
+    typeMod = target.damageState.typeMod
     # Two-turn attacks can't fail here in the charging turn
     return true if user.effects[PBEffects::TwoTurnAttack]
     # Move-specific failures
