@@ -39,3 +39,7 @@ Description = Critical hits deal 1 hp and boost critical rate.
 [SWEETDREAMS]
 Name = Sweet Dreams
 Description = Heals while asleep.
+#-------------------------------
+[DREADFUL]
+Name = Dreadful
+Description = Ghost type moves are also Dark type.

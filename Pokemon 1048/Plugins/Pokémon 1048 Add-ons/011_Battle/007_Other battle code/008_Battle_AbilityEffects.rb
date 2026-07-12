@@ -173,3 +173,14 @@ Battle::AbilityEffects::EndOfRoundEffect.add(:SWEETDREAMS,
      battle.pbHideAbilitySplash(battler)
    }
 )
+
+Battle::AbilityEffects::DamageCalcFromUser.add(:DREADFUL,
+   proc { |ability, user, target, move, mults, power, type|
+     next if type != :GHOST
+     darkEff = Effectiveness::NORMAL_EFFECTIVE_MULTIPLIER
+     target.pbTypes(true).each do |t|
+       darkEff *= move.pbCalcTypeModSingle(:DARK, t, user, target)
+     end
+     target.damageState.typeMod *= darkEff
+   }
+)
