@@ -1,8 +1,14 @@
 module Battle::AbilityEffects
   EffectivenessCalcFromUser          = AbilityHandlerHash.new   # Dreadul
+  OnTargetStatChange                 = AbilityHandlerHash.new
+
 
   def self.triggerEffectivenessCalcFromUser(ability, user, target, move, type)
     EffectivenessCalcFromUser.trigger(ability, user, target, move, type)
+  end
+
+  def self.triggerOnTargetStatChange(ability, user, stat, target)
+    OnTargetStatChange.trigger(ability, user, stat, target)
   end
 end
 Battle::AbilityEffects::StatusImmunity.add(:SOUNDPROOF,
@@ -214,5 +220,27 @@ Battle::AbilityEffects::DamageCalcFromUser.add(:DREADFUL,
 Battle::AbilityEffects::OnBeingHit.add(:RESILIENCE,
    proc { |ability, user, target, move, battle|
      target.pbRaiseStatStageByAbility(:SPECIAL_DEFENSE, 1, target)
+   }
+)
+
+Battle::AbilityEffects::OnTargetStatChange.add(:EMPATHETIC,
+   proc { |ability, user, stat, target|
+     next if !target.opposes?(user)
+     user.battle.pbShowAbilitySplash(user)
+     GameData::Stat.each_battle do |s|
+       if user.stages[s.id] > target.stages[s.id]
+         user.statsLoweredThisRound = true
+         user.statsDropped = true
+       elsif user.stages[s.id] < target.stages[s.id]
+         user.statsRaisedThisRound = true
+       end
+       user.stages[s.id] = target.stages[s.id]
+     end
+     if Settings::NEW_CRITICAL_HIT_RATE_MECHANICS
+       user.effects[PBEffects::FocusEnergy] = target.effects[PBEffects::FocusEnergy]
+       user.effects[PBEffects::LaserFocus]  = target.effects[PBEffects::LaserFocus]
+     end
+     user.battle.pbDisplay(_INTL("{1}'s {2} copied {3}'s stat changes!", user.pbThis, user.abilityName, target.pbThis(true)))
+     user.battle.pbHideAbilitySplash(user)
    }
 )

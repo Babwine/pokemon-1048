@@ -170,9 +170,9 @@ class Battle
     end
 end
 
-def allOtherSameSideBattlers(idxBattler = 0)
-  return allSameSideBattlers(idxBattler).select {|b| b.index != idxBattler }
-end
+  def allOtherSameSideBattlers(idxBattler = 0)
+    return allSameSideBattlers(idxBattler).select {|b| b.index != idxBattler }
+  end
 
   def pbHandleBattleStartEvents()
     unless @start_events.nil? || @start_events.empty?

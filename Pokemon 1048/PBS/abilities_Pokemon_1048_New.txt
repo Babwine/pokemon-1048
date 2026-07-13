@@ -55,3 +55,7 @@ Description = Boosts Special Defense when hit by an attack
 [LENDAHAND]
 Name = Lend-a-Hand
 Description = Immunes allies to all Ground-type moves.
+#-------------------------------
+[EMPATHETIC]
+Name = Empathetic
+Description = Copies the opponents' stat changes.
