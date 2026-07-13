@@ -204,6 +204,13 @@ Battle::AbilityEffects::EffectivenessCalcFromUser.add(:DREADFUL,
    }
 )
 
+Battle::AbilityEffects::DamageCalcFromUser.add(:DREADFUL,
+   proc { |ability, user, target, move, mults, power, type|
+     next if type != :GHOST
+     mults[:attack_multiplier] *= 1.5 if user.pbHasType?(:DARK)
+   }
+)
+
 Battle::AbilityEffects::OnBeingHit.add(:RESILIENCE,
    proc { |ability, user, target, move, battle|
      target.pbRaiseStatStageByAbility(:SPECIAL_DEFENSE, 1, target)
