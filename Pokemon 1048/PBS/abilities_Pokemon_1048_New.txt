@@ -6,7 +6,7 @@ Description = Powers up Flying-type moves.
 #-------------------------------
 [MAINTHREAD]
 Name = Main Thread
-Description = The ally's attacks can't miss.
+Description = The allies' attacks can't miss.
 #-------------------------------
 [COLLAPSE]
 Name = Collapse
@@ -22,7 +22,7 @@ Description = When entering combat, makes the foes flinch. Only once for every f
 #-------------------------------
 [SORELOSER]
 Name = Sore Loser
-Description = When leaving combat, descreases all battlers' accuracy.
+Description = When leaving combat, decreases all battlers' accuracy.
 #-------------------------------
 [HEADSUP]
 Name = Heads Up
@@ -51,3 +51,7 @@ Description = Powers up Fire-type moves.
 [RESILIENCE]
 Name = Resilience
 Description = Boosts Special Defense when hit by an attack
+#-------------------------------
+[LENDAHAND]
+Name = Lend-a-Hand
+Description = Immunes allies to all Ground-type moves.

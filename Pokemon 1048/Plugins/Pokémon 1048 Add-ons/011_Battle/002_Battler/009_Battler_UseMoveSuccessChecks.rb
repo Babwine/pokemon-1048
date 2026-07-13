@@ -358,6 +358,18 @@ class Battle::Battler
         end
         return false
       end
+      if (ally = @battle.allOtherSameSideBattlers(target.index).detect { |b| b.hasActiveAbility?(:LENDAHAND) }) && !@battle.moldBreaker
+        if show_message
+          @battle.pbShowAbilitySplash(ally)
+          if Battle::Scene::USE_ABILITY_SPLASH
+            @battle.pbDisplay(_INTL("{1} avoided the attack thanks to {2}!", target.pbThis, ally.pbThis(true)))
+          else
+            @battle.pbDisplay(_INTL("{1} avoided the attack thanks to {2}'s {3}!", target.pbThis, ally.pbThis(true), ally.abilityName))
+          end
+          @battle.pbHideAbilitySplash(ally)
+        end
+        return false
+      end
       if target.hasActiveItem?(:AIRBALLOON)
         @battle.pbDisplay(_INTL("{1}'s {2} makes Ground moves miss!", target.pbThis, target.itemName)) if show_message
         return false
@@ -426,7 +438,7 @@ class Battle::Battler
     hitsInvul = true if user.hasActiveAbility?(:NOGUARD) ||
                         target.hasActiveAbility?(:NOGUARD)
     # Main Thread
-    hitsInvul = true if @battle.allSameSideBattlers(user.index).delete_if {|b| b.index == user.index }.map { |b| b.hasActiveAbility?(:MAINTHREAD) }.any?
+    hitsInvul = true if @battle.allOtherSameSideBattlers(user.index).map { |b| b.hasActiveAbility?(:MAINTHREAD) }.any?
     # Future Sight
     hitsInvul = true if @battle.futureSight
     # Helping Hand
