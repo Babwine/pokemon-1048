@@ -21,7 +21,7 @@ class Battle::Battler
     # Trigger abilities upon stat gain
     if abilityActive?
       Battle::AbilityEffects.triggerOnStatGain(self.ability, self, stat, user)
-      @battle.allOtherSideBattlers(self).each { |b| Battle::AbilityEffects.triggerOnTargetStatChange(b.ability, b, stat, self) }
+      @battle.allOtherBattlers(self).each { |b| Battle::AbilityEffects.triggerOnTargetStatGain(b.ability, b, stat, increment, self) }
     end
     return true
   end
@@ -53,7 +53,7 @@ class Battle::Battler
     # Trigger abilities upon stat gain
     if abilityActive?
       Battle::AbilityEffects.triggerOnStatGain(self.ability, self, stat, user)
-      @battle.allOtherSideBattlers(self).each { |b| Battle::AbilityEffects.triggerOnTargetStatChange(b.ability, b, stat, self) }
+      @battle.allOtherBattlers(self).each { |b| Battle::AbilityEffects.triggerOnTargetStatGain(b.ability, b, stat, increment, self) }
     end
     return true
   end
@@ -99,7 +99,7 @@ class Battle::Battler
     # Trigger abilities upon stat loss
     if abilityActive?
       Battle::AbilityEffects.triggerOnStatLoss(self.ability, self, stat, user)
-      @battle.allOtherSideBattlers(self).each { |b| Battle::AbilityEffects.triggerOnTargetStatChange(b.ability, b, stat, self) }
+      @battle.allOtherBattlers(self).each { |b| Battle::AbilityEffects.triggerOnTargetStatLoss(b.ability, b, stat, increment, self) }
     end
     return true
   end
@@ -148,7 +148,7 @@ class Battle::Battler
     # Trigger abilities upon stat loss
     if abilityActive?
       Battle::AbilityEffects.triggerOnStatLoss(self.ability, self, stat, user)
-      @battle.allOtherSideBattlers(self).each { |b| Battle::AbilityEffects.triggerOnTargetStatChange(b.ability, b, stat, self) }
+      @battle.allOtherBattlers(self).each { |b| Battle::AbilityEffects.triggerOnTargetStatLoss(b.ability, b, stat, increment, self) }
     end
     return true
   end

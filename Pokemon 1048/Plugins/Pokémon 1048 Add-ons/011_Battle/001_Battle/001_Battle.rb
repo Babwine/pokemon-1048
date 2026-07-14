@@ -170,6 +170,10 @@ class Battle
     end
 end
 
+def allOtherBattlers(idxBattler = 0)
+  return allBattlers.select {|b| b.index != idxBattler }
+end
+
   def allOtherSameSideBattlers(idxBattler = 0)
     return allSameSideBattlers(idxBattler).select {|b| b.index != idxBattler }
   end

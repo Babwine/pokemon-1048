@@ -1,14 +1,29 @@
 module Battle::AbilityEffects
   EffectivenessCalcFromUser          = AbilityHandlerHash.new   # Dreadul
-  OnTargetStatChange                 = AbilityHandlerHash.new
+  OnTargetStatLoss                 = AbilityHandlerHash.new
+  OnTargetStatGain                 = AbilityHandlerHash.new
+  OnTargetCritRateGain                 = AbilityHandlerHash.new
+  OnTargetCritEnsureGain                 = AbilityHandlerHash.new
 
 
   def self.triggerEffectivenessCalcFromUser(ability, user, target, move, type)
     EffectivenessCalcFromUser.trigger(ability, user, target, move, type)
   end
 
-  def self.triggerOnTargetStatChange(ability, user, stat, target)
-    OnTargetStatChange.trigger(ability, user, stat, target)
+  def self.triggerOnTargetStatGain(ability, user, stat, increment, target)
+    OnTargetStatGain.trigger(ability, user, stat, increment, target)
+  end
+
+  def self.triggerOnTargetStatLoss(ability, user, stat, increment, target)
+    OnTargetStatLoss.trigger(ability, user, stat, increment, target)
+  end
+
+  def self.triggerOnTargetCritRateGain(ability, user)
+    OnTargetCritRateGain.trigger(ability, user)
+  end
+
+  def self.triggerOnTargetCritEnsureGain(ability, user)
+    OnTargetCritEnsureGain.trigger(ability, user)
   end
 end
 Battle::AbilityEffects::StatusImmunity.add(:SOUNDPROOF,
@@ -223,24 +238,51 @@ Battle::AbilityEffects::OnBeingHit.add(:RESILIENCE,
    }
 )
 
-Battle::AbilityEffects::OnTargetStatChange.add(:EMPATHETIC,
-   proc { |ability, user, stat, target|
+Battle::AbilityEffects::OnTargetStatGain.add(:EMPATHETIC,
+   proc { |ability, user, stat, increment, target|
      next if !target.opposes?(user)
      user.battle.pbShowAbilitySplash(user)
-     GameData::Stat.each_battle do |s|
-       if user.stages[s.id] > target.stages[s.id]
-         user.statsLoweredThisRound = true
-         user.statsDropped = true
-       elsif user.stages[s.id] < target.stages[s.id]
-         user.statsRaisedThisRound = true
-       end
-       user.stages[s.id] = target.stages[s.id]
-     end
-     if Settings::NEW_CRITICAL_HIT_RATE_MECHANICS
-       user.effects[PBEffects::FocusEnergy] = target.effects[PBEffects::FocusEnergy]
-       user.effects[PBEffects::LaserFocus]  = target.effects[PBEffects::LaserFocus]
-     end
-     user.battle.pbDisplay(_INTL("{1}'s {2} copied {3}'s stat changes!", user.pbThis, user.abilityName, target.pbThis(true)))
+     user.pbRaiseStatStage(stat, increment, user, showAnim = true, ignoreContrary = true)
      user.battle.pbHideAbilitySplash(user)
+   }
+)
+
+Battle::AbilityEffects::OnTargetStatLoss.add(:EMPATHETIC,
+  proc { |ability, user, stat, increment, target|
+   next if !target.opposes?(user)
+   user.battle.pbShowAbilitySplash(user)
+   user.pbLowerStatStage(stat, increment, user, showAnim = true, ignoreContrary = true)
+   user.battle.pbHideAbilitySplash(user)
+  }
+)
+
+Battle::AbilityEffects::OnTargetCritRateGain.add(:EMPATHETIC,
+   proc { |ability, user|
+     if Settings::NEW_CRITICAL_HIT_RATE_MECHANICS
+       user.battle.pbShowAbilitySplash(user)
+       user.effects[PBEffects::FocusEnergy] = 2
+       if Battle::Scene::USE_ABILITY_SPLASH
+         user.battle.pbDisplay(_INTL("{1} is getting pumped!", user.pbThis))
+       else
+         user.battle.pbDisplay(_INTL("{1}'s {2} got it pumped!",
+                                user.pbThis, user.abilityName))
+       end
+       user.battle.pbHideAbilitySplash(user)
+     end
+   }
+)
+
+Battle::AbilityEffects::OnTargetCritEnsureGain.add(:EMPATHETIC,
+   proc { |ability, user|
+     if Settings::NEW_CRITICAL_HIT_RATE_MECHANICS
+       user.battle.pbShowAbilitySplash(user)
+       user.effects[PBEffects::LaserFocus] = 2
+       if Battle::Scene::USE_ABILITY_SPLASH
+         user.battle.pbDisplay(_INTL("{1} concentrated intensely!", user.pbThis))
+       else
+         user.battle.pbDisplay(_INTL("{1} concentrated intensely thanks to {2}!", user.pbThis, user.abilityName))
+       end
+       user.battle.pbHideAbilitySplash(user)
+     end
    }
 )

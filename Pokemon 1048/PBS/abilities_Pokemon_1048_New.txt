@@ -58,4 +58,4 @@ Description = Immunes allies to all Ground-type moves.
 #-------------------------------
 [EMPATHETIC]
 Name = Empathetic
-Description = Copies the opponents' stat changes.
+Description = Mimics every battlers' stat changes.
