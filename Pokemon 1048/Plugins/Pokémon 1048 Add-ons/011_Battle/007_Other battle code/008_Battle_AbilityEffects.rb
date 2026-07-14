@@ -240,7 +240,6 @@ Battle::AbilityEffects::OnBeingHit.add(:RESILIENCE,
 
 Battle::AbilityEffects::OnTargetStatGain.add(:EMPATHETIC,
    proc { |ability, user, stat, increment, target|
-     next if !target.opposes?(user)
      user.battle.pbShowAbilitySplash(user)
      user.pbRaiseStatStage(stat, increment, user, showAnim = true, ignoreContrary = true)
      user.battle.pbHideAbilitySplash(user)
@@ -249,7 +248,6 @@ Battle::AbilityEffects::OnTargetStatGain.add(:EMPATHETIC,
 
 Battle::AbilityEffects::OnTargetStatLoss.add(:EMPATHETIC,
   proc { |ability, user, stat, increment, target|
-   next if !target.opposes?(user)
    user.battle.pbShowAbilitySplash(user)
    user.pbLowerStatStage(stat, increment, user, showAnim = true, ignoreContrary = true)
    user.battle.pbHideAbilitySplash(user)

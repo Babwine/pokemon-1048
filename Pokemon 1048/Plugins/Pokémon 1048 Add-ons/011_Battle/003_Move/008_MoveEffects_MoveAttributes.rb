@@ -43,6 +43,6 @@ class Battle::Move::EnsureNextCriticalHit < Battle::Move
   def pbEffectGeneral(user)
     user.effects[PBEffects::LaserFocus] = 2
     @battle.pbDisplay(_INTL("{1} concentrated intensely!", user.pbThis))
-    @battle.allOtherBattlers(self).each { |b| Battle::AbilityEffects.triggerOnTargetCritEnsureGain(b.ability, b) }
+    @battle.allOtherBattlers(user.index).each { |b| Battle::AbilityEffects.triggerOnTargetCritEnsureGain(b.ability, b) }
   end
 end

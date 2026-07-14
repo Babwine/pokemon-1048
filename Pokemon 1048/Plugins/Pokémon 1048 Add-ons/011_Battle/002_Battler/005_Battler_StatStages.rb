@@ -21,7 +21,7 @@ class Battle::Battler
     # Trigger abilities upon stat gain
     if abilityActive?
       Battle::AbilityEffects.triggerOnStatGain(self.ability, self, stat, user)
-      @battle.allOtherBattlers(self).each { |b| Battle::AbilityEffects.triggerOnTargetStatGain(b.ability, b, stat, increment, self) }
+      @battle.allOtherBattlers(self.index).each { |b| Battle::AbilityEffects.triggerOnTargetStatGain(b.ability, b, stat, increment, self) }
     end
     return true
   end
@@ -53,7 +53,9 @@ class Battle::Battler
     # Trigger abilities upon stat gain
     if abilityActive?
       Battle::AbilityEffects.triggerOnStatGain(self.ability, self, stat, user)
-      @battle.allOtherBattlers(self).each { |b| Battle::AbilityEffects.triggerOnTargetStatGain(b.ability, b, stat, increment, self) }
+      @battle.pbDisplay(@battle.allBattlers.map { |b| b.index+"///"+b.name })
+      @battle.pbDisplay(@battle.allOtherBattlers(self.index).map { |b| b.index+"///"+b.name })
+      @battle.allOtherBattlers(self.index).each { |b| Battle::AbilityEffects.triggerOnTargetStatGain(b.ability, b, stat, increment, self) }
     end
     return true
   end
@@ -99,7 +101,7 @@ class Battle::Battler
     # Trigger abilities upon stat loss
     if abilityActive?
       Battle::AbilityEffects.triggerOnStatLoss(self.ability, self, stat, user)
-      @battle.allOtherBattlers(self).each { |b| Battle::AbilityEffects.triggerOnTargetStatLoss(b.ability, b, stat, increment, self) }
+      @battle.allOtherBattlers(self.index).each { |b| Battle::AbilityEffects.triggerOnTargetStatLoss(b.ability, b, stat, increment, self) }
     end
     return true
   end
@@ -148,7 +150,7 @@ class Battle::Battler
     # Trigger abilities upon stat loss
     if abilityActive?
       Battle::AbilityEffects.triggerOnStatLoss(self.ability, self, stat, user)
-      @battle.allOtherBattlers(self).each { |b| Battle::AbilityEffects.triggerOnTargetStatLoss(b.ability, b, stat, increment, self) }
+      @battle.allOtherBattlers(self.index).each { |b| Battle::AbilityEffects.triggerOnTargetStatLoss(b.ability, b, stat, increment, self) }
     end
     return true
   end
