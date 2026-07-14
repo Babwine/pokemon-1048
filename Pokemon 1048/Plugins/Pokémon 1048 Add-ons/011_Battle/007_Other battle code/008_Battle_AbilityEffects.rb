@@ -285,3 +285,29 @@ Battle::AbilityEffects::OnSwitchIn.add(:SUGARSYRUP,
    end
   }
 )
+
+Battle::AbilityEffects::OnBeingHit.copy(:SHIELDDUST, :PUREASGOLD)
+
+Battle::AbilityEffects::OnDealingHit.add(:POISONTOUCH,
+   proc { |ability, user, target, move, battle|
+     battle.pbDisplay("PROUT:"+target.hasActiveAbility?(:PUREASGOLD).to_s)
+     next if !move.contactMove?
+     next if battle.pbRandom(100) >= 30
+     next if target.hasActiveItem?(:COVERTCLOAK)
+     battle.pbShowAbilitySplash(user)
+     if (target.hasActiveAbility?(:SHIELDDUST) || target.hasActiveAbility?(:PUREASGOLD)) && !battle.moldBreaker
+       battle.pbShowAbilitySplash(target)
+       if !Battle::Scene::USE_ABILITY_SPLASH
+         battle.pbDisplay(_INTL("{1} is unaffected!", target.pbThis))
+       end
+       battle.pbHideAbilitySplash(target)
+     elsif target.pbCanPoison?(user, Battle::Scene::USE_ABILITY_SPLASH)
+       msg = nil
+       if !Battle::Scene::USE_ABILITY_SPLASH
+         msg = _INTL("{1}'s {2} poisoned {3}!", user.pbThis, user.abilityName, target.pbThis(true))
+       end
+       target.pbPoison(user, msg)
+     end
+     battle.pbHideAbilitySplash(user)
+   }
+)

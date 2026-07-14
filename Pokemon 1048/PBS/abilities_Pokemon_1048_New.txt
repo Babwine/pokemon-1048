@@ -63,3 +63,7 @@ Description = Mimics every battlers' stat changes.
 [SUGARSYRUP]
 Name = Sugar Syrup
 Description = When entering battle, lowers the opponents' Special Attack.
+#-------------------------------
+[PUREASGOLD]
+Name = Pure as Gold
+Description = The Pokémon becomes immune to additional effects.

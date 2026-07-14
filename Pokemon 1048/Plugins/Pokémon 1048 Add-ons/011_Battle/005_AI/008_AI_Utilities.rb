@@ -3,6 +3,7 @@
 #===============================================================================
 class Battle::AI
   BASE_ABILITY_RATINGS[6] << :WINGEDFEET
+  BASE_ABILITY_RATINGS[5] << :PUREASGOLD
 end
 
 Battle::AI::Handlers::AbilityRanking.add(:WINGEDFEET,
