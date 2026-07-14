@@ -59,3 +59,7 @@ Description = Immunes allies to all Ground-type moves.
 [EMPATHETIC]
 Name = Empathetic
 Description = Mimics every battlers' stat changes.
+#-------------------------------
+[SUGARSYRUP]
+Name = Sugar Syrup
+Description = When entering battle, lowers the opponents' Special Attack.

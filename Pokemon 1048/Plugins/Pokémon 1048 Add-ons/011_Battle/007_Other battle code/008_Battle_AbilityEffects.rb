@@ -119,12 +119,10 @@ Battle::AbilityEffects::OnSwitchIn.add(:JUMPSCARE,
 Battle::AbilityEffects::OnBeingHit.add(:SORELOSER,
   proc { |ability, user, target, move, battle|
    next if !target.fainted?
-   battle.pbShowAbilitySplash(target)
    battle.allBattlers.each do |b|
      b.pbLowerStatStageByAbility(:ACCURACY, 1, target, false) if b.index != target.index
    end
    battle.pbHandleAbilityEvent(battle.pbGetOwnerIndexFromBattlerIndex(target.index),ability.to_s)
-   battle.pbHideAbilitySplash(target)
   }
 )
 
@@ -133,13 +131,11 @@ Battle::AbilityEffects::MoveImmunity.add(:HEADSUP,
    next false if !move.slicingMove?
    next false if Settings::MECHANICS_GENERATION >= 8 && user.index == target.index
    if show_message
-     battle.pbShowAbilitySplash(target)
      if Battle::Scene::USE_ABILITY_SPLASH
        battle.pbDisplay(_INTL("It doesn't affect {1}...", target.pbThis(true)))
      else
        battle.pbDisplay(_INTL("{1}'s {2} blocks {3}!", target.pbThis, target.abilityName, move.name))
      end
-     battle.pbHideAbilitySplash(target)
      target.pbRaiseStatStageByAbility(:ATTACK, 2, target, false) if user.index != target.index
    end
    next true
@@ -240,17 +236,13 @@ Battle::AbilityEffects::OnBeingHit.add(:RESILIENCE,
 
 Battle::AbilityEffects::OnTargetStatGain.add(:EMPATHETIC,
    proc { |ability, user, stat, increment, target|
-     user.battle.pbShowAbilitySplash(user)
-     user.pbRaiseStatStage(stat, increment, user, showAnim = true, ignoreContrary = true)
-     user.battle.pbHideAbilitySplash(user)
+     user.pbRaiseStatStageByAbility(stat, increment, user, showAnim = true, ignoreContrary = true)
    }
 )
 
 Battle::AbilityEffects::OnTargetStatLoss.add(:EMPATHETIC,
   proc { |ability, user, stat, increment, target|
-   user.battle.pbShowAbilitySplash(user)
-   user.pbLowerStatStage(stat, increment, user, showAnim = true, ignoreContrary = true)
-   user.battle.pbHideAbilitySplash(user)
+   user.pbLowerStatStageByAbility(stat, increment, user, showAnim = true, ignoreContrary = true)
   }
 )
 
@@ -283,4 +275,13 @@ Battle::AbilityEffects::OnTargetCritEnsureGain.add(:EMPATHETIC,
        user.battle.pbHideAbilitySplash(user)
      end
    }
+)
+
+Battle::AbilityEffects::OnSwitchIn.add(:SUGARSYRUP,
+  proc { |ability, battler, battle, switch_in|
+   battle.allOtherSideBattlers(battler.index).each do |b|
+     next if !b.near?(battler)
+     b.pbLowerStatStageByAbility(:SPECIAL_ATTACK, 1, battler)
+   end
+  }
 )
