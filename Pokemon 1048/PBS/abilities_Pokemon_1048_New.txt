@@ -67,3 +67,7 @@ Description = When entering battle, lowers the opponents' Special Attack.
 [PUREASGOLD]
 Name = Pure as Gold
 Description = The Pokémon becomes immune to additional effects.
+#-------------------------------
+[ICETOLL]
+Name = Ice Toll
+Description = Contact with the Pokémon may cause deafness.

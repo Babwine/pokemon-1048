@@ -308,3 +308,25 @@ Battle::AbilityEffects::OnDealingHit.add(:POISONTOUCH,
      battle.pbHideAbilitySplash(user)
    }
 )
+
+
+Battle::AbilityEffects::OnBeingHit.add(:ICETOLL,
+   proc { |ability, user, target, move, battle|
+     next if !move.pbContactMove?(user)
+     next if user.deafened? || battle.pbRandom(100) >= 30
+     battle.pbShowAbilitySplash(target)
+     target.battle.allOtherBattlers(target.index).each do |b|
+       if b.pbCanDeafen?(target, Battle::Scene::USE_ABILITY_SPLASH) &&
+          b.affectedByContactEffect?(Battle::Scene::USE_ABILITY_SPLASH)
+         msg = nil
+         if !Battle::Scene::USE_ABILITY_SPLASH
+           msg = _INTL("{1}'s {2} deafened {3}!",
+                       target.pbThis, target.abilityName, b.pbThis(true))
+         end
+       end
+       b.pbDeafen(msg)
+     end
+
+     battle.pbHideAbilitySplash(target)
+   }
+)
