@@ -290,16 +290,13 @@ Battle::AbilityEffects::OnBeingHit.copy(:SHIELDDUST, :PUREASGOLD)
 
 Battle::AbilityEffects::OnDealingHit.add(:POISONTOUCH,
    proc { |ability, user, target, move, battle|
-     battle.pbDisplay("PROUT:"+target.hasActiveAbility?(:PUREASGOLD).to_s)
      next if !move.contactMove?
      next if battle.pbRandom(100) >= 30
      next if target.hasActiveItem?(:COVERTCLOAK)
      battle.pbShowAbilitySplash(user)
      if (target.hasActiveAbility?(:SHIELDDUST) || target.hasActiveAbility?(:PUREASGOLD)) && !battle.moldBreaker
        battle.pbShowAbilitySplash(target)
-       if !Battle::Scene::USE_ABILITY_SPLASH
-         battle.pbDisplay(_INTL("{1} is unaffected!", target.pbThis))
-       end
+       battle.pbDisplay(_INTL("{1} is unaffected!", target.pbThis))
        battle.pbHideAbilitySplash(target)
      elsif target.pbCanPoison?(user, Battle::Scene::USE_ABILITY_SPLASH)
        msg = nil

@@ -2,4 +2,5 @@ Name         = Pokémon 1048 Add-ons
 Version      = 1.0
 Essentials   = 21.1
 Requires     = v21.1 Hotfixes
+Requires 	 = Generation 9 Pack
 Credits      = Babwine (Dell)
