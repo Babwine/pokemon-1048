@@ -21,12 +21,6 @@ class Battle
   attr_reader :current_field # the topmost field
   attr_reader :field_counters # Field counters object (for field transitions)
 
-  # Gen 9 add-ons
-  attr_accessor :abils_triggered # Used to track any once-per-battle ability triggers for each Pokemon.
-  attr_accessor :rage_hit_count  # Used to track the number of hits that have been taken for Rage Fist.
-  attr_accessor :fainted_count   # Used to track the number of fainted battlers for Last Respects/Supreme Overlord.
-  attr_accessor :sideStatUps     # Used to tally up the number of stat boosts to mirror with Opportunist/Mirror Herb.
-
 
   alias field_initialize initialize
   def initialize(scene, p1, p2, player, opponent) # recommend
@@ -48,12 +42,6 @@ class Battle
     
     create_base_field
     @fields_initialized = false
-
-
-    @abils_triggered = [Array.new(@party1.length, false), Array.new(@party2.length, false)]
-    @rage_hit_count  = [Array.new(@party1.length, 0), Array.new(@party2.length, 0)]
-    @fainted_count   = [0, 0]
-    @sideStatUps     = [{}, {}]
   end
 
   alias field_pbStartBattle pbStartBattle
