@@ -26,6 +26,8 @@ module Battle::AbilityEffects
     OnTargetCritEnsureGain.trigger(ability, user)
   end
 end
+
+
 Battle::AbilityEffects::StatusImmunity.add(:SOUNDPROOF,
   proc { |ability, battler, status|
     next true if status == :DEAFENED
@@ -333,108 +335,58 @@ Battle::AbilityEffects::OnBeingHit.add(:ICETOLL,
 
 Battle::AbilityEffects::DamageCalcFromUser.add(:THUNDERINGCHARIOT,
    proc { |ability, user, target, move, mults, power, type|
-     next if type != :ELECTRIC
-     next if move.pbTarget(user).num_targets < 2
-     next if !move.damagingMove?
-     case move.pbTarget(user).id
-     when :AllAllies
-       moveTargetCount = [user.battle.pbSideSize(0),2].max-1
-     when :UserAndAllies
-       moveTargetCount = [user.battle.pbSideSize(0),2].max
-     when :AllNearFoes
-       moveTargetCount = [user.battle.allOtherSideBattlers(user.index).select { |b| b.near?(user) }.length,2].max
-     when :AllFoes
-       moveTargetCount = [user.battle.pbSideSize(1),2].max
-     when :AllNearOthers
-       moveTargetCount = [user.battle.allOtherBattlers(user.index).select { |b| b.near?(user) }.length,3].max
-     when :AllBattlers
-       moveTargetCount = [allBattlers.length,3].max
-     else
-       moveTargetCount = 1
-     end
-     num_targets_hit = 0
-     user.pbFindTargets(-1, move, user).each do |b|
-       num_targets_hit += 1  if !b.damageState.missed && !b.damageState.unaffected
-     end
-     mult = 1 + (num_targets_hit > 0 ? 1-(num_targets_hit.to_f/moveTargetCount.to_f) : 1)
-     next if num_targets_hit <= 0
-     next if mult <= 1
-     user.battle.pbShowAbilitySplash(user)
-     user.battle.pbDisplay(_INTL("{1}'s {2} boosted the attack's power on less targets!",
-                                 user.pbThis, user.abilityName))
-     mults[:power_multiplier] *= 1 + mult
-     user.battle.pbHideAbilitySplash(user) if mult > 1
+     increaseDamageFromAOEMovesToLessTargets(ability, user, target, move, mults, power, type, :ELECTRIC)
    }
 )
 
 Battle::AbilityEffects::DamageCalcFromUser.add(:SURGINGCARRIAGE,
    proc { |ability, user, target, move, mults, power, type|
-     next if type != :WATER
-     next if move.pbTarget(user).num_targets < 2
-     next if !move.damagingMove?
-     case move.pbTarget(user).id
-     when :AllAllies
-       moveTargetCount = [user.battle.pbSideSize(0),2].max-1
-     when :UserAndAllies
-       moveTargetCount = [user.battle.pbSideSize(0),2].max
-     when :AllNearFoes
-       moveTargetCount = [user.battle.allOtherSideBattlers(user.index).select { |b| b.near?(user) }.length,2].max
-     when :AllFoes
-       moveTargetCount = [user.battle.pbSideSize(1),2].max
-     when :AllNearOthers
-       moveTargetCount = [user.battle.allOtherBattlers(user.index).select { |b| b.near?(user) }.length,3].max
-     when :AllBattlers
-       moveTargetCount = [allBattlers.length,3].max
-     else
-       moveTargetCount = 1
-     end
-     num_targets_hit = 0
-     user.pbFindTargets(-1, move, user).each do |b|
-       num_targets_hit += 1  if !b.damageState.missed && !b.damageState.unaffected
-     end
-     mult = 1 + (num_targets_hit > 0 ? 1-(num_targets_hit.to_f/moveTargetCount.to_f) : 1)
-     next if num_targets_hit <= 0
-     next if mult <= 1
-     user.battle.pbShowAbilitySplash(user)
-     user.battle.pbDisplay(_INTL("{1}'s {2} boosted the attack's power on less targets!",
-                                 user.pbThis, user.abilityName))
-     mults[:power_multiplier] *= 1 + mult
-     user.battle.pbHideAbilitySplash(user) if mult > 1
+     increaseDamageFromAOEMovesToLessTargets(ability, user, target, move, mults, power, type, :WATER)
    }
 )
 
 Battle::AbilityEffects::DamageCalcFromUser.add(:RUMBLINGCOACH,
    proc { |ability, user, target, move, mults, power, type|
-     next if type != :GROUND
-     next if move.pbTarget(user).num_targets < 2
-     next if !move.damagingMove?
-     case move.pbTarget(user).id
-     when :AllAllies
-       moveTargetCount = [user.battle.pbSideSize(0),2].max-1
-     when :UserAndAllies
-       moveTargetCount = [user.battle.pbSideSize(0),2].max
-     when :AllNearFoes
-       moveTargetCount = [user.battle.allOtherSideBattlers(user.index).select { |b| b.near?(user) }.length,2].max
-     when :AllFoes
-       moveTargetCount = [user.battle.pbSideSize(1),2].max
-     when :AllNearOthers
-       moveTargetCount = [user.battle.allOtherBattlers(user.index).select { |b| b.near?(user) }.length,3].max
-     when :AllBattlers
-       moveTargetCount = [allBattlers.length,3].max
-     else
-       moveTargetCount = 1
-     end
-     num_targets_hit = 0
-     user.pbFindTargets(-1, move, user).each do |b|
-       num_targets_hit += 1  if !b.damageState.missed && !b.damageState.unaffected
-     end
-     mult = 1 + (num_targets_hit > 0 ? 1-(num_targets_hit.to_f/moveTargetCount.to_f) : 1)
-     next if num_targets_hit <= 0
-     next if mult <= 1
-     user.battle.pbShowAbilitySplash(user)
-     user.battle.pbDisplay(_INTL("{1}'s {2} boosted the attack's power on less targets!",
-                                 user.pbThis, user.abilityName))
-     mults[:power_multiplier] *= 1 + mult
-     user.battle.pbHideAbilitySplash(user) if mult > 1
+     increaseDamageFromAOEMovesToLessTargets(ability, user, target, move, mults, power, type, :GROUND)
    }
 )
+
+Battle::AbilityEffects::DamageCalcFromUser.add(:ARSONIST,
+  proc { |ability, user, target, move, mults, power, type|
+    increaseDamageFromAOEMovesToLessTargets(ability, user, target, move, mults, power, type, :FIRE)
+  }
+)
+
+def increaseDamageFromAOEMovesToLessTargets(ability, user, target, move, mults, power, type, wantedType)
+  return if type != wantedType
+  return if move.pbTarget(user).num_targets < 2
+  return if !move.damagingMove?
+  case move.pbTarget(user).id
+  when :AllAllies
+    moveTargetCount = [user.battle.pbSideSize(0),2].max-1
+  when :UserAndAllies
+    moveTargetCount = [user.battle.pbSideSize(0),2].max
+  when :AllNearFoes
+    moveTargetCount = [user.battle.allOtherSideBattlers(user.index).select { |b| b.near?(user) }.length,2].max
+  when :AllFoes
+    moveTargetCount = [user.battle.pbSideSize(1),2].max
+  when :AllNearOthers
+    moveTargetCount = [user.battle.allOtherBattlers(user.index).select { |b| b.near?(user) }.length,3].max
+  when :AllBattlers
+    moveTargetCount = [allBattlers.length,3].max
+  else
+    moveTargetCount = 1
+  end
+  num_targets_hit = 0
+  user.pbFindTargets(-1, move, user).each do |b|
+    num_targets_hit += 1  if !b.damageState.missed && !b.damageState.unaffected
+  end
+  mult = 1 + (num_targets_hit > 0 ? 1-(num_targets_hit.to_f/moveTargetCount.to_f) : 1)
+  return if num_targets_hit <= 0
+  return if mult <= 1
+  user.battle.pbShowAbilitySplash(user)
+  user.battle.pbDisplay(_INTL("{1}'s {2} boosted the attack's power!",
+                              user.pbThis, user.abilityName))
+  mults[:power_multiplier] *= 1 + mult
+  user.battle.pbHideAbilitySplash(user) if mult > 1
+end

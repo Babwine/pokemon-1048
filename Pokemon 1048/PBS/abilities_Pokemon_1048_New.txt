@@ -74,12 +74,20 @@ Description = Contact with the Pokémon may cause deafness.
 #-------------------------------
 [THUNDERINGCHARIOT]
 Name = Thundering Chariot
-Description = Electric moves hitting multiple targets hit harder on less targets.
+Description = AoE Electric moves hit harder on less targets.
 #-------------------------------
 [SURGINGCARRIAGE]
 Name = Surging Carriage
-Description = Water moves hitting multiple targets hit harder on less targets.
+Description = AoE Water moves hit harder on less targets.
 #------------------	-------------
 [RUMBLINGCOACH]
 Name = Rumbling Coach
-Description = Ground moves hitting multiple targets hit harder on less targets.
+Description = AoE Ground moves hit harder on less targets.
+#------------------	-------------
+[ARSONIST]
+Name = Arsonist
+Description = AoE Fire moves hit harder on less targets.
+#------------------	-------------
+[UNWAVERING]
+Name = Unwavering
+Description = Is dealt reduced damage from AoE moves.
