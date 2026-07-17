@@ -357,6 +357,17 @@ Battle::AbilityEffects::DamageCalcFromUser.add(:ARSONIST,
   }
 )
 
+Battle::AbilityEffects::DamageCalcFromTarget.add(:UNWAVERING,
+   proc { |ability, user, target, move, mults, power, type|
+     next if move.pbTarget(user).num_targets < 2
+     target.battle.pbShowAbilitySplash(target)
+     target.battle.pbDisplay(_INTL("{1}'s {2} reduced the attack's power!",
+                                   target.pbThis, target.abilityName))
+     mults[:power_multiplier] *= 0.5
+     target.battle.pbHideAbilitySplash(target)
+   }
+)
+
 def increaseDamageFromAOEMovesToLessTargets(ability, user, target, move, mults, power, type, wantedType)
   return if type != wantedType
   return if move.pbTarget(user).num_targets < 2
@@ -388,5 +399,5 @@ def increaseDamageFromAOEMovesToLessTargets(ability, user, target, move, mults, 
   user.battle.pbDisplay(_INTL("{1}'s {2} boosted the attack's power!",
                               user.pbThis, user.abilityName))
   mults[:power_multiplier] *= 1 + mult
-  user.battle.pbHideAbilitySplash(user) if mult > 1
+  user.battle.pbHideAbilitySplash(user)
 end

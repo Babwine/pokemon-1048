@@ -4,9 +4,6 @@
     <list default="true" id="53f26598-8cb9-4a7b-b310-c695443fe57c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../Data/PluginScripts.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/PluginScripts.rxdata" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Data/Scripts/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/Scripts/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data/abilities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/abilities.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data/messages_game.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/messages_game.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../PBS/abilities_Pokemon_1048_New.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../PBS/abilities_Pokemon_1048_New.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/011_Battle/007_Other battle code/008_Battle_AbilityEffects.rb" beforeDir="false" afterPath="$PROJECT_DIR$/011_Battle/007_Other battle code/008_Battle_AbilityEffects.rb" afterDir="false" />
     </list>
@@ -82,7 +79,7 @@
       <workItem from="1784041415554" duration="7580000" />
       <workItem from="1784052695265" duration="1717000" />
       <workItem from="1784217943647" duration="8127000" />
-      <workItem from="1784242632466" duration="3586000" />
+      <workItem from="1784242632466" duration="4058000" />
     </task>
     <servers />
   </component>
