@@ -91,3 +91,7 @@ Description = AoE Fire moves hit harder on less targets.
 [UNWAVERING]
 Name = Unwavering
 Description = Is dealt reduced damage from AoE moves.
+#------------------	-------------
+[HOURGLASSTWIST]
+Name = Hourglass Twist
+Description = Moves that would need a rest turn don't need it anymore.
