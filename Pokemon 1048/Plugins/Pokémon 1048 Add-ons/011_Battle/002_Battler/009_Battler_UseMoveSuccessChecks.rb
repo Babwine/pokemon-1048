@@ -445,6 +445,8 @@ class Battle::Battler
     hitsInvul = true if move.function_code == "PowerUpAllyMove"
     # Deafened target
     hitsInvul = true if target.deafened?
+    # Intelligible
+    hitsInvul = true if user.hasActiveAbility?(:INTELLIGIBLE) && (move.type == :ECHO || move.soundMove?)
     if !hitsInvul
       # Semi-invulnerable moves
       if target.effects[PBEffects::TwoTurnAttack]

@@ -111,3 +111,7 @@ Description = Boosts the chances of obtaining an egg.
 [FLINTANDSTEEL]
 Name = Flint and Steel
 Description = Rock type contact moves on Steel type will burn and vice versa.
+#------------------	-------------
+[INTELLIGIBLE]
+Name = Intelligible
+Description = Echo type moves and sound moves can't fail.
