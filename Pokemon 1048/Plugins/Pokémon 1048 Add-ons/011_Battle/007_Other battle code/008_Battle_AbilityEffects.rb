@@ -620,3 +620,28 @@ Battle::AbilityEffects::EndOfRoundEffect.add(:PULSATINGSTIFFNESS,
      end
    }
 )
+
+Battle::AbilityEffects::OnSwitchIn.add(:VOID,
+   proc { |ability, battler, battle, switch_in|
+     battle.pbShowAbilitySplash(battler)
+     battle.pbDisplay(_INTL("Seems like {1} can't be hit with normal attacks...", battler.pbThis(true)))
+     battle.pbHideAbilitySplash(battler)
+   }
+)
+
+Battle::AbilityEffects::MoveImmunity.add(:VOID,
+   proc { |ability, user, target, move, type, battle, show_message|
+     next false if move.statusMove?
+     next false if move.pbTarget(user).num_targets > 1
+     if show_message
+       battle.pbShowAbilitySplash(target)
+       if Battle::Scene::USE_ABILITY_SPLASH
+         battle.pbDisplay(_INTL("It doesn't affect {1}...", target.pbThis(true)))
+       else
+         battle.pbDisplay(_INTL("{1} avoided damage with {2}!", target.pbThis, target.abilityName))
+       end
+       battle.pbHideAbilitySplash(target)
+     end
+     next true
+   }
+)

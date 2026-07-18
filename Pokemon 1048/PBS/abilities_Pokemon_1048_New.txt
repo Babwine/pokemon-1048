@@ -127,3 +127,7 @@ Description = Fighting and Ground moves are enhanced alternatively.
 [PULSATINGSTIFFNESS]
 Name = Pulsating Stiffness
 Description = Ice and Electric moves are enhanced alternatively.
+#------------------	-------------
+[VOID]
+Name = Void
+Description = Only AoE moves will hit.
