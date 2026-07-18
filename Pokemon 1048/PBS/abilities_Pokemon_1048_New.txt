@@ -131,3 +131,7 @@ Description = Ice and Electric moves are enhanced alternatively.
 [VOID]
 Name = Void
 Description = Only AoE moves will hit.
+#------------------	-------------
+[RICOCHET]
+Name = Ricochet
+Description = Type effectivenesses will "ricochet" to the next effectiveness.

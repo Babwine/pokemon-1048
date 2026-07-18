@@ -645,3 +645,53 @@ Battle::AbilityEffects::MoveImmunity.add(:VOID,
      next true
    }
 )
+
+Battle::AbilityEffects::EffectivenessCalcFromUser.add(:RICOCHET,
+  proc { |ability, user, target, move, type|
+    finalEff = Effectiveness::NORMAL_EFFECTIVE_MULTIPLIER
+    target.types.each do |t|
+      tData = GameData::Type.get(t)
+      W = tData.weaknesses
+      R = tData.resistances
+      I = tData.immunities
+      WoW = []
+      RoR = []
+      IoI = []
+      W.each do |w|
+        wData = GameData::Type.get(w)
+        WoW =  WoW.push(*wData.weaknesses)
+      end
+      R.each do |r|
+        rData = GameData::Type.get(r)
+        RoR =  RoR.push(*rData.resistances)
+      end
+      I.each do |i|
+        iData = GameData::Type.get(i)
+        IoI =  IoI.push(*iData.immunities)
+      end
+      wCount = WoW.count(type)
+      rCount = RoR.count(type)
+      iCount = IoI.count(type)
+      wMult = Effectiveness::SUPER_EFFECTIVE_MULTIPLIER**wCount
+      rMult = Effectiveness::NOT_VERY_EFFECTIVE_MULTIPLIER**rCount
+      iMult = 0 if iCount > 0
+      finalEff *= wMult if wMult
+      finalEff *= rMult if rMult
+      finalEff *= iMult if iMult
+      PBDebug.log("W:"+W.to_s)
+      PBDebug.log("R:"+R.to_s)
+      PBDebug.log("I:"+I.to_s)
+      PBDebug.log("WoW:"+WoW.to_s)
+      PBDebug.log("RoR:"+RoR.to_s)
+      PBDebug.log("IoI:"+IoI.to_s)
+      PBDebug.log("wCount:"+wCount.to_s)
+      PBDebug.log("rCount:"+rCount.to_s)
+      PBDebug.log("iCount:"+iCount.to_s)
+      PBDebug.log("wMult:"+wMult.to_s)
+      PBDebug.log("rMult:"+rMult.to_s)
+      PBDebug.log("iMult:"+iMult.to_s)
+      PBDebug.log("finalEff:"+finalEff.to_s)
+    end
+    target.damageState.typeMod = finalEff
+  }
+)
