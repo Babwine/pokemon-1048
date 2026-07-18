@@ -107,3 +107,7 @@ Description = Boosts attacks from other Soul Sister allies. Faints when another 
 [CUPID]
 Name = Cupid
 Description = Boosts the chances of obtaining an egg.
+#------------------	-------------
+[FLINTANDSTEEL]
+Name = Flint and Steel
+Description = Rock type contact moves on Steel type will burn and vice versa.

@@ -501,3 +501,26 @@ Battle::AbilityEffects::DamageCalcFromUser.add(:SOULSISTER,
      mults[:power_multiplier] *= 1.5
    }
 )
+
+
+Battle::AbilityEffects::OnDealingHit.add(:FLINTANDSTEEL,
+   proc { |ability, user, target, move, battle|
+     next if !move.contactMove?
+     next unless (target.pbHasType?(:ROCK) && move.type == :STEEL) || (target.pbHasType?(:STEEL) && move.type == :ROCK)
+     battle.pbShowAbilitySplash(user)
+     if (target.hasActiveAbility?(:SHIELDDUST) || target.hasActiveAbility?(:PUREASGOLD)) && !battle.moldBreaker
+       battle.pbShowAbilitySplash(target)
+       if !Battle::Scene::USE_ABILITY_SPLASH
+         battle.pbDisplay(_INTL("{1} is unaffected!", target.pbThis))
+       end
+       battle.pbHideAbilitySplash(target)
+     elsif target.pbCanBurn?(user, Battle::Scene::USE_ABILITY_SPLASH)
+       msg = nil
+       if !Battle::Scene::USE_ABILITY_SPLASH
+         msg = _INTL("{1}'s {2} burnt {3}!", user.pbThis, user.abilityName, target.pbThis(true))
+       end
+       target.pbBurn(user, msg)
+     end
+     battle.pbHideAbilitySplash(user)
+   }
+)
