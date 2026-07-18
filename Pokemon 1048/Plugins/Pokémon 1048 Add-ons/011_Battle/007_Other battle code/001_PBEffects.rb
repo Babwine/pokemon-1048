@@ -6,4 +6,11 @@ module PBEffects
   Jumpscare           = 118
   Hope                = 119
   SoulSister          = 120
+
+  #=============================================================================
+  # These effects apply to the battle (i.e. both sides)
+  #=============================================================================
+  SobbingSky          = 913
+  TelluricIre         = 914
+  PulsatingStiffness  = 915
 end

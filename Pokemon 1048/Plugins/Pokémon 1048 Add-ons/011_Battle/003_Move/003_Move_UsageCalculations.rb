@@ -28,4 +28,14 @@ class Battle::Move
                 user.pbOwnSide.effects[PBEffects::Rainbow] > 0
     return ret
   end
+
+  alias alt_pbCalcDamageMultipliers pbCalcDamageMultipliers
+
+  def pbCalcDamageMultipliers(user, target, numTargets, type, baseDmg, multipliers)
+    alt_pbCalcDamageMultipliers(user, target, numTargets, type, baseDmg, multipliers)
+    # Sobbing Sky, Telluric Ire, Pulsating Stiffness
+    multipliers[:final_damage_multiplier] *= 1.3 if @battle.field.effects[PBEffects::SobbingSky] == type
+    multipliers[:final_damage_multiplier] *= 1.3 if @battle.field.effects[PBEffects::TelluricIre] == type
+    multipliers[:final_damage_multiplier] *= 1.3 if @battle.field.effects[PBEffects::PulsatingStiffness] == type
+  end
 end

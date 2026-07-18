@@ -524,3 +524,99 @@ Battle::AbilityEffects::OnDealingHit.add(:FLINTANDSTEEL,
      battle.pbHideAbilitySplash(user)
    }
 )
+
+Battle::AbilityEffects::OnSwitchIn.add(:SOBBINGSKY,
+   proc { |ability, battler, battle, switch_in|
+     battle.pbShowAbilitySplash(battler)
+     battle.pbDisplay(_INTL("The winds yell and sob violently."))
+     battle.field.effects[PBEffects::SobbingSky] = :FLYING
+     battle.pbHideAbilitySplash(battler)
+     battle.pbDisplay(_INTL("Air whistles furiously at your ears."))
+   }
+)
+
+Battle::AbilityEffects::OnSwitchIn.add(:TELLURICIRE,
+   proc { |ability, battler, battle, switch_in|
+     battle.pbShowAbilitySplash(battler)
+     battle.pbDisplay(_INTL("The ground rumbles and boils."))
+     battle.field.effects[PBEffects::TelluricIre] = :FIGHTING
+     battle.pbHideAbilitySplash(battler)
+     battle.pbDisplay(_INTL("You feel the urge to fight."))
+   }
+)
+
+Battle::AbilityEffects::OnSwitchIn.add(:PULSATINGSTIFFNESS,
+   proc { |ability, battler, battle, switch_in|
+     battle.pbShowAbilitySplash(battler)
+     battle.pbDisplay(_INTL("The air is tense and freezing."))
+     battle.field.effects[PBEffects::PulsatingStiffness] = :ICE
+     battle.pbHideAbilitySplash(battler)
+     battle.pbDisplay(_INTL("Shivers crawl through your spine."))
+   }
+)
+
+Battle::AbilityEffects::OnSwitchOut.add(:SOBBINGSKY,
+  proc { |ability, battler, endOfBattle|
+    next if endOfBattle
+    battler.battle.field.effects[PBEffects::SobbingSky] = nil
+    unless [battler.battle.field.effects[PBEffects::SobbingSky], battler.battle.field.effects[PBEffects::TelluricIre], battler.battle.field.effects[PBEffects::PulsatingStiffness]].any?
+      battler.battle.pbDisplay(_INTL("Elements are calming down."))
+    end
+  }
+)
+
+Battle::AbilityEffects::OnSwitchOut.add(:TELLURICIRE,
+  proc { |ability, battler, endOfBattle|
+    next if endOfBattle
+    battler.battle.field.effects[PBEffects::TelluricIre] = nil
+    unless [battler.battle.field.effects[PBEffects::SobbingSky], battler.battle.field.effects[PBEffects::TelluricIre], battler.battle.field.effects[PBEffects::PulsatingStiffness]].any?
+      battler.battle.pbDisplay(_INTL("Elements are calming down."))
+    end
+  }
+)
+
+Battle::AbilityEffects::OnSwitchOut.add(:PULSATINGSTIFFNESS,
+    proc { |ability, battler, endOfBattle|
+      next if endOfBattle
+      battler.battle.field.effects[PBEffects::PulsatingStiffness] = nil
+      unless [battler.battle.field.effects[PBEffects::SobbingSky], battler.battle.field.effects[PBEffects::TelluricIre], battler.battle.field.effects[PBEffects::PulsatingStiffness]].any?
+        battler.battle.pbDisplay(_INTL("Elements are calming down."))
+      end
+    }
+)
+
+Battle::AbilityEffects::EndOfRoundEffect.add(:SOBBINGSKY,
+   proc { |ability, battler, battle|
+     if battle.field.effects[PBEffects::SobbingSky] == :FLYING
+       battle.field.effects[PBEffects::SobbingSky] = :WATER
+       battle.pbDisplay(_INTL("Waters grumble in the distance."))
+     else
+       battle.field.effects[PBEffects::SobbingSky] = :FLYING
+       battle.pbDisplay(_INTL("Air whistles furiously at your ears."))
+     end
+   }
+)
+
+Battle::AbilityEffects::EndOfRoundEffect.add(:TELLURICIRE,
+   proc { |ability, battler, battle|
+     if battle.field.effects[PBEffects::TelluricIre] == :FIGHTING
+       battle.field.effects[PBEffects::TelluricIre] = :GROUND
+       battle.pbDisplay(_INTL("The earth grows restless."))
+     else
+       battle.field.effects[PBEffects::TelluricIre] = :FIGHTING
+       battle.pbDisplay(_INTL("You feel the urge to fight."))
+     end
+   }
+)
+
+Battle::AbilityEffects::EndOfRoundEffect.add(:PULSATINGSTIFFNESS,
+   proc { |ability, battler, battle|
+     if battle.field.effects[PBEffects::PulsatingStiffness] == :ICE
+       battle.field.effects[PBEffects::PulsatingStiffness] = :ELECTRIC
+       battle.pbDisplay(_INTL("Thunder clouds are gathering above."))
+     else
+       battle.field.effects[PBEffects::PulsatingStiffness] = :ICE
+       battle.pbDisplay(_INTL("Shivers crawl through your spine."))
+     end
+   }
+)

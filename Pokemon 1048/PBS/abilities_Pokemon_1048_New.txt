@@ -115,3 +115,15 @@ Description = Rock type contact moves on Steel type will burn and vice versa.
 [INTELLIGIBLE]
 Name = Intelligible
 Description = Echo type moves and sound moves can't fail.
+#------------------	-------------
+[SOBBINGSKY]
+Name = Sobbing Sky
+Description = Flying and Water moves are enhanced alternatively.
+#------------------	-------------
+[TELLURICIRE]
+Name = Telluric Ire
+Description = Fighting and Ground moves are enhanced alternatively.
+#------------------	-------------
+[PULSATINGSTIFFNESS]
+Name = Pulsating Stiffness
+Description = Ice and Electric moves are enhanced alternatively.
