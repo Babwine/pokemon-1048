@@ -103,3 +103,7 @@ Description = When a move doesn't affect anyone, heals some HP. Doubles healing 
 [SOULSISTER]
 Name = Soul Sister
 Description = Boosts attacks from other Soul Sister allies. Faints when another Soul Sister ally on the field dies.
+#------------------	-------------
+[CUPID]
+Name = Cupid
+Description = Boosts the chances of obtaining an egg.
