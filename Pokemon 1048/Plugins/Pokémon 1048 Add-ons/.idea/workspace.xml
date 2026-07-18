@@ -2,26 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53f26598-8cb9-4a7b-b310-c695443fe57c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/011_Battle/002_Battler/010_Battler_UseMoveTriggerEffects.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data/Actors.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/Actors.rxdata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data/Animations.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/Animations.rxdata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data/Armors.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/Armors.rxdata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data/CommonEvents.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/CommonEvents.rxdata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data/Enemies.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/Enemies.rxdata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data/Items.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/Items.rxdata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data/MapInfos.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/MapInfos.rxdata" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Data/PluginScripts.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/PluginScripts.rxdata" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Data/Scripts/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/Scripts/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data/Skills.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/Skills.rxdata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data/States.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/States.rxdata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data/System.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/System.rxdata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data/Tilesets.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/Tilesets.rxdata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data/Weapons.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/Weapons.rxdata" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Data/abilities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/abilities.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Data/messages_game.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/messages_game.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../PBS/abilities_Pokemon_1048_New.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../PBS/abilities_Pokemon_1048_New.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/011_Battle/002_Battler/003_Battler_ChangeSelf.rb" beforeDir="false" afterPath="$PROJECT_DIR$/011_Battle/002_Battler/003_Battler_ChangeSelf.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/011_Battle/007_Other battle code/001_PBEffects.rb" beforeDir="false" afterPath="$PROJECT_DIR$/011_Battle/007_Other battle code/001_PBEffects.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/011_Battle/007_Other battle code/008_Battle_AbilityEffects.rb" beforeDir="false" afterPath="$PROJECT_DIR$/011_Battle/007_Other battle code/008_Battle_AbilityEffects.rb" afterDir="false" />
     </list>
@@ -100,7 +86,7 @@
       <workItem from="1784242632466" duration="6867000" />
       <workItem from="1784283570804" duration="9721000" />
       <workItem from="1784374429427" duration="34000" />
-      <workItem from="1784374475353" duration="916000" />
+      <workItem from="1784374475353" duration="4759000" />
     </task>
     <servers />
   </component>

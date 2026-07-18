@@ -99,3 +99,7 @@ Description = Moves that would need a rest turn don't need it anymore.
 [HOPE]
 Name = Hope
 Description = When a move doesn't affect anyone, heals some HP. Doubles healing efficiency.
+#------------------	-------------
+[SOULSISTER]
+Name = Soul Sister
+Description = Boosts attacks from other Soul Sister allies. Faints when another Soul Sister ally on the field dies.

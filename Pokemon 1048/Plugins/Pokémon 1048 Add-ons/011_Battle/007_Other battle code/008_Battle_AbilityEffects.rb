@@ -449,3 +449,55 @@ Battle::AbilityEffects::OnSwitchOut.add(:HOPE,
      battler.battle.allSameSideBattlers(battler.index).each { |b| b.effects[PBEffects::Hope] = false if b.effects[PBEffects::Hope] }
    }
 )
+
+
+Battle::AbilityEffects::OnSwitchIn.add(:SOULSISTER,
+   proc { |ability, battler, battle, switch_in|
+     allyWithSoulSister = battle.allSameSideBattlers(battler.index).detect { |b| b.hasActiveAbility?(:SOULSISTER) && b.pokemonIndex != battler.pokemonIndex }
+     next if allyWithSoulSister.nil?
+     battle.pbShowAbilitySplash(battler)
+     battle.pbDisplay(_INTL("{1} met its Soul Sister!", battler.pbThis))
+     allyWithSoulSister.pbRaiseStatStageByAbility(:DEFENSE, 1, allyWithSoulSister, false) if !allyWithSoulSister.effects[PBEffects::SoulSister]
+     battler.pbRaiseStatStageByAbility(:DEFENSE, 1, battler, false) if !allyWithSoulSister.effects[PBEffects::SoulSister]
+     allyWithSoulSister.effects[PBEffects::SoulSister] = true if !allyWithSoulSister.effects[PBEffects::SoulSister]
+     battler.effects[PBEffects::SoulSister] = true if !battler.effects[PBEffects::SoulSister]
+     battle.pbHideAbilitySplash(battler)
+   }
+)
+
+
+Battle::AbilityEffects::OnSwitchOut.add(:SOULSISTER,
+    proc { |ability, battler, end_of_battle|
+      next if end_of_battle
+      next if battler.fainted?
+      allyWithSoulSister = battler.battle.allSameSideBattlers(battler.index).detect { |b| b.hasActiveAbility?(:SOULSISTER) && b.pokemonIndex != battler.pokemonIndex }
+      next if allyWithSoulSister.nil?
+      allyWithSoulSister.effects[PBEffects::SoulSister] = false if allyWithSoulSister.effects[PBEffects::SoulSister]
+      battler.effects[PBEffects::SoulSister] = false if battler.effects[PBEffects::SoulSister]
+      battler.battle.pbDisplay(_INTL("{1} lost some motivation!", allyWithSoulSister.pbThis))
+      allyWithSoulSister.pbLowerStatStageByAbility(:DEFENSE, 1, allyWithSoulSister, false)
+    }
+)
+
+Battle::AbilityEffects::OnBattlerFainting.add(:SOULSISTER,
+  proc { |ability, battler, fainted, battle|
+    next if battler.opposes?(fainted)
+    next if !fainted.hasActiveAbility?(:SOULSISTER,true)
+    next if !battler.effects[PBEffects::SoulSister]
+    battle.pbShowAbilitySplash(battler)
+    battler.pbReduceHP(battler.hp)
+    battle.pbDisplay(_INTL("{1} couldn't fathom losing its Soul Sister!", battler.pbThis))
+    battler.pbFaint(false)
+    battler.effects[PBEffects::SoulSister] = false if battler.effects[PBEffects::SoulSister]
+    battle.pbHideAbilitySplash(battler)
+  }
+)
+
+Battle::AbilityEffects::DamageCalcFromUser.add(:SOULSISTER,
+   proc { |ability, user, target, move, mults, power, type|
+     next if !user.effects[PBEffects::SoulSister]
+     next if type != :ELECTRIC && type != :ICE
+     next if !user.pbHasType?(type)
+     mults[:power_multiplier] *= 1.5
+   }
+)
