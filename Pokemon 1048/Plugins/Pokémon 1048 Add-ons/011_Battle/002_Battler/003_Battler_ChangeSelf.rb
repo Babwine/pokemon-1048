@@ -40,4 +40,19 @@ class Battle::Battler
     # Check for end of primordial weather
     @battle.pbEndPrimordialWeather
   end
+
+  def pbRecoverHP(amt, anim = true, anyAnim = true)
+    amt *= 2 if self.effects[PBEffects::Hope]
+    amt = amt.round
+    amt = @totalhp - @hp if amt > @totalhp - @hp
+    amt = 1 if amt < 1 && @hp < @totalhp
+    oldHP = @hp
+    self.hp += amt
+    PBDebug.log("[HP change] #{pbThis} gained #{amt} HP (#{oldHP} -> #{@hp})") if amt > 0
+    raise _INTL("HP less than 0") if @hp < 0
+    raise _INTL("HP greater than total HP") if @hp > @totalhp
+    @battle.scene.pbHPChanged(self, oldHP, anim) if anyAnim && amt > 0
+    @droppedBelowHalfHP = false if @hp >= @totalhp / 2
+    return amt
+  end
 end

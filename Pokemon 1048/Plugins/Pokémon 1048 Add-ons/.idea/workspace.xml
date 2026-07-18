@@ -2,12 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53f26598-8cb9-4a7b-b310-c695443fe57c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/011_Battle/002_Battler/010_Battler_UseMoveTriggerEffects.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Data/Actors.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/Actors.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Data/Animations.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/Animations.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Data/Armors.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/Armors.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Data/CommonEvents.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/CommonEvents.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Data/Enemies.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/Enemies.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Data/Items.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/Items.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Data/MapInfos.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/MapInfos.rxdata" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Data/PluginScripts.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/PluginScripts.rxdata" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Data/Scripts/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/Scripts/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Data/Skills.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/Skills.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Data/States.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/States.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Data/System.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/System.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Data/Tilesets.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/Tilesets.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Data/Weapons.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/Weapons.rxdata" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Data/abilities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/abilities.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Data/messages_game.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data/messages_game.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../PBS/abilities_Pokemon_1048_New.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../PBS/abilities_Pokemon_1048_New.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/011_Battle/002_Battler/003_Battler_ChangeSelf.rb" beforeDir="false" afterPath="$PROJECT_DIR$/011_Battle/002_Battler/003_Battler_ChangeSelf.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/011_Battle/007_Other battle code/001_PBEffects.rb" beforeDir="false" afterPath="$PROJECT_DIR$/011_Battle/007_Other battle code/001_PBEffects.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/011_Battle/007_Other battle code/008_Battle_AbilityEffects.rb" beforeDir="false" afterPath="$PROJECT_DIR$/011_Battle/007_Other battle code/008_Battle_AbilityEffects.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,30 +45,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Ruby.007_MoveEffects_BattlerOther.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ruby.rubocop.migration.global.runOnSaveToExternalFormatter&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/pierr/Desktop/Bureau rangé/Pokémon/Pokémon-1048/pokemon-1048/Pokemon 1048/Plugins/Pokémon 1048 Add-ons&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Ruby.007_MoveEffects_BattlerOther.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.ruby.rubocop.migration.global.runOnSaveToExternalFormatter": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/pierr/Desktop/Bureau rangé/Pokémon/Pokémon-1048/pokemon-1048/Pokemon 1048/Plugins/Pokémon 1048 Add-ons",
+    "nodejs_package_manager_path": "npm",
+    "ruby.structure.view.model.defaults.configured": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\pierr\Desktop\Bureau rangé\Pokémon\Pokémon-1048\pokemon-1048\Pokemon 1048\Plugins\Pokémon 1048 Add-ons\011_Battle\002_Battler" />
+      <recent name="C:\Users\pierr\Desktop\Bureau rangé\Pokémon\Pokémon-1048\pokemon-1048\Pokemon 1048\Plugins\Pokémon 1048 Add-ons\011_Battle\001_Battle" />
       <recent name="C:\Users\pierr\Desktop\Bureau rangé\Pokémon\Pokémon-1048\pokemon-1048\Pokemon 1048\Plugins\Pokémon 1048 Add-ons\011_Battle\005_AI" />
       <recent name="C:\Users\pierr\Desktop\Bureau rangé\Pokémon\Pokémon-1048\pokemon-1048\Pokemon 1048\Plugins\Pokémon 1048 Add-ons\011_Battle\003_Move" />
-      <recent name="C:\Users\pierr\Desktop\Bureau rangé\Pokémon\Pokémon-1048\pokemon-1048\Pokemon 1048\Plugins\Pokémon 1048 Add-ons\011_Battle\002_Battler" />
       <recent name="C:\Users\pierr\Desktop\Bureau rangé\Pokémon\Pokémon-1048\pokemon-1048\Pokemon 1048\Plugins\Pokémon 1048 Add-ons\011_Battle\007_Other battle code" />
-      <recent name="C:\Users\pierr\Desktop\Bureau rangé\Pokémon\Pokémon-1048\pokemon-1048\Pokemon 1048\Plugins\Pokémon 1048 Add-ons\021_Add-ons" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -82,7 +97,10 @@
       <workItem from="1784041415554" duration="7580000" />
       <workItem from="1784052695265" duration="1717000" />
       <workItem from="1784217943647" duration="8127000" />
-      <workItem from="1784242632466" duration="5195000" />
+      <workItem from="1784242632466" duration="6867000" />
+      <workItem from="1784283570804" duration="9721000" />
+      <workItem from="1784374429427" duration="34000" />
+      <workItem from="1784374475353" duration="916000" />
     </task>
     <servers />
   </component>

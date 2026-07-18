@@ -1,9 +1,10 @@
 module Battle::AbilityEffects
-  EffectivenessCalcFromUser          = AbilityHandlerHash.new   # Dreadul
-  OnTargetStatLoss                 = AbilityHandlerHash.new
-  OnTargetStatGain                 = AbilityHandlerHash.new
-  OnTargetCritRateGain                 = AbilityHandlerHash.new
-  OnTargetCritEnsureGain                 = AbilityHandlerHash.new
+  EffectivenessCalcFromUser         = AbilityHandlerHash.new   # Dreadul
+  OnTargetStatLoss                  = AbilityHandlerHash.new
+  OnTargetStatGain                  = AbilityHandlerHash.new
+  OnTargetCritRateGain              = AbilityHandlerHash.new
+  OnTargetCritEnsureGain            = AbilityHandlerHash.new
+  OnHealing                         = AbilityHandlerHash.new
 
 
   def self.triggerEffectivenessCalcFromUser(ability, user, target, move, type)
@@ -24,6 +25,14 @@ module Battle::AbilityEffects
 
   def self.triggerOnTargetCritEnsureGain(ability, user)
     OnTargetCritEnsureGain.trigger(ability, user)
+  end
+
+  def self.triggerOnEndOfTargetUsingMove(ability, user, target, targets, move, battle)
+    OnEndOfTargetUsingMove.trigger(ability, user, target, targets, move, battle)
+  end
+
+  def self.triggerOnHealing(ability, target, amount)
+    return trigger(OnHealing, ability, target, amount)
   end
 end
 
@@ -412,5 +421,31 @@ Battle::AbilityEffects::EndOfRoundEffect.add(:HOURGLASSTWIST,
      battle.pbDisplay(_INTL("{1} won't need any rest turn thanks to {2}!",
                             battler.pbThis, battler.abilityName))
      battle.pbHideAbilitySplash(battler)
+   }
+)
+
+Battle::AbilityEffects::OnEndOfUsingMove.add(:HOPE,
+   proc { |ability, user, targets, move, battle|
+     next if !move.pbMoveFailed?(user,targets) && !targets.empty?
+     next if !user.canHeal?
+     battle.pbShowAbilitySplash(user)
+     user.pbRecoverHP(user.totalhp / 8)
+     battle.pbDisplay(_INTL("{1}'s HP was restored.", user.pbThis))
+     battle.pbHideAbilitySplash(user)
+   }
+)
+
+Battle::AbilityEffects::OnSwitchIn.add(:HOPE,
+   proc { |ability, battler, battle, switch_in|
+     battle.pbShowAbilitySplash(battler)
+     battle.allSameSideBattlers(battler.index).each { |b| b.effects[PBEffects::Hope] = true if !b.effects[PBEffects::Hope] }
+     battle.pbDisplay(_INTL("{1} are filled with Hope!", (battler.idxOwnSide == 0 ? "Allies" : "Opponents")))
+     battle.pbHideAbilitySplash(battler)
+   }
+)
+
+Battle::AbilityEffects::OnSwitchOut.add(:HOPE,
+   proc { |ability, battler, end_of_battle|
+     battler.battle.allSameSideBattlers(battler.index).each { |b| b.effects[PBEffects::Hope] = false if b.effects[PBEffects::Hope] }
    }
 )

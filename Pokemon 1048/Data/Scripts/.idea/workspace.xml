@@ -2,12 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11f0dc06-8be5-49e7-aadb-5c474382f50d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Plugins/Pokémon 1048 Add-ons/011_Battle/002_Battler/010_Battler_UseMoveTriggerEffects.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Actors.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Actors.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Animations.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Animations.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Armors.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Armors.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CommonEvents.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../CommonEvents.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enemies.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Enemies.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Items.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Items.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MapInfos.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../MapInfos.rxdata" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PluginScripts.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../PluginScripts.rxdata" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Skills.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Skills.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../States.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../States.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../System.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../System.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tilesets.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Tilesets.rxdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Weapons.rxdata" beforeDir="false" afterPath="$PROJECT_DIR$/../Weapons.rxdata" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../abilities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../abilities.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../messages_game.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../messages_game.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../PBS/abilities_Pokemon_1048_New.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../PBS/abilities_Pokemon_1048_New.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Plugins/Pokémon 1048 Add-ons/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Pokémon 1048 Add-ons/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Pokémon 1048 Add-ons/011_Battle/002_Battler/003_Battler_ChangeSelf.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Pokémon 1048 Add-ons/011_Battle/002_Battler/003_Battler_ChangeSelf.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Plugins/Pokémon 1048 Add-ons/011_Battle/007_Other battle code/001_PBEffects.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Pokémon 1048 Add-ons/011_Battle/007_Other battle code/001_PBEffects.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Plugins/Pokémon 1048 Add-ons/011_Battle/007_Other battle code/008_Battle_AbilityEffects.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Plugins/Pokémon 1048 Add-ons/011_Battle/007_Other battle code/008_Battle_AbilityEffects.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +83,9 @@
       <workItem from="1783950675966" duration="3310000" />
       <workItem from="1784041397158" duration="8822000" />
       <workItem from="1784217768723" duration="6461000" />
-      <workItem from="1784242296162" duration="4749000" />
+      <workItem from="1784242296162" duration="6625000" />
+      <workItem from="1784283548207" duration="9018000" />
+      <workItem from="1784374462162" duration="925000" />
     </task>
     <servers />
   </component>
